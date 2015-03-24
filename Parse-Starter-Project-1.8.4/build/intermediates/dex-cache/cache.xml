@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/Parse-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0fcb6bbc9cf6d2643a90c812539aa82ed16ea315">
+        <dex dex="/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-b6d5d9e2e67ea2e508e0b199f382b3af3fdebe03.jar" />
+    </item>
+    <item
+        jar="/Users/joeyraso/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-274c9419ef707f01e761f0f10245afc4cc06626d.jar" />
+    </item>
+    <item
+        jar="/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/ParseCrashReporting-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1d00b92e605b3d970994449b93d8ff135f96bb41">
+        <dex dex="/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-f9bc93a4dc25c7e95dbc5dbb83c418b3a69e450b.jar" />
+    </item>
+
+</items>
