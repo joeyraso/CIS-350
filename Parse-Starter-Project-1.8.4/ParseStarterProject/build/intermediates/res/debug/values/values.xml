@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/strings.xml -->
+    <declare-styleable name="HomepageView"><attr format="string" name="exampleString"/><attr format="dimension" name="exampleDimension"/><attr format="color" name="exampleColor"/><attr format="color|reference" name="exampleDrawable"/></declare-styleable>
+    <!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/Final%20Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">ParseStarterProject</string>
     <string name="hello">Hello World, ParseStarterProjectActivity!</string>
