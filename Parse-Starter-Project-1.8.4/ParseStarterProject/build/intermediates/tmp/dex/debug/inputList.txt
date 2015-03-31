@@ -1,4 +1,4 @@
-/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/classes/debug
-/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-274c9419ef707f01e761f0f10245afc4cc06626d.jar
-/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-f9bc93a4dc25c7e95dbc5dbb83c418b3a69e450b.jar
-/Users/joeyraso/Downloads/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-b6d5d9e2e67ea2e508e0b199f382b3af3fdebe03.jar
+/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/classes/debug
+/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-c1a27db8856eb25316cf82da2e18222eb1e03381.jar
+/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-669cc773a59d87b4cc121f76ec6668cca605fdc8.jar
+/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-7d59d588fd440d8858c2c96a91e4a399231b36db.jar

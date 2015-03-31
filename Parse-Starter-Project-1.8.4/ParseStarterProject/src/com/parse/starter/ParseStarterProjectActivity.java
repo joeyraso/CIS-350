@@ -1,6 +1,7 @@
 package com.parse.starter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.parse.ParseAnalytics;
@@ -12,10 +13,16 @@ public class ParseStarterProjectActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
+
 		ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
         testObject.saveInBackground();
+
+        Intent intent = new Intent(this, SignInActivity.class);
+        startActivity(intent);
 	}
+
+
 }

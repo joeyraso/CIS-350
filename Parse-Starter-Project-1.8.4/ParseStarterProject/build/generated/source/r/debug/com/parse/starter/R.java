@@ -18,6 +18,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int exampleColor=0x7f010002;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleColorSignIn=0x7f010006;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -28,12 +37,28 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int exampleDimension=0x7f010001;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleDimensionSignIn=0x7f010005;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int exampleDrawable=0x7f010003;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int exampleDrawableSignIn=0x7f010007;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -42,26 +67,68 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int exampleString=0x7f010000;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleStringSignIn=0x7f010004;
+    }
+    public static final class color {
+        public static final int white=0x7f040000;
+    }
+    public static final class dimen {
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int button=0x7f050004;
-        public static final int button2=0x7f050003;
-        public static final int button3=0x7f050002;
-        public static final int listView=0x7f050000;
-        public static final int textView=0x7f050001;
+        public static final int action_settings=0x7f09000a;
+        public static final int button=0x7f090004;
+        public static final int button2=0x7f090002;
+        public static final int button3=0x7f090003;
+        public static final int editText1=0x7f090007;
+        public static final int editText2=0x7f090009;
+        public static final int listView=0x7f090000;
+        public static final int textView=0x7f090001;
+        public static final int textView1=0x7f090005;
+        public static final int textView2=0x7f090006;
+        public static final int textView3=0x7f090008;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
-        public static final int sample_homepage_view=0x7f030001;
+        public static final int activity_homepage=0x7f030000;
+        public static final int activity_sign_in=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int sample_homepage_view=0x7f030003;
+        public static final int sign_in_view=0x7f030004;
+    }
+    public static final class menu {
+        public static final int menu_homepage=0x7f080000;
+        public static final int menu_sign_in=0x7f080001;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
-        public static final int hello=0x7f040001;
-        public static final int parse_app_id=0x7f040002;
-        public static final int parse_client_key=0x7f040003;
+        public static final int action_settings=0x7f060000;
+        public static final int app_name=0x7f060001;
+        public static final int cartTab=0x7f060002;
+        public static final int dashboardTab=0x7f060003;
+        public static final int hello=0x7f060004;
+        public static final int hello_world=0x7f060005;
+        public static final int newJobsAroundYou=0x7f060006;
+        public static final int parse_app_id=0x7f060007;
+        public static final int parse_client_key=0x7f060008;
+        public static final int password=0x7f060009;
+        public static final int settingsTab=0x7f06000a;
+        public static final int title_activity_homepage=0x7f06000b;
+        public static final int title_activity_sign_in=0x7f06000c;
+        public static final int username=0x7f06000d;
+        public static final int welcome=0x7f06000e;
+    }
+    public static final class style {
+        public static final int LogInFont=0x7f070000;
     }
     public static final class styleable {
         /** Attributes that can be used with a HomepageView.
@@ -140,5 +207,81 @@ containing a value of this type.
           @attr name com.parse.starter:exampleString
         */
         public static final int HomepageView_exampleString = 0;
+        /** Attributes that can be used with a SignInView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SignInView_exampleColorSignIn com.parse.starter:exampleColorSignIn}</code></td><td></td></tr>
+           <tr><td><code>{@link #SignInView_exampleDimensionSignIn com.parse.starter:exampleDimensionSignIn}</code></td><td></td></tr>
+           <tr><td><code>{@link #SignInView_exampleDrawableSignIn com.parse.starter:exampleDrawableSignIn}</code></td><td></td></tr>
+           <tr><td><code>{@link #SignInView_exampleStringSignIn com.parse.starter:exampleStringSignIn}</code></td><td></td></tr>
+           </table>
+           @see #SignInView_exampleColorSignIn
+           @see #SignInView_exampleDimensionSignIn
+           @see #SignInView_exampleDrawableSignIn
+           @see #SignInView_exampleStringSignIn
+         */
+        public static final int[] SignInView = {
+            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#exampleColorSignIn}
+          attribute's value can be found in the {@link #SignInView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.parse.starter:exampleColorSignIn
+        */
+        public static final int SignInView_exampleColorSignIn = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#exampleDimensionSignIn}
+          attribute's value can be found in the {@link #SignInView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.parse.starter:exampleDimensionSignIn
+        */
+        public static final int SignInView_exampleDimensionSignIn = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#exampleDrawableSignIn}
+          attribute's value can be found in the {@link #SignInView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.parse.starter:exampleDrawableSignIn
+        */
+        public static final int SignInView_exampleDrawableSignIn = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#exampleStringSignIn}
+          attribute's value can be found in the {@link #SignInView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.parse.starter:exampleStringSignIn
+        */
+        public static final int SignInView_exampleStringSignIn = 0;
     };
 }
