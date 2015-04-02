@@ -88,7 +88,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int action_settings=0x7f09000a;
-        public static final int button=0x7f090004;
+        public static final int signupButton =0x7f090004;
         public static final int button2=0x7f090002;
         public static final int button3=0x7f090003;
         public static final int editText1=0x7f090007;
