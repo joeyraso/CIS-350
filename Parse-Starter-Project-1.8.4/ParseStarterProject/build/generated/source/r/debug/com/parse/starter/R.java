@@ -151,13 +151,14 @@ containing a value of this type.
         public static final int activity_homepage=0x7f030001;
         public static final int activity_profile=0x7f030002;
         public static final int activity_sign_in=0x7f030003;
-        public static final int job_creation_view=0x7f030004;
-        public static final int main=0x7f030005;
-        public static final int profile_tab_view=0x7f030006;
-        public static final int sample_cart_tab_view=0x7f030007;
-        public static final int sample_homepage_view=0x7f030008;
-        public static final int sign_in_view=0x7f030009;
-        public static final int sign_up_view=0x7f03000a;
+        public static final int fragment_custom_list_adapter=0x7f030004;
+        public static final int job_creation_view=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int profile_tab_view=0x7f030007;
+        public static final int sample_cart_tab_view=0x7f030008;
+        public static final int sample_homepage_view=0x7f030009;
+        public static final int sign_in_view=0x7f03000a;
+        public static final int sign_up_view=0x7f03000b;
     }
     public static final class menu {
         public static final int menu_cart=0x7f080000;
@@ -172,22 +173,23 @@ containing a value of this type.
         public static final int dashboardTab=0x7f060003;
         public static final int email=0x7f060004;
         public static final int hello=0x7f060005;
-        public static final int hello_world=0x7f060006;
-        public static final int newJobsAroundYou=0x7f060007;
-        public static final int parse_app_id=0x7f060008;
-        public static final int parse_client_key=0x7f060009;
-        public static final int password=0x7f06000a;
-        public static final int phone=0x7f06000b;
-        public static final int settingsTab=0x7f06000c;
-        public static final int sign_up=0x7f06000d;
-        public static final int title_activity_cart=0x7f06000e;
-        public static final int title_activity_current_user=0x7f06000f;
-        public static final int title_activity_homepage=0x7f060010;
-        public static final int title_activity_profile=0x7f060011;
-        public static final int title_activity_sign_in=0x7f060012;
-        public static final int title_activity_sign_up=0x7f060013;
-        public static final int username=0x7f060014;
-        public static final int welcome=0x7f060015;
+        public static final int hello_blank_fragment=0x7f060006;
+        public static final int hello_world=0x7f060007;
+        public static final int newJobsAroundYou=0x7f060008;
+        public static final int parse_app_id=0x7f060009;
+        public static final int parse_client_key=0x7f06000a;
+        public static final int password=0x7f06000b;
+        public static final int phone=0x7f06000c;
+        public static final int settingsTab=0x7f06000d;
+        public static final int sign_up=0x7f06000e;
+        public static final int title_activity_cart=0x7f06000f;
+        public static final int title_activity_current_user=0x7f060010;
+        public static final int title_activity_homepage=0x7f060011;
+        public static final int title_activity_profile=0x7f060012;
+        public static final int title_activity_sign_in=0x7f060013;
+        public static final int title_activity_sign_up=0x7f060014;
+        public static final int username=0x7f060015;
+        public static final int welcome=0x7f060016;
     }
     public static final class style {
         public static final int LogInFont=0x7f070000;

@@ -2,6 +2,7 @@ package com.parse.starter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,14 +21,10 @@ public class CartActivity extends Activity {
         setContentView(R.layout.activity_cart);
 
         final ListView listview = (ListView) findViewById(R.id.listview);
-        /*String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-                "Android", "iPhone", "WindowsMobile" };*/
+        String[] values = new String[] { "Walk dog", "Clean car", "Fix bike", "Get me Chipotle"};
 
 
-        Job job = new Job();
+        /*Job job = new Job();
         job.setJobName("Walk dog");
 
         Job job2 = new Job();
@@ -46,7 +43,7 @@ public class CartActivity extends Activity {
         job.setJobName("Help me assemble something");
 
         String[] values = new String[]{job.getJobName(), job2.getJobName(), job3.getJobName(),
-                job4.getJobName(), job5.getJobName(), job6.getJobName()};
+                job4.getJobName(), job5.getJobName(), job6.getJobName()};*/
 
 
         final ArrayList<String> list = new ArrayList<String>();
@@ -66,6 +63,8 @@ public class CartActivity extends Activity {
             }
 
         });
+
+        listview.setBackgroundColor(Color.rgb(30, 137, 255));
     }
 
     private class StableArrayAdapter extends ArrayAdapter<String> {
