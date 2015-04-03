@@ -56,7 +56,10 @@
             android:name=".CurrentUserActivity"
             android:label="@string/title_activity_current_user" >
         </activity>
-
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile" >
+        </activity>
     </application>
 
 </manifest>

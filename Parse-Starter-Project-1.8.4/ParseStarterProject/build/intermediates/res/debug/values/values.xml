@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/strings.xml -->
+    <!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/strings.xml -->
     <eat-comment/>
     <color name="white">#FFFFFF</color>
+    <declare-styleable name="CartTabView"><attr format="string" name="exampleString3"/><attr format="dimension" name="exampleDimension3"/><attr format="color" name="exampleColor3"/><attr format="color|reference" name="exampleDrawable3"/></declare-styleable>
     <declare-styleable name="HomepageView"><attr format="string" name="exampleString"/><attr format="dimension" name="exampleDimension"/><attr format="color" name="exampleColor"/><attr format="color|reference" name="exampleDrawable"/></declare-styleable>
     <declare-styleable name="SignInView"><attr format="string" name="exampleStringSignIn"/><attr format="dimension" name="exampleDimensionSignIn"/><attr format="color" name="exampleColorSignIn"/><attr format="color|reference" name="exampleDrawableSignIn"/></declare-styleable>
-    <!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/dimens.xml -->
+    <!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/strings.xml -->
+    <!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="app_name">Job Board</string>
@@ -27,11 +28,12 @@
     <string name="sign_up">Please sign up below:</string>
     <string name="title_activity_current_user">CurrentUserActivity</string>
     <string name="title_activity_homepage">HomepageActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="username">Username:</string>
     <string name="welcome">Please sign in below:</string>
-    <!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/style.xml -->
+    <!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/style.xml -->
     <eat-comment/>
     <style name="LogInFont" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">fill_parent</item>
