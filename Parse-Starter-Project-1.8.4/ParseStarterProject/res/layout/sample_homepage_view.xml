@@ -7,9 +7,10 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="395dp"
-        android:id="@+id/listView"
+        android:id="@+id/list"
         android:layout_gravity="left|center_vertical"
-        android:choiceMode="singleChoice" />
+        android:choiceMode="singleChoice"
+        android:headerDividersEnabled="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -49,5 +50,13 @@
         android:text="@string/dashboardTab"
         android:id="@+id/signupButton"
         android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="193dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView7"
+        android:layout_gravity="left|center_vertical" />
 
 </FrameLayout>
