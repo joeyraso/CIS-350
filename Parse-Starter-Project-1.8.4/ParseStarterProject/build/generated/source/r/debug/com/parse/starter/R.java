@@ -122,12 +122,11 @@ containing a value of this type.
     public static final class id {
         public static final int action_settings=0x7f090017;
         public static final int button3=0x7f090008;
-        public static final int editText1=0x7f09000b;
-        public static final int editText2=0x7f09000d;
         public static final int emailText=0x7f090013;
         public static final int emailTextView=0x7f090002;
         public static final int listView=0x7f090005;
         public static final int logOutButton=0x7f090004;
+        public static final int passwordSignIn=0x7f09000d;
         public static final int passwordText=0x7f090011;
         public static final int phoneNumberTextView=0x7f090003;
         public static final int phoneText=0x7f090015;
@@ -142,6 +141,7 @@ containing a value of this type.
         public static final int textView4=0x7f090010;
         public static final int textView5=0x7f090012;
         public static final int textView6=0x7f090014;
+        public static final int usernameSignIn=0x7f09000b;
         public static final int usernameText=0x7f09000f;
         public static final int usernameTextView=0x7f090001;
     }
