@@ -1,7 +1,9 @@
 package com.parse.starter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -60,6 +62,36 @@ public class CartActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        view.getContext());
+
+                // set title
+                alertDialogBuilder.setTitle("Checkout Job");
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Do you want to request this job?")
+                        .setCancelable(false)
+                        .setPositiveButton("No",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                // if this button is clicked, just close
+                                // the dialog box and do nothing
+                                dialog.cancel();
+                            }
+                        })
+                        .setNegativeButton("Yes",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+
+                            }
+                        });
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
+
             }
 
         });
