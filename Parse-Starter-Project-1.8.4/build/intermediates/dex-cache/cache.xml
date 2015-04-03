@@ -2,7 +2,25 @@
 <items version="2" >
 
     <item
+<<<<<<< Updated upstream
         jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/Final Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+=======
+        jar="/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/ParseCrashReporting-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1d00b92e605b3d970994449b93d8ff135f96bb41">
+        <dex dex="/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-f995b48d0b2063e71a6952b3bb10e3689b0d5c67.jar" />
+    </item>
+    <item
+        jar="/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/Parse-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0fcb6bbc9cf6d2643a90c812539aa82ed16ea315">
+        <dex dex="/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-5f22741cdac77796c03b8d5ee5b9751da4ff1a68.jar" />
+    </item>
+    <item
+        jar="/Users/joeyraso/Desktop/CIS_350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/Parse-1.8.4.jar"
+>>>>>>> Stashed changes
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">

@@ -12,6 +12,12 @@
     <string name="welcome">Please sign in below:</string>
     <string name="username">Username:</string>
     <string name="password">Password:</string>
+<<<<<<< Updated upstream
+=======
+    <string name="jobName">Job Name:</string>
+    <string name="jobDescription">Description:</string>
+
+>>>>>>> Stashed changes
     <string name="sign_up">Please sign up below:</string>
     <string name="email">Email:</string>
     <string name="phone">Phone Number:</string>
@@ -27,5 +33,7 @@
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_cart">CartActivity</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="jobPrompt">Please Enter Job Information</string>
 
 </resources>

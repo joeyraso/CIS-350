@@ -3,6 +3,7 @@
     <!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/Final%20Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/strings.xml -->
     <eat-comment/>
     <color name="white">#FFFFFF</color>
+    <declare-styleable name="CartTabView"><attr format="string" name="exampleStringCartTab"/><attr format="dimension" name="exampleDimensionCartTab"/><attr format="color" name="exampleColorCartTab"/><attr format="color|reference" name="exampleDrawableCartTab"/></declare-styleable>
     <declare-styleable name="HomepageView"><attr format="string" name="exampleString"/><attr format="dimension" name="exampleDimension"/><attr format="color" name="exampleColor"/><attr format="color|reference" name="exampleDrawable"/></declare-styleable>
     <declare-styleable name="SignInView"><attr format="string" name="exampleStringSignIn"/><attr format="dimension" name="exampleDimensionSignIn"/><attr format="color" name="exampleColorSignIn"/><attr format="color|reference" name="exampleDrawableSignIn"/></declare-styleable>
     <!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/Final%20Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/values/dimens.xml -->
@@ -19,6 +20,9 @@
     <string name="hello">Hello World, ParseStarterProjectActivity!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
+    <string name="jobDescription">Description:</string>
+    <string name="jobName">Job Name:</string>
+    <string name="jobPrompt">Please Enter Job Information</string>
     <string name="newJobsAroundYou">New Jobs Around You</string>
     <string name="parse_app_id">9tRjp0biQVhmD8nDSSKEq0jgLx6WSemFP1fOgsbc</string>
     <string name="parse_client_key">rm3H0T94rlsEFyfEEojuSv29XSWrPmmzfLVCWsFb</string>
