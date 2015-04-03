@@ -60,6 +60,10 @@
             android:name="com.parse.starter.ProfileActivity"
             android:label="@string/title_activity_profile" >
         </activity>
+        <activity
+            android:name="com.parse.starter.CartActivity"
+            android:label="@string/title_activity_cart" >
+        </activity>
     </application>
 
 </manifest>

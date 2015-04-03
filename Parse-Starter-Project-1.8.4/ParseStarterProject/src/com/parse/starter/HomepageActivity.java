@@ -44,4 +44,10 @@ public class HomepageActivity extends Activity {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
+
+    //go to the cart screen
+    public void displayCart(View view) {
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
+    }
 }
