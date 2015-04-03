@@ -60,14 +60,14 @@ public class ProfileActivity extends Activity {
     }
 
     public void displayUserDetails() {
-        TextView username = (TextView) findViewById(R.id.usernameTextView);
-        username.append(ParseUser.getCurrentUser().getUsername());
-
-        TextView email = (TextView) findViewById(R.id.emailTextView);
-        email.append(ParseUser.getCurrentUser().getEmail());
-
-        TextView phone = (TextView) findViewById(R.id.phoneNumberTextView);
-        phone.append(ParseUser.getCurrentUser().get("phone").toString());
+//        TextView username = (TextView) findViewById(R.id.usernameTextView);
+//        username.append(ParseUser.getCurrentUser().getUsername());
+//
+//        TextView email = (TextView) findViewById(R.id.emailTextView);
+//        email.append(ParseUser.getCurrentUser().getEmail());
+//
+//        TextView phone = (TextView) findViewById(R.id.phoneNumberTextView);
+//        phone.append(ParseUser.getCurrentUser().get("phone").toString());
     }
 
     public void logoutUser() {
