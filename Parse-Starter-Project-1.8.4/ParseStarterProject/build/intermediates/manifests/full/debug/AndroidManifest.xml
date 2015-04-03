@@ -48,6 +48,14 @@
             android:name="com.parse.starter.HomepageActivity"
             android:label="@string/title_activity_homepage" >
         </activity>
+        <activity
+            android:name="com.parse.starter.SignUpActivity"
+            android:label="@string/title_activity_sign_up" >
+        </activity>
+        <activity
+            android:name="com.parse.starter.CurrentUserActivity"
+            android:label="@string/title_activity_current_user" >
+        </activity>
     </application>
 
 </manifest>

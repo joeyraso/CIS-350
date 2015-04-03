@@ -44,8 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dashboardTab"
-        android:id="@+id/button"
+        android:id="@+id/signupButton"
         android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>
-<!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->
+<!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->

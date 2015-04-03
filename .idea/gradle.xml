@@ -11,17 +11,6 @@
           </set>
         </option>
       </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Parse-Starter-Project-1.8.4" />
-        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/plugins/gradle" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/Parse-Starter-Project-1.8.4" />
-            <option value="$PROJECT_DIR$/Parse-Starter-Project-1.8.4/ParseStarterProject" />
-          </set>
-        </option>
-      </GradleProjectSettings>
     </option>
   </component>
 </project>

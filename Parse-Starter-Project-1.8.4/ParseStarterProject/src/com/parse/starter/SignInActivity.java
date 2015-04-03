@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.view.View.OnClickListener;
+
+
 
 
 public class SignInActivity extends Activity {
@@ -39,9 +43,17 @@ public class SignInActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    // go to the new screen with the game
+    // go to main app screen
     public void goToHomepage(View view) {
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
     }
+
+    //go to the sign up screen
+    public void goToSignUp(View view) {
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+    }
+
+
 }
