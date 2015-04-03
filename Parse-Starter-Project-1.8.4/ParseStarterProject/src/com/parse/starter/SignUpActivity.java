@@ -88,15 +88,15 @@ public class SignUpActivity extends Activity {
         newUser.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {
-            if (e == null) {
-                // Start an intent for the CurrentUserActivity, which routes user if logged in
-                Intent intent = new Intent(SignUpActivity.this, CurrentUserActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            } else {
-                //If e is not null, there is an error which we display
-                Toast.makeText(SignUpActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
+                if (e == null) {
+                    // Start an intent for the CurrentUserActivity, which routes user if logged in
+                    Intent intent = new Intent(SignUpActivity.this, CurrentUserActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } else {
+                    //If e is not null, there is an error which we display
+                    Toast.makeText(SignUpActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

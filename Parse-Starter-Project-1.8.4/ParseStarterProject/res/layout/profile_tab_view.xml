@@ -28,7 +28,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="50dp"
-        android:text="Username:"
+        android:text="Username: "
         android:textAppearance="?android:attr/textAppearanceMedium"
         style="@style/LogInFont"/>
 
@@ -39,7 +39,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/usernameTextView"
         android:layout_marginTop="50dp"
-        android:text="Email:"
+        android:text="Email: "
         android:textAppearance="?android:attr/textAppearanceMedium"
         style="@style/LogInFont"/>
 
@@ -50,7 +50,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/emailTextView"
         android:layout_marginTop="50dp"
-        android:text="Phone Number:"
+        android:text="Phone Number: "
         android:textAppearance="?android:attr/textAppearanceMedium"
         style="@style/LogInFont"/>
 
@@ -63,9 +63,7 @@
         android:layout_marginTop="47dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/phoneNumberTextView"
-        android:onClick="logOut"
         />
-
 
 </RelativeLayout>
 

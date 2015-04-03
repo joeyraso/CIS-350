@@ -14,7 +14,7 @@ import android.view.View;
 /**
  * TODO: document your custom view class.
  */
-public class ProfileTabView extends View {
+public class CartTabView extends View {
     private String mExampleString; // TODO: use a default from R.string...
     private int mExampleColor = Color.RED; // TODO: use a default from R.color...
     private float mExampleDimension = 0; // TODO: use a default from R.dimen...
@@ -24,17 +24,17 @@ public class ProfileTabView extends View {
     private float mTextWidth;
     private float mTextHeight;
 
-    public ProfileTabView(Context context) {
+    public CartTabView(Context context) {
         super(context);
         init(null, 0);
     }
 
-    public ProfileTabView(Context context, AttributeSet attrs) {
+    public CartTabView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(attrs, 0);
     }
 
-    public ProfileTabView(Context context, AttributeSet attrs, int defStyle) {
+    public CartTabView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(attrs, defStyle);
     }
@@ -42,22 +42,32 @@ public class ProfileTabView extends View {
     private void init(AttributeSet attrs, int defStyle) {
         // Load attributes
         final TypedArray a = getContext().obtainStyledAttributes(
-                attrs, R.styleable.ProfileTabView, defStyle, 0);
+                attrs, R.styleable.CartTabView, defStyle, 0);
 
         mExampleString = a.getString(
-                R.styleable.ProfileTabView_exampleString);
+                R.styleable.CartTabView_exampleString3);
         mExampleColor = a.getColor(
-                R.styleable.ProfileTabView_exampleColor,
+                R.styleable.ProfileTabView_exampleColor2,
+                R.styleable.CartTabView_exampleString3);
+        mExampleColor = a.getColor(
+                R.styleable.CartTabView_exampleColor3,
                 mExampleColor);
         // Use getDimensionPixelSize or getDimensionPixelOffset when dealing with
         // values that should fall on pixel boundaries.
         mExampleDimension = a.getDimension(
-                R.styleable.ProfileTabView_exampleDimension,
+                R.styleable.ProfileTabView_exampleDimension2,
                 mExampleDimension);
 
-        if (a.hasValue(R.styleable.ProfileTabView_exampleDrawable)) {
+        if (a.hasValue(R.styleable.ProfileTabView_exampleDrawable2)) {
             mExampleDrawable = a.getDrawable(
-                    R.styleable.ProfileTabView_exampleDrawable);
+                    R.styleable.ProfileTabView_exampleDrawable2;
+                R.styleable.CartTabView_exampleDimension3,
+                mExampleDimension);
+        }
+
+        if (a.hasValue(R.styleable.CartTabView_exampleDrawable3)) {
+            mExampleDrawable = a.getDrawable(
+                    R.styleable.CartTabView_exampleDrawable3);
             mExampleDrawable.setCallback(this);
         }
 

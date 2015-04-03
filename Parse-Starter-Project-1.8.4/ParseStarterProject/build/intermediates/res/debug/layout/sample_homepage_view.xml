@@ -29,9 +29,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settingsTab"
-        android:id="@+id/button2"
-        android:layout_gravity="right|bottom" />
+        android:text="Profile"
+        android:id="@+id/profileButton"
+        android:layout_gravity="right|bottom"
+        android:onClick="displayProfile"
+        />
 
     <Button
         android:layout_width="74dp"
@@ -48,4 +50,4 @@
         android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>
-<!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->
+<!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->

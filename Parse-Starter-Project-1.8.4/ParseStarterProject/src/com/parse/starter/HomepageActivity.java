@@ -1,9 +1,11 @@
 package com.parse.starter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class HomepageActivity extends Activity {
@@ -35,5 +37,11 @@ public class HomepageActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //go to the profile screen
+    public void displayProfile(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
     }
 }

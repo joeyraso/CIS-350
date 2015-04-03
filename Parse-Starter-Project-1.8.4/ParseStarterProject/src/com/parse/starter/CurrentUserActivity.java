@@ -22,10 +22,9 @@ public class CurrentUserActivity extends Activity {
         //if Parse has a user logged in, take us to the HomepageActivity
         if (ParseUser.getCurrentUser() != null) {
             startActivity(new Intent(this, HomepageActivity.class));
-        }
-        //if Parse has no user logged in, take us to the SignInActivity
-        else {
-            startActivity(new Intent(this, SignUpActivity.class));
+        } else {
+            //if Parse has no user logged in, take us to the SignInActivity
+            startActivity(new Intent(this, SignInActivity.class));
         }
     }
 }

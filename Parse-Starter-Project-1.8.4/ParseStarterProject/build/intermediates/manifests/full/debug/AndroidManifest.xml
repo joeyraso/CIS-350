@@ -56,6 +56,10 @@
             android:name="com.parse.starter.CurrentUserActivity"
             android:label="@string/title_activity_current_user" >
         </activity>
+        <activity
+            android:name="com.parse.starter.ProfileActivity"
+            android:label="@string/title_activity_profile" >
+        </activity>
     </application>
 
 </manifest>

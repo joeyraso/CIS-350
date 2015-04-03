@@ -114,8 +114,8 @@
         style="@style/LogInFont"
         android:id="@+id/phoneText"
         android:layout_below="@+id/emailText"
-        android:layout_alignLeft="@+id/signupButton"
-        android:layout_alignStart="@+id/signupButton" />
+        android:layout_alignLeft="@+id/signupButton2"
+        android:layout_alignStart="@+id/signupButton2" />
 
     <!--Sign Up Button-->
     <Button
