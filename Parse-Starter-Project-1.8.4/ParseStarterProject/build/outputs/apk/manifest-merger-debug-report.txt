@@ -113,3 +113,9 @@ ADDED from AndroidManifest.xml:59:9
 		ADDED from AndroidManifest.xml:61:13
 	android:name
 		ADDED from AndroidManifest.xml:60:13
+activity#com.parse.starter.CartActivity
+ADDED from AndroidManifest.xml:63:9
+	android:label
+		ADDED from AndroidManifest.xml:65:13
+	android:name
+		ADDED from AndroidManifest.xml:64:13
