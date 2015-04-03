@@ -1,4 +1,0 @@
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/listview"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" /> <!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/activity_cart.xml -->

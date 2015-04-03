@@ -40,8 +40,7 @@
         android:layout_height="wrap_content"
         android:text="@string/cartTab"
         android:id="@+id/button3"
-        android:layout_gravity="left|bottom"
-        android:onClick="displayCart"/>
+        android:layout_gravity="left|bottom" />
 
     <Button
         android:layout_width="wrap_content"
