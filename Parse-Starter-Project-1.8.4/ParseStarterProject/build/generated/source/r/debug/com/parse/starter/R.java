@@ -90,9 +90,10 @@ containing a value of this type.
         public static final int action_settings=0x7f090013;
         public static final int button2=0x7f090002;
         public static final int button3=0x7f090003;
+        public static final int editText1=0x7f090007;
+        public static final int editText2=0x7f090009;
         public static final int emailText=0x7f09000f;
         public static final int listView=0x7f090000;
-        public static final int passwordSignIn=0x7f090009;
         public static final int passwordText=0x7f09000d;
         public static final int phoneText=0x7f090011;
         public static final int signinButton=0x7f09000a;
@@ -105,16 +106,16 @@ containing a value of this type.
         public static final int textView4=0x7f09000c;
         public static final int textView5=0x7f09000e;
         public static final int textView6=0x7f090010;
-        public static final int usernameSignIn=0x7f090007;
         public static final int usernameText=0x7f09000b;
     }
     public static final class layout {
         public static final int activity_homepage=0x7f030000;
         public static final int activity_sign_in=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int sample_homepage_view=0x7f030003;
-        public static final int sign_in_view=0x7f030004;
-        public static final int sign_up_view=0x7f030005;
+        public static final int job_creation_view=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int sample_homepage_view=0x7f030004;
+        public static final int sign_in_view=0x7f030005;
+        public static final int sign_up_view=0x7f030006;
     }
     public static final class menu {
         public static final int menu_homepage=0x7f080000;

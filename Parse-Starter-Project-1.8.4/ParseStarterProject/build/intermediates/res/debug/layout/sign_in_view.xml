@@ -32,7 +32,7 @@
         style="@style/LogInFont"/>
 
     <EditText
-        android:id="@+id/usernameSignIn"
+        android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
@@ -54,7 +54,7 @@
         style="@style/LogInFont"/>
 
     <EditText
-        android:id="@+id/passwordSignIn"
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:onClick="validateLogIn"
+        android:onClick="goToHomepage"
         android:text="Sign In"
         android:textColor="#FFFFFF"/>
 
@@ -88,4 +88,4 @@
 
 </RelativeLayout>
 
-<!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sign_in_view.xml -->
+<!-- From: file:/Users/joeyraso/Desktop/CIS_350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sign_in_view.xml -->
