@@ -6,10 +6,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,35 +30,25 @@ public class CartActivity extends Activity {
         setContentView(R.layout.activity_cart);
 
         final ListView listview = (ListView) findViewById(R.id.listview);
-        String[] values = new String[] { "Walk dog", "Clean car", "Fix bike", "Get me Chipotle"};
-
-
-        /*Job job = new Job();
-        job.setJobName("Walk dog");
-
-        Job job2 = new Job();
-        job.setJobName("Clean car");
-
-        Job job3 = new Job();
-        job.setJobName("Fix bike");
-
-        Job job4 = new Job();
-        job.setJobName("Get me Chipotle");
-
-        Job job5 = new Job();
-        job.setJobName("Make website");
-
-        Job job6 = new Job();
-        job.setJobName("Help me assemble something");
-
-        String[] values = new String[]{job.getJobName(), job2.getJobName(), job3.getJobName(),
-                job4.getJobName(), job5.getJobName(), job6.getJobName()};*/
 
 
         final ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < values.length; ++i) {
-            list.add(values[i]);
-        }
+        //Querey Parse
+        ParseQuery<Job> query = new ParseQuery("Job");
+        query.findInBackground(new FindCallback<Job>() {
+            @Override
+            public void done(List objects, ParseException e) {
+                for (int i = 0; i < objects.size(); i++) {
+                    ParseObject o = (ParseObject)objects.get(i);
+                    String name = o.getString("jobName");
+
+                    list.add(name);
+                }
+            }
+        });
+
+
+
         final StableArrayAdapter adapter = new StableArrayAdapter(this,
                 android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);

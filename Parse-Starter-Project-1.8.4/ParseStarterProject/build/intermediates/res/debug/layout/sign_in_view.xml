@@ -38,6 +38,7 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="47dp"
         android:layout_toRightOf="@+id/textView2"
+        android:text="joeyraso"
         style="@style/LogInFont"/>
 
     <!--PASSWORD-->
@@ -60,6 +61,7 @@
         android:inputType="textPassword"
         android:layout_below="@+id/textView2"
         android:layout_toRightOf="@+id/textView3"
+        android:text="hello"
         android:layout_marginTop="47dp"
         style="@style/LogInFont"/>
 
@@ -88,4 +90,4 @@
 
 </RelativeLayout>
 
-<!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/Final%20Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sign_in_view.xml -->
+<!-- From: file:/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sign_in_view.xml -->

@@ -23,31 +23,31 @@
 
     <!--USERNAME-->
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/startDateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/jobName"
+        android:text="@string/startDate"
         android:textAppearance="?android:attr/textAppearanceMedium"
         style="@style/LogInFont"
         android:layout_above="@+id/textView6"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="46dp"
-        android:layout_alignRight="@+id/textView5"
-        android:layout_alignEnd="@+id/textView5" />
+        android:layout_toLeftOf="@+id/startDate"
+        android:layout_toStartOf="@+id/startDate" />
 
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@string/jobDescription"
+        android:id="@+id/startDate"
         style="@style/LogInFont"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignLeft="@+id/phoneText"
-        android:layout_alignStart="@+id/phoneText"
-        android:layout_alignBottom="@+id/textView2"
-        android:backgroundTint="#ffe5ffa7"
-        android:background="#ff20ff3f"
+        android:layout_alignTop="@+id/startDateText"
+        android:layout_alignLeft="@+id/endDateText"
+        android:layout_alignStart="@+id/endDateText"
+        android:layout_alignBottom="@+id/startDateText"
+        android:backgroundTint="#ff84dbff"
+        android:background="@drawable/layout_bg"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -55,11 +55,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password"
+        android:text="@string/jobName"
         android:id="@+id/textView4"
         android:textAppearance="?android:attr/textAppearanceMedium"
         style="@style/LogInFont"
-        android:layout_alignBottom="@+id/passwordText"
+        android:layout_alignBottom="@+id/jobNameText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/textView5"
@@ -68,79 +68,80 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:ems="10"
         style="@style/LogInFont"
-        android:id="@+id/passwordText"
-        android:background="#DEFC"
+        android:id="@+id/jobNameText"
+        android:background="@drawable/layout_bg"
         android:layout_below="@+id/textView1"
-        android:layout_alignLeft="@+id/emailText"
-        android:layout_alignStart="@+id/emailText"
-        android:layout_marginTop="73dp" />
+        android:layout_alignLeft="@+id/descriptionText"
+        android:layout_alignStart="@+id/descriptionText"
+        android:layout_marginTop="73dp"
+        android:backgroundTint="#ff84dbff" />
 
     <!--Email-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email"
+        android:text="@string/jobDescription"
         android:id="@+id/textView5"
         style="@style/LogInFont"
-        android:layout_alignBottom="@+id/emailText"
+        android:layout_alignBottom="@+id/descriptionText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/textView6"
-        android:layout_alignEnd="@+id/textView6" />
+        android:layout_alignRight="@+id/startDateText"
+        android:layout_alignEnd="@+id/startDateText" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
         android:ems="10"
         style="@style/LogInFont"
-        android:id="@+id/emailText"
+        android:id="@+id/descriptionText"
         android:autoText="false"
-        android:background="#DEFC"
         android:layout_marginTop="56dp"
-        android:layout_below="@+id/passwordText"
-        android:layout_alignLeft="@string/jobDescription"
-        android:layout_alignStart="@string/jobDescription" />
+        android:layout_below="@+id/jobNameText"
+        android:layout_alignLeft="@+id/startDate"
+        android:layout_alignStart="@+id/startDate"
+        android:backgroundTint="#ff84dbff"
+        android:background="@drawable/layout_bg"/>
+
 
     <!--Phone-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/phone"
+        android:text="@string/endDate"
         android:id="@+id/textView6"
         style="@style/LogInFont"
-        android:layout_alignTop="@+id/phoneText"
+        android:layout_alignTop="@+id/endDateText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/phoneText" />
+        android:layout_alignBottom="@+id/endDateText" />
 
     <EditText
+        android:background="@drawable/layout_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
         style="@style/LogInFont"
-        android:id="@+id/phoneText"
-        android:backgroundTint="#fff3ff87"
-        android:background="#ff9ac0ff"
+        android:id="@+id/endDateText"
+        android:backgroundTint="#ff84dbff"
         android:layout_marginBottom="51dp"
-        android:layout_above="@+id/signupButton2"
-        android:layout_alignLeft="@+id/signupButton2"
-        android:layout_alignStart="@+id/signupButton2" />
+        android:layout_above="@+id/submitButton"
+        android:layout_alignLeft="@+id/submitButton"
+        android:layout_alignStart="@+id/submitButton" />
 
     <!--Sign Up Button-->
     <Button
-        android:id="@+id/signupButton2"
+        android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="goToHomepage"
-        android:text="Sign Up"
+        android:onClick="submitJob"
+        android:text="Submit"
         android:textColor="#FFFFFF"
         android:layout_marginBottom="33dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

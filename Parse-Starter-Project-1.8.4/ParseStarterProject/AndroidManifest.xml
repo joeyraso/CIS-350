@@ -64,6 +64,10 @@
             android:name=".CartActivity"
             android:label="@string/title_activity_cart" >
         </activity>
+        <activity
+            android:name=".jobCreationActivity"
+            android:label="@string/title_activity_job_creation" >
+        </activity>
     </application>
 
 </manifest>

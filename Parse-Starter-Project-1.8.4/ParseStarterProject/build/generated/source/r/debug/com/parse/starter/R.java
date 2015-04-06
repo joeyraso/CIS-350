@@ -26,11 +26,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-<<<<<<< Updated upstream
-        public static final int exampleColor2=0x7f01000a;
-=======
-        public static final int exampleColorCartTab=0x7f010002;
->>>>>>> Stashed changes
+        public static final int exampleColor2=0x7f01000e;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -39,11 +35,16 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-<<<<<<< Updated upstream
-        public static final int exampleColorSignIn=0x7f010006;
-=======
+        public static final int exampleColorCartTab=0x7f010002;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int exampleColorSignIn=0x7f01000a;
->>>>>>> Stashed changes
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -63,11 +64,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-<<<<<<< Updated upstream
-        public static final int exampleDimension2=0x7f010009;
-=======
-        public static final int exampleDimensionCartTab=0x7f010001;
->>>>>>> Stashed changes
+        public static final int exampleDimension2=0x7f01000d;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -77,11 +74,17 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-<<<<<<< Updated upstream
-        public static final int exampleDimensionSignIn=0x7f010005;
-=======
+        public static final int exampleDimensionCartTab=0x7f010001;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int exampleDimensionSignIn=0x7f010009;
->>>>>>> Stashed changes
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -93,19 +96,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-<<<<<<< Updated upstream
-        public static final int exampleDrawable2=0x7f01000b;
-=======
-        public static final int exampleDrawableCartTab=0x7f010003;
->>>>>>> Stashed changes
+        public static final int exampleDrawable2=0x7f01000f;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-<<<<<<< Updated upstream
-        public static final int exampleDrawableSignIn=0x7f010007;
-=======
+        public static final int exampleDrawableCartTab=0x7f010003;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
         public static final int exampleDrawableSignIn=0x7f01000b;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
@@ -115,7 +117,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int exampleString=0x7f010004;
->>>>>>> Stashed changes
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleString2=0x7f01000c;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -131,19 +140,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-<<<<<<< Updated upstream
-        public static final int exampleString2=0x7f010008;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int exampleStringSignIn=0x7f010004;
-=======
         public static final int exampleStringSignIn=0x7f010008;
->>>>>>> Stashed changes
     }
     public static final class color {
         public static final int white=0x7f040000;
@@ -154,127 +151,95 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int layout_bg=0x7f020001;
     }
     public static final class id {
-<<<<<<< Updated upstream
-        public static final int action_settings=0x7f090019;
-        public static final int button3=0x7f090009;
-        public static final int emailText=0x7f090015;
-        public static final int emailTextView=0x7f090003;
-        public static final int list=0x7f090006;
+        public static final int action_settings=0x7f090020;
+        public static final int addJobButton=0x7f090013;
+        public static final int button3=0x7f090015;
+        public static final int descriptionText=0x7f090009;
+        public static final int emailText=0x7f09001d;
+        public static final int emailTextView=0x7f09000c;
+        public static final int endDateText=0x7f090005;
+        public static final int jobNameText=0x7f090007;
+        public static final int list=0x7f09000f;
         public static final int listview=0x7f090000;
-        public static final int logOutButton=0x7f090005;
-        public static final int passwordSignIn=0x7f09000f;
-        public static final int passwordText=0x7f090013;
-        public static final int phoneNumberTextView=0x7f090004;
-        public static final int phoneText=0x7f090017;
-        public static final int profileButton=0x7f090008;
-        public static final int signinButton=0x7f090010;
-        public static final int signupButton=0x7f09000a;
-        public static final int signupButton2=0x7f090018;
-        public static final int textView=0x7f090007;
+        public static final int logOutButton=0x7f09000e;
+        public static final int passwordSignIn=0x7f090019;
+        public static final int passwordText=0x7f09001c;
+        public static final int phoneNumberTextView=0x7f09000d;
+        public static final int phoneText=0x7f09001e;
+        public static final int profileButton=0x7f090011;
+        public static final int signinButton=0x7f09001a;
+        public static final int signupButton=0x7f090014;
+        public static final int signupButton2=0x7f09001f;
+        public static final int startDate=0x7f090004;
+        public static final int startDateText=0x7f090002;
+        public static final int submitButton=0x7f09000a;
+        public static final int textView=0x7f090010;
         public static final int textView1=0x7f090001;
-        public static final int textView2=0x7f09000c;
-        public static final int textView3=0x7f09000e;
-        public static final int textView4=0x7f090012;
-        public static final int textView5=0x7f090014;
-        public static final int textView6=0x7f090016;
-        public static final int textView7=0x7f09000b;
-        public static final int usernameSignIn=0x7f09000d;
-        public static final int usernameText=0x7f090011;
-        public static final int usernameTextView=0x7f090002;
+        public static final int textView2=0x7f090016;
+        public static final int textView3=0x7f090018;
+        public static final int textView4=0x7f090006;
+        public static final int textView5=0x7f090008;
+        public static final int textView6=0x7f090003;
+        public static final int textView7=0x7f090012;
+        public static final int usernameSignIn=0x7f090017;
+        public static final int usernameText=0x7f09001b;
+        public static final int usernameTextView=0x7f09000b;
     }
     public static final class layout {
         public static final int activity_cart=0x7f030000;
         public static final int activity_homepage=0x7f030001;
-        public static final int activity_profile=0x7f030002;
-        public static final int activity_sign_in=0x7f030003;
-        public static final int job_creation_view=0x7f030004;
-        public static final int main=0x7f030005;
-        public static final int profile_tab_view=0x7f030006;
-        public static final int sample_cart_tab_view=0x7f030007;
-        public static final int sample_homepage_view=0x7f030008;
-        public static final int sign_in_view=0x7f030009;
-        public static final int sign_up_view=0x7f03000a;
-=======
-        public static final int action_settings=0x7f090013;
-        public static final int button2=0x7f09000b;
-        public static final int button3=0x7f09000c;
-        public static final int editText1=0x7f09000e;
-        public static final int editText2=0x7f090010;
-        public static final int emailText=0x7f090007;
-        public static final int listView=0x7f090009;
-        public static final int passwordText=0x7f090006;
-        public static final int phoneText=0x7f090004;
-        public static final int signinButton=0x7f090011;
-        public static final int signupButton=0x7f09000d;
-        public static final int signupButton2=0x7f090008;
-        public static final int textView=0x7f09000a;
-        public static final int textView1=0x7f090000;
-        public static final int textView2=0x7f090001;
-        public static final int textView3=0x7f09000f;
-        public static final int textView4=0x7f090005;
-        public static final int textView5=0x7f090003;
-        public static final int textView6=0x7f090002;
-        public static final int usernameText=0x7f090012;
-    }
-    public static final class layout {
-        public static final int activity_homepage=0x7f030000;
-        public static final int activity_sign_in=0x7f030001;
-        public static final int job_creation_view=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int sample_cart_tab_view=0x7f030004;
-        public static final int sample_homepage_view=0x7f030005;
-        public static final int sign_in_view=0x7f030006;
-        public static final int sign_up_view=0x7f030007;
->>>>>>> Stashed changes
+        public static final int activity_job_creation=0x7f030002;
+        public static final int activity_profile=0x7f030003;
+        public static final int activity_sign_in=0x7f030004;
+        public static final int job_creation_view=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int profile_tab_view=0x7f030007;
+        public static final int sample_cart_tab_view=0x7f030008;
+        public static final int sample_homepage_view=0x7f030009;
+        public static final int sign_in_view=0x7f03000a;
+        public static final int sign_up_view=0x7f03000b;
     }
     public static final class menu {
         public static final int menu_cart=0x7f080000;
         public static final int menu_homepage=0x7f080001;
-        public static final int menu_profile=0x7f080002;
-        public static final int menu_sign_in=0x7f080003;
+        public static final int menu_job_creation=0x7f080002;
+        public static final int menu_profile=0x7f080003;
+        public static final int menu_sign_in=0x7f080004;
     }
     public static final class string {
         public static final int action_settings=0x7f060000;
-        public static final int app_name=0x7f060001;
-        public static final int cartTab=0x7f060002;
-        public static final int dashboardTab=0x7f060003;
-        public static final int email=0x7f060004;
-        public static final int hello=0x7f060005;
-<<<<<<< Updated upstream
-        public static final int hello_blank_fragment=0x7f060006;
-        public static final int hello_world=0x7f060007;
-        public static final int newJobsAroundYou=0x7f060008;
-        public static final int parse_app_id=0x7f060009;
-        public static final int parse_client_key=0x7f06000a;
-        public static final int password=0x7f06000b;
-        public static final int phone=0x7f06000c;
-        public static final int settingsTab=0x7f06000d;
-        public static final int sign_up=0x7f06000e;
-        public static final int title_activity_cart=0x7f06000f;
-        public static final int title_activity_current_user=0x7f060010;
-        public static final int title_activity_homepage=0x7f060011;
-        public static final int title_activity_profile=0x7f060012;
-=======
-        public static final int hello_world=0x7f060006;
-        public static final int jobDescription=0x7f060007;
-        public static final int jobName=0x7f060008;
-        public static final int jobPrompt=0x7f060009;
-        public static final int newJobsAroundYou=0x7f06000a;
-        public static final int parse_app_id=0x7f06000b;
-        public static final int parse_client_key=0x7f06000c;
-        public static final int password=0x7f06000d;
-        public static final int phone=0x7f06000e;
-        public static final int settingsTab=0x7f06000f;
-        public static final int sign_up=0x7f060010;
-        public static final int title_activity_current_user=0x7f060011;
-        public static final int title_activity_homepage=0x7f060012;
->>>>>>> Stashed changes
-        public static final int title_activity_sign_in=0x7f060013;
-        public static final int title_activity_sign_up=0x7f060014;
-        public static final int username=0x7f060015;
-        public static final int welcome=0x7f060016;
+        public static final int addTab=0x7f060001;
+        public static final int app_name=0x7f060002;
+        public static final int cartTab=0x7f060003;
+        public static final int dashboardTab=0x7f060004;
+        public static final int email=0x7f060005;
+        public static final int endDate=0x7f060006;
+        public static final int hello=0x7f060007;
+        public static final int hello_blank_fragment=0x7f060008;
+        public static final int hello_world=0x7f060009;
+        public static final int jobDescription=0x7f06000a;
+        public static final int jobName=0x7f06000b;
+        public static final int jobPrompt=0x7f06000c;
+        public static final int newJobsAroundYou=0x7f06000d;
+        public static final int parse_app_id=0x7f06000e;
+        public static final int parse_client_key=0x7f06000f;
+        public static final int password=0x7f060010;
+        public static final int phone=0x7f060011;
+        public static final int settingsTab=0x7f060012;
+        public static final int sign_up=0x7f060013;
+        public static final int startDate=0x7f060014;
+        public static final int title_activity_cart=0x7f060015;
+        public static final int title_activity_current_user=0x7f060016;
+        public static final int title_activity_homepage=0x7f060017;
+        public static final int title_activity_job_creation=0x7f060018;
+        public static final int title_activity_profile=0x7f060019;
+        public static final int title_activity_sign_in=0x7f06001a;
+        public static final int title_activity_sign_up=0x7f06001b;
+        public static final int username=0x7f06001c;
+        public static final int welcome=0x7f06001d;
     }
     public static final class style {
         public static final int LogInFont=0x7f070000;
@@ -449,7 +414,7 @@ containing a value of this type.
            @see #ProfileTabView_exampleString2
          */
         public static final int[] ProfileTabView = {
-            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b
+            0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f
         };
         /**
           <p>This symbol is the offset where the {@link com.parse.starter.R.attr#exampleColor2}

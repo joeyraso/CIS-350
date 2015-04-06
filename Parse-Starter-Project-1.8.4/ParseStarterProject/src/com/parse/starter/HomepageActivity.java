@@ -22,11 +22,14 @@ import android.view.View;
 import android.widget.TextView;
 import android.content.Context;
 import android.widget.Toast;
+import android.util.Log;
 
 public class HomepageActivity extends Activity {
-
+    ListView jobslv;
+    ArrayAdapter<String> listAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample_homepage_view);
 
@@ -34,18 +37,39 @@ public class HomepageActivity extends Activity {
         final ArrayList<String> jobNames = new ArrayList<String>();
         final ArrayList<String> jobDescriptions = new ArrayList<String>();
         //populate
-        ListView jobslv = (ListView) findViewById(android.R.id.list);
-//        jobslv.setAdapter(listAdapter);
+
+        jobslv = (ListView) findViewById(R.id.list);
+
+        /*
+        Log.v("Homepage", jobslv + " ");
+        jobNames.add("Walk dog");
+        jobNames.add("Clean car");
+        jobNames.add("Fix bike");
+        jobNames.add("Get me chipotle");
+
+        jobDescriptions.add("Mow my Lawn");
+        jobDescriptions.add("Clean my carpet");
+        jobDescriptions.add("Walk my Dog");
+        */
+
+        listAdapter = new ArrayAdapter<String>(this,
+                R.layout.sample_homepage_view, R.id.textView,jobNames);
+        jobslv.setAdapter(listAdapter);
+
 
         //Querey Parse
-        ParseQuery query = new ParseQuery("Job");
-        query.findInBackground(new FindCallback() {
+        ParseQuery<Job> query = new ParseQuery("Job");
+        query.findInBackground(new FindCallback<Job>() {
             @Override
             public void done(List objects, ParseException e) {
+                Log.v("homepage", objects.size()+"");
                 for (int i = 0; i < objects.size(); i++) {
                     ParseObject o = (ParseObject)objects.get(i);
                     String name = o.getString("jobName");
                     String descr = o.getString("jobDescription");
+
+                    Log.v("Homepage", name);
+                    Log.v("Homepage", descr);
                     jobNames.add(name);
                     jobDescriptions.add(descr);
 
@@ -57,18 +81,12 @@ public class HomepageActivity extends Activity {
                     toast.show();
 //                    listAdapter.add(name);
 //                    listAdapter.add(descr);
+
+
                 }
-            }
-
-            @Override
-            public void done(Object o, Throwable throwable) {
-
+                listAdapter.notifyDataSetChanged();
             }
         });
-
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_list_item_1, jobNames);
-//        jobslv.setAdapter(adapter);
     }
 
 
@@ -103,6 +121,12 @@ public class HomepageActivity extends Activity {
     //go to the cart screen
     public void displayCart(View view) {
         Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
+    }
+
+    // go to the job creation screen
+    public void addJob(View view) {
+        Intent intent = new Intent(this, jobCreationActivity.class);
         startActivity(intent);
     }
 }
