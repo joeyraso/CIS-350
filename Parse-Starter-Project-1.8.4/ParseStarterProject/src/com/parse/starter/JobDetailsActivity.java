@@ -84,22 +84,32 @@ public class JobDetailsActivity extends Activity {
         addJobToMyRequested(); //current user gets this job added to requests
         addUserToJobRequestors();//add current user to jobs list of requestors
 
-
-//        Intent intent = new Intent(this, CartActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
     }
 
     private void addJobToMyRequested() {
         //Updates myRequestedJobs list in the User
         List<String> myRequestedJobs = ParseUser.getCurrentUser().getList("myRequestedJobs");
+        if (myRequestedJobs == null) {
+            ParseUser.getCurrentUser().put("myRequestedJobs", new ArrayList<String>());
+            myRequestedJobs = ParseUser.getCurrentUser().getList("myRequestedJobs");
+        }
+
         myRequestedJobs.add(jobId);
+        ParseUser.getCurrentUser().saveInBackground();
         return;
     }
 
     private void addUserToJobRequestors() {
         //Updates jobRequestors list in the Job
         List<String> currRequestors = job.getList("jobRequestors");
+        if (currRequestors == null) {
+            job.put("jobRequestors", new ArrayList<String>());
+            currRequestors = job.getList("jobRequestors");
+        }
         currRequestors.add(ParseUser.getCurrentUser().getObjectId());
+        job.saveInBackground();
         return;
     }
 }

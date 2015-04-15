@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -32,8 +33,9 @@ public class CartActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        final ListView listview = (ListView) findViewById(R.id.listview);
-        final ArrayList<String> list = new ArrayList<String>();
+        final ListView listview = (ListView) findViewById(R.id.list);
+        final ArrayList<String> jobNames = new ArrayList<String>();
+        final ArrayList<String> jobDescriptions = new ArrayList<>();
 
         //List of IDS for all the jobs
         List<String> myRequestedJobs = ParseUser.getCurrentUser().getList("myRequestedJobs");
@@ -44,83 +46,40 @@ public class CartActivity extends Activity {
                 @Override
                 public void done(Job o, ParseException e) {
                     String name = o.getJobName();
-                    list.add(name);
+                    jobNames.add(name);
+                    Toast.makeText(CartActivity.this, "THERE IS A JOB:." + name,
+                            Toast.LENGTH_SHORT).show();
+                    jobDescriptions.add(o.getString("jobDescription"));
                 }
             });
         }
 
-
-
-
-        final StableArrayAdapter adapter = new StableArrayAdapter(this,
-                android.R.layout.simple_list_item_1, list);
-        listview.setAdapter(adapter);
-
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_2,
+                android.R.id.text1,
+                jobNames) {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
-                                    int position, long id) {
-                final String item = (String) parent.getItemAtPosition(position);
+            public View getView(int position, View convertView, ViewGroup parent) {
 
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                        view.getContext());
+                // Must always return just a View.
+                View view = super.getView(position, convertView, parent);
 
-                // set title
-                alertDialogBuilder.setTitle("Checkout Job");
-
-                // set dialog message
-                alertDialogBuilder
-                        .setMessage("Do you want to request this job?")
-                        .setCancelable(false)
-                        .setPositiveButton("No",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
-                                // if this button is clicked, just close
-                                // the dialog box and do nothing
-                                dialog.cancel();
-                            }
-                        })
-                        .setNegativeButton("Yes",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
-
-                            }
-                        });
-
-                // create alert dialog
-                AlertDialog alertDialog = alertDialogBuilder.create();
-
-                // show it
-                alertDialog.show();
-
+                // If you look at the android.R.layout.simple_list_item_2 source, you'll see
+                // it's a TwoLineListItem with 2 TextViews - text1 and text2.
+                //TwoLineListItem listItem = (TwoLineListItem) view;
+                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+                text1.setText(jobNames.get(position));
+                text1.setTextSize(25);
+                text2.setText(jobDescriptions.get(position));
+                text2.setPadding(50,0,0,0);
+                return view;
             }
+        };
 
-        });
-
-        listview.setBackgroundColor(Color.rgb(30, 137, 255));
-    }
-
-    private class StableArrayAdapter extends ArrayAdapter<String> {
-
-        HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
-
-        public StableArrayAdapter(Context context, int textViewResourceId,
-                                  List<String> objects) {
-            super(context, textViewResourceId, objects);
-            for (int i = 0; i < objects.size(); ++i) {
-                mIdMap.put(objects.get(i), i);
-            }
-        }
-
-        @Override
-        public long getItemId(int position) {
-            String item = getItem(position);
-            return mIdMap.get(item);
-        }
-
-        @Override
-        public boolean hasStableIds() {
-            return true;
-        }
+        listview.setAdapter(listAdapter);
 
     }
 
