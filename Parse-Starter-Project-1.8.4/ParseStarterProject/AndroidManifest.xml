@@ -68,6 +68,10 @@
             android:name=".jobCreationActivity"
             android:label="@string/title_activity_job_creation" >
         </activity>
+        <activity
+            android:name=".JobDetailsActivity"
+            android:label="@string/title_activity_job_details" >
+        </activity>
     </application>
 
 </manifest>
