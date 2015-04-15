@@ -1,25 +1,43 @@
 package com.parse.starter;
 
 /**
+ * Jobs always start as "available" (which means it is up for grabs). Once the poster picks
+ * a user to complete it, the status becomes "in progress". Upon completion, "complete".
  * Created by joeyraso on 4/2/15.
  */
 
+import android.location.Location;
+import android.location.LocationListener;
 import com.parse.ParseObject;
 import com.parse.ParseClassName;
+import com.parse.ParseUser;
 
 @ParseClassName("Job")
-public class Job extends ParseObject{
+public class Job extends ParseObject {
+
     public Job(String name, String description, String start, String end) {
         setJobName(name);
         setJobDescription(description);
         setStartDate(start);
         setEndDate(end);
+        setJobPoster();
+        setJobStatus("available");  //default
+
+//        LocationListener locationListener = new LocationListener() {
+//            public void onLocationChanged(Location location) {
+//                int lat = (int) (location.getLatitude() * 1E6);
+//                int lng = (int) (location.getLongitude() * 1E6);
+//                GeoPoint point = new GeoPoint(lat, lng);
+//                put("jobLocation", point);
+//            }
+//        }
     }
 
     public Job() {
 
     }
 
+    //Setters
     public void setJobName(String name) {
         put("jobName", name);
     }
@@ -34,6 +52,30 @@ public class Job extends ParseObject{
         put("endDate", end);
     }
 
+    public void setJobPoster() {put("jobPoster", ParseUser.getCurrentUser().getObjectId());}
+
+    public void setJobStatus(String status) {put("jobStatus", status);}
+
+    public void addJobRequestor(String userID) {
+
+        //Copy over the old list of requestors
+        String[] currUsers = (String[]) get("jobRequestors");
+        String[] newUsers = new String[currUsers.length + 1];
+        for (int i = 0; i < currUsers.length; i++) {
+            newUsers[i] = currUsers[i];
+        }
+
+        //This adds the requesting user to the list of requestors
+        newUsers[newUsers.length - 1] = userID;
+
+        //update so the Job contains the new list of them
+        put("jobRequestors", newUsers);
+    }
+
+    public void setJobDoer(String userID) {put("jobDoer", userID);}
+
+
+    //Getters
     public String getJobName() {
         return getString("jobName");
     }
@@ -49,4 +91,11 @@ public class Job extends ParseObject{
     public String getEndDate() {
         return getString("endDate");
     }
+
+    public String[] getJobRequestors() {return (String[]) get("jobRequestors");}
+
+    public String getJobDoer() { return getString("jobDoer");}
+
+    public String getJobPoster() {return getString("jobPoster");}
+
 }
