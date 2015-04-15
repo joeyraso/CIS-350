@@ -103,6 +103,7 @@ public class HomepageActivity extends Activity {
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
                 Toast.makeText(HomepageActivity.this, "You chose" + position, Toast.LENGTH_SHORT).show();
+                openJob(position);
             }
         });
 
@@ -134,12 +135,12 @@ public class HomepageActivity extends Activity {
     }
 
     //go to the JobDetailsActivity
-    public void openJob( int position) {
-        SerializableJob job = new SerializableJob();
-        job.setObj(jobObjects.get(position));
-        //Intent intent = new Intent(this, JobDetailsActivity.class);
-        //intent.putExtra("JOB", (java.io.Serializable) job);
-        //startActivity(intent);
+    public void openJob(int position) {
+        ParseObject object = jobObjects.get(position);
+        String id = object.getString("objectId");
+        Intent intent = new Intent(this, JobDetailsActivity.class);
+        intent.putExtra("jobID", id);
+        startActivity(intent);
     }
 
 
