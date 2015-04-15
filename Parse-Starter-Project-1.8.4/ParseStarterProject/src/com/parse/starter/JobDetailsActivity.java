@@ -21,6 +21,7 @@ import com.parse.ParseUser;
 
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -84,37 +85,21 @@ public class JobDetailsActivity extends Activity {
         addUserToJobRequestors();//add current user to jobs list of requestors
 
 
-        Intent intent = new Intent(this, CartActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, CartActivity.class);
+//        startActivity(intent);
     }
 
-
     private void addJobToMyRequested() {
-        //Copy over the old list of reqeustedJobs
-        String[] currRequests = (String[]) ParseUser.getCurrentUser().get("myRequestedJobs");
-        String[] newRequests = new String[currRequests.length + 1];
-        for (int i = 0; i < currRequests.length; i++) {
-            newRequests[i] = currRequests[i];
-        }
-
-        //This adds the requested job to the list of requestedJobs
-        newRequests[newRequests.length - 1] = jobId;
-
-        //update so the User contains the new list of requestedJobs
-        ParseUser.getCurrentUser().put("myRequestedJobs", newRequests);
+        //Updates myRequestedJobs list in the User
+        List<String> myRequestedJobs = ParseUser.getCurrentUser().getList("myRequestedJobs");
+        myRequestedJobs.add(jobId);
+        return;
     }
 
     private void addUserToJobRequestors() {
-        String[] currRequestors = (String[]) job.get("jobRequestors");
-        String[] newRequestors = new String[currRequestors.length + 1];
-        for (int i = 0; i < currRequestors.length; i++) {
-            newRequestors[i] = currRequestors[i];
-        }
-
-        //This adds the user to the list of jobRequestors
-        newRequestors[newRequestors.length - 1] = ParseUser.getCurrentUser().getObjectId();
-
-        //update so the Job contains the new requesotr
-       job.put("jobRequestors", newRequestors);
+        //Updates jobRequestors list in the Job
+        List<String> currRequestors = job.getList("jobRequestors");
+        currRequestors.add(ParseUser.getCurrentUser().getObjectId());
+        return;
     }
 }

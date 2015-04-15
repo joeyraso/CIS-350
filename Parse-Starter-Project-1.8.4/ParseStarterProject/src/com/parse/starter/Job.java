@@ -12,6 +12,8 @@ import com.parse.ParseObject;
 import com.parse.ParseClassName;
 import com.parse.ParseUser;
 
+import java.util.List;
+
 @ParseClassName("Job")
 public class Job extends ParseObject {
 
@@ -56,22 +58,6 @@ public class Job extends ParseObject {
 
     public void setJobStatus(String status) {put("jobStatus", status);}
 
-    public void addJobRequestor(String userID) {
-
-        //Copy over the old list of requestors
-        String[] currUsers = (String[]) get("jobRequestors");
-        String[] newUsers = new String[currUsers.length + 1];
-        for (int i = 0; i < currUsers.length; i++) {
-            newUsers[i] = currUsers[i];
-        }
-
-        //This adds the requesting user to the list of requestors
-        newUsers[newUsers.length - 1] = userID;
-
-        //update so the Job contains the new list of them
-        put("jobRequestors", newUsers);
-    }
-
     public void setJobDoer(String userID) {put("jobDoer", userID);}
 
 
@@ -92,7 +78,7 @@ public class Job extends ParseObject {
         return getString("endDate");
     }
 
-    public String[] getJobRequestors() {return (String[]) get("jobRequestors");}
+    public List<String> getJobRequestors() {return getList("jobRequestors");}
 
     public String getJobDoer() { return getString("jobDoer");}
 
