@@ -5,11 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-<<<<<<< HEAD
 import android.content.Intent;
-=======
 import android.widget.Toast;
->>>>>>> origin/master
 
 
 public class JobDetailsActivity extends Activity {
@@ -19,12 +16,9 @@ public class JobDetailsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_details);
 
-<<<<<<< HEAD
         Intent intent = getIntent();
         String jobId = intent.getStringExtra("jobID");
-        
-=======
->>>>>>> origin/master
+
     }
 
 
