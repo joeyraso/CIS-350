@@ -20,6 +20,8 @@
     <string name="phone">Phone Number:</string>
     <string name="startDate">Start Date:</string>
     <string name="endDate">End Date:</string>
+    <string name="search_title">Search</string>
+
 
     <color name="white">#FFFFFF</color>
 

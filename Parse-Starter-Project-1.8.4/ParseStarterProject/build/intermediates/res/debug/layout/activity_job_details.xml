@@ -20,11 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/Title"
+                android:id="@+id/detailsName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:text="Name"
                 android:gravity="center"
                 android:textSize="40dp"
                 android:paddingBottom="30dp"
@@ -52,13 +51,12 @@
                     android:gravity="right"
                     />
                 <TextView
-                    android:id="@+id/description_text"
+                    android:id="@+id/detailsDescription"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
                     android:textColor="#000000"
-                    android:text="Sign in with Google+"
                     android:layout_weight="1.2"
                     />
 
@@ -81,13 +79,12 @@
                     android:gravity="right"
                     />
                 <TextView
-                    android:id="@+id/start_date_text"
+                    android:id="@+id/detailsStartDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
                     android:textColor="#000000"
-                    android:text="Sign in with Google+"
                     android:layout_weight="1.2"
                     />
 
@@ -110,13 +107,12 @@
                     android:gravity="right"
                     />
                 <TextView
-                    android:id="@+id/end_date_text"
+                    android:id="@+id/detailsEndDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
                     android:textColor="#000000"
-                    android:text="Sign in with Google+"
                     android:layout_weight="1.4"
                     />
 
@@ -125,7 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:weightSum="2"
-                android:paddingBottom="130dp">
+                android:paddingBottom="90dp">
 
                 <TextView
                     android:id="@+id/payment"
@@ -140,13 +136,12 @@
                     android:gravity="right"
                     />
                 <TextView
-                    android:id="@+id/payment_text"
+                    android:id="@+id/detailsPayment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
                     android:textColor="#000000"
-                    android:text="Sign in with Google+"
                     android:layout_weight="1.4"
                     />
             </LinearLayout>
@@ -171,8 +166,4 @@
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
-<<<<<<< HEAD
 <!-- From: file:/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/activity_job_details.xml -->
-=======
-<!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/Final%20Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/activity_job_details.xml -->
->>>>>>> origin/master

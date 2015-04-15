@@ -30,6 +30,7 @@
     <string name="parse_client_key">rm3H0T94rlsEFyfEEojuSv29XSWrPmmzfLVCWsFb</string>
     <string name="password">Password:</string>
     <string name="phone">Phone Number:</string>
+    <string name="search_title">Search</string>
     <string name="settingsTab">Settings</string>
     <string name="sign_up">Please sign up below:</string>
     <string name="startDate">Start Date:</string>

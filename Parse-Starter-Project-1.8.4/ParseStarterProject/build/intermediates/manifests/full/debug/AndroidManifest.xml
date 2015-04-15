@@ -46,7 +46,7 @@
         </activity>
         <activity
             android:name="com.parse.starter.HomepageActivity"
-            android:label="@string/title_activity_homepage" >
+            android:label="" >
         </activity>
         <activity
             android:name="com.parse.starter.SignUpActivity"

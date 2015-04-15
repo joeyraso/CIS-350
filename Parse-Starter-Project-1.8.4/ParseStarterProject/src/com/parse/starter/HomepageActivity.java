@@ -1,13 +1,16 @@
 package com.parse.starter;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.app.ListActivity;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 
@@ -29,12 +32,19 @@ import android.view.ViewGroup;
 import android.widget.TwoLineListItem;
 import android.view.LayoutInflater;
 import org.apache.http.message.BasicNameValuePair;
+import android.view.Display;
+import android.graphics.Point;
+import android.widget.Button;
+import android.widget.RadioGroup.LayoutParams;
 
 
 public class HomepageActivity extends Activity {
     ArrayAdapter<String> listAdapter;
-    final ArrayList<ParseObject> jobObjects = new ArrayList<>();
+    ArrayList<Job> jobObjects = new ArrayList<>();
+    ArrayList<Job> shownObjects = new ArrayList<>();
 
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -46,14 +56,18 @@ public class HomepageActivity extends Activity {
         final ArrayList<String> jobDescriptions = new ArrayList<String>();
         final List<String> jobInfo = new LinkedList<String>();
 
+
+
+
         //Query Parse
         ParseQuery<Job> query = new ParseQuery("Job");
         query.findInBackground(new FindCallback<Job>() {
             @Override
             public void done(List objects, ParseException e) {
                 for (int i = 0; i < objects.size(); i++) {
-                    ParseObject o = (ParseObject)objects.get(i);
+                    Job o = (Job)objects.get(i);
                     jobObjects.add(o);
+                    shownObjects.add(o);
                     String name = o.getString("jobName");
                     String descr = o.getString("jobDescription");
 
@@ -67,7 +81,7 @@ public class HomepageActivity extends Activity {
             }
         });
 
-        ListView jobsListView = (ListView) findViewById(R.id.listView);
+        ListView jobsListView = (ListView) findViewById(R.id.list);
 //        listAdapter = new ArrayAdapter<String>(this,
 //                android.R.layout.simple_list_item_1, jobNames);
 //        jobsListView.setAdapter(listAdapter);
@@ -91,7 +105,9 @@ public class HomepageActivity extends Activity {
             TextView text1 = (TextView) view.findViewById(android.R.id.text1);
             TextView text2 = (TextView) view.findViewById(android.R.id.text2);
             text1.setText(jobNames.get(position));
+            text1.setTextSize(25);
             text2.setText(jobDescriptions.get(position));
+            text2.setPadding(50,0,0,0);
             return view;
         }
     };
@@ -127,7 +143,7 @@ public class HomepageActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.search) {
             return true;
         }
 
@@ -136,8 +152,7 @@ public class HomepageActivity extends Activity {
 
     //go to the JobDetailsActivity
     public void openJob(int position) {
-        ParseObject object = jobObjects.get(position);
-        String id = object.getString("objectId");
+        String id = jobObjects.get(position).getObjectId();
         Intent intent = new Intent(this, JobDetailsActivity.class);
         intent.putExtra("jobID", id);
         startActivity(intent);
@@ -161,4 +176,6 @@ public class HomepageActivity extends Activity {
         Intent intent = new Intent(this, jobCreationActivity.class);
         startActivity(intent);
     }
+
+
 }

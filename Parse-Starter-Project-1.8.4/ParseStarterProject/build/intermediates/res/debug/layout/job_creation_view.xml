@@ -21,20 +21,12 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/Title"
-<<<<<<< HEAD
                 android:layout_width="wrap_content"
-=======
-                android:layout_width="match_parent"
->>>>>>> origin/master
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
                 android:text="Please Enter Job Details"
                 android:gravity="center"
-<<<<<<< HEAD
                 android:textSize="30dp"
-=======
-                android:textSize="40dp"
->>>>>>> origin/master
                 android:paddingBottom="30dp"
                 />
         </LinearLayout>
@@ -42,7 +34,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-<<<<<<< HEAD
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,82 +64,17 @@
 
             </LinearLayout>
 
-=======
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:weightSum="2">
 
                 <TextView
-                    android:id="@+id/description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
                     android:textColor="#000000"
-                    android:text="Description:"
-                    android:layout_weight="0.8"
-                    android:textSize="18dp"
-                    android:gravity="right"
-                    />
-                <TextView
-                    android:id="@+id/description_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_margin="4dp"
-                    android:textColor="#000000"
-                    android:text="Sign in with Google+"
-                    android:layout_weight="1.2"
-                    />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
-
-                <TextView
-                    android:id="@+id/start_date"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_margin="4dp"
-                    android:textColor="#000000"
-                    android:text="Start Date:"
-                    android:layout_weight="0.8"
-                    android:textSize="18dp"
-                    android:gravity="right"
-                    />
-                <TextView
-                    android:id="@+id/start_date_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_margin="4dp"
-                    android:textColor="#000000"
-                    android:text="Sign in with Google+"
-                    android:layout_weight="1.2"
-                    />
-
-            </LinearLayout>
->>>>>>> origin/master
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
-
-                <TextView
-<<<<<<< HEAD
-=======
-                    android:id="@+id/end_date"
->>>>>>> origin/master
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_margin="4dp"
-                    android:textColor="#000000"
-<<<<<<< HEAD
                     android:text="Description:"
                     android:layout_weight="0.75"
                     android:textSize="18dp"
@@ -156,50 +82,27 @@
                     />
                 <EditText
                     android:id="@+id/creationDescription"
-=======
-                    android:text="End Date:"
-                    android:layout_weight="0.8"
-                    android:textSize="18dp"
-                    android:gravity="right"
-                    />
-                <TextView
-                    android:id="@+id/end_date_text"
->>>>>>> origin/master
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
                     android:textColor="#000000"
-<<<<<<< HEAD
                     android:layout_weight="1.25"
                     android:background="@drawable/layout_bg"
-=======
-                    android:text="Sign in with Google+"
-                    android:layout_weight="1.4"
->>>>>>> origin/master
                     />
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
                 android:weightSum="2">
 
                 <TextView
-=======
-                android:weightSum="2"
-                android:paddingBottom="130dp">
-
-                <TextView
-                    android:id="@+id/payment"
->>>>>>> origin/master
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
                     android:textColor="#000000"
-<<<<<<< HEAD
                     android:text="Start Date:"
                     android:layout_weight="0.75"
                     android:textSize="18dp"
@@ -207,21 +110,11 @@
                     />
                 <EditText
                     android:id="@+id/creationStartDate"
-=======
-                    android:text="Payment:"
-                    android:layout_weight="0.8"
-                    android:textSize="18dp"
-                    android:gravity="right"
-                    />
-                <TextView
-                    android:id="@+id/payment_text"
->>>>>>> origin/master
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
                     android:textColor="#000000"
-<<<<<<< HEAD
                     android:layout_weight="1.25"
                     android:background="@drawable/layout_bg"
                     />
@@ -303,30 +196,3 @@
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout><!-- From: file:/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/job_creation_view.xml -->
-=======
-                    android:text="Sign in with Google+"
-                    android:layout_weight="1.4"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/Request"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_margin="4dp"
-                    android:textColor="#ffffff"
-                    android:textStyle="bold"
-                    android:text="Request Job"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    />
-
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-</RelativeLayout><!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/Final%20Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/job_creation_view.xml -->
->>>>>>> origin/master

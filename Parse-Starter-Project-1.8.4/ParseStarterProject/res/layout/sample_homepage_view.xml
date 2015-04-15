@@ -1,54 +1,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Jobs"
-        android:textSize="40dp" />
 
     <Button
-        android:id="@+id/bNyVare"
+        android:id="@+id/buttonDashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="Tilføj ny vare"
-        android:textSize="30dp" />
-
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Dashboard" />
     <Button
-        android:id="@+id/cart"
+        android:id="@+id/buttonCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Cart" />
+    <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Cart"
-        android:textSize="30dp" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
 
-    <Button
-        android:id="@+id/dashboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/cart"
-        android:text="Dashboard"
-        android:textSize="30dp" />
+        android:text="Button" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:layout_above="@id/bNyVare"
-        android:orientation="vertical" >
-
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
+    <ListView
+        android:id="@+id/list"
+        android:layout_above="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp">
+    </ListView>
 
 </RelativeLayout>
