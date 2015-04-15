@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
 
 
 public class JobDetailsActivity extends Activity {
@@ -12,6 +13,10 @@ public class JobDetailsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_details);
+
+        Intent intent = getIntent();
+        String jobId = intent.getStringExtra("jobID");
+        
     }
 
 

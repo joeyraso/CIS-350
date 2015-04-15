@@ -26,12 +26,10 @@ public class jobCreationActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.job_creation_view);
 
-        jobNameTextObject = (EditText) findViewById(R.id.jobNameText);
-        jobDescriptionTextObject = (EditText) findViewById(R.id.descriptionText);
-        startDateTextObject = (EditText) findViewById(R.id.startDate);
-        endDateTextObject = (EditText) findViewById(R.id.endDateText);
-
-
+        jobNameTextObject = (EditText) findViewById(R.id.creationName);
+        jobDescriptionTextObject = (EditText) findViewById(R.id.creationDescription);
+        startDateTextObject = (EditText) findViewById(R.id.creationStartDate);
+        endDateTextObject = (EditText) findViewById(R.id.creationEndDate);
     }
 
 
