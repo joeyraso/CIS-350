@@ -25,8 +25,8 @@ import android.widget.Toast;
 import android.util.Log;
 
 public class HomepageActivity extends Activity {
-    ListView jobslv;
     ArrayAdapter<String> listAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,26 +38,15 @@ public class HomepageActivity extends Activity {
         final ArrayList<String> jobDescriptions = new ArrayList<String>();
         //populate
 
-        jobslv = (ListView) findViewById(R.id.list);
+        ListView jobsListView = (ListView) findViewById(R.id.listView);
 
-        /*
-        Log.v("Homepage", jobslv + " ");
-        jobNames.add("Walk dog");
-        jobNames.add("Clean car");
-        jobNames.add("Fix bike");
-        jobNames.add("Get me chipotle");
-
-        jobDescriptions.add("Mow my Lawn");
-        jobDescriptions.add("Clean my carpet");
-        jobDescriptions.add("Walk my Dog");
-        */
 
         listAdapter = new ArrayAdapter<String>(this,
-                R.layout.sample_homepage_view, R.id.textView,jobNames);
-        jobslv.setAdapter(listAdapter);
+                android.R.layout.simple_list_item_1, jobNames);
+        jobsListView.setAdapter(listAdapter);
 
 
-        //Querey Parse
+        //Query Parse
         ParseQuery<Job> query = new ParseQuery("Job");
         query.findInBackground(new FindCallback<Job>() {
             @Override
@@ -72,17 +61,6 @@ public class HomepageActivity extends Activity {
                     Log.v("Homepage", descr);
                     jobNames.add(name);
                     jobDescriptions.add(descr);
-
-                    Context context = getApplicationContext();
-                    CharSequence text = "Hello toast!";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-//                    listAdapter.add(name);
-//                    listAdapter.add(descr);
-
-
                 }
                 listAdapter.notifyDataSetChanged();
             }
