@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.app.ListActivity;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 
@@ -17,15 +18,22 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import android.view.View;
 import android.widget.TextView;
 import android.content.Context;
 import android.widget.Toast;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.TwoLineListItem;
+import android.view.LayoutInflater;
+import org.apache.http.message.BasicNameValuePair;
+
 
 public class HomepageActivity extends Activity {
     ArrayAdapter<String> listAdapter;
+    final ArrayList<ParseObject> jobObjects = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +44,7 @@ public class HomepageActivity extends Activity {
         //Set up listview
         final ArrayList<String> jobNames = new ArrayList<String>();
         final ArrayList<String> jobDescriptions = new ArrayList<String>();
-        //populate
-
-        ListView jobsListView = (ListView) findViewById(R.id.listView);
-
-
-        listAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, jobNames);
-        jobsListView.setAdapter(listAdapter);
-
+        final List<String> jobInfo = new LinkedList<String>();
 
         //Query Parse
         ParseQuery<Job> query = new ParseQuery("Job");
@@ -53,15 +53,61 @@ public class HomepageActivity extends Activity {
             public void done(List objects, ParseException e) {
                 for (int i = 0; i < objects.size(); i++) {
                     ParseObject o = (ParseObject)objects.get(i);
+                    jobObjects.add(o);
                     String name = o.getString("jobName");
                     String descr = o.getString("jobDescription");
 
+                    String[] temp = new String[2];
+                    temp[0] = name;
+                    temp[1] = descr;
                     jobNames.add(name);
                     jobDescriptions.add(descr);
                 }
-                listAdapter.notifyDataSetChanged();
+                //listAdapter.notifyDataSetChanged();
             }
         });
+
+        ListView jobsListView = (ListView) findViewById(R.id.listView);
+//        listAdapter = new ArrayAdapter<String>(this,
+//                android.R.layout.simple_list_item_1, jobNames);
+//        jobsListView.setAdapter(listAdapter);
+
+
+    listAdapter = new ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_list_item_2,
+            android.R.id.text1,
+            jobNames) {
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            // Must always return just a View.
+            View view = super.getView(position, convertView, parent);
+
+            // If you look at the android.R.layout.simple_list_item_2 source, you'll see
+            // it's a TwoLineListItem with 2 TextViews - text1 and text2.
+            //TwoLineListItem listItem = (TwoLineListItem) view;
+            TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+            TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+            text1.setText(jobNames.get(position));
+            text2.setText(jobDescriptions.get(position));
+            return view;
+        }
+    };
+
+        jobsListView.setAdapter(listAdapter);
+        jobsListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+            {
+                Toast.makeText(HomepageActivity.this, "You chose" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
     }
 
 
@@ -86,6 +132,16 @@ public class HomepageActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    //go to the JobDetailsActivity
+    public void openJob( int position) {
+        SerializableJob job = new SerializableJob();
+        job.setObj(jobObjects.get(position));
+        //Intent intent = new Intent(this, JobDetailsActivity.class);
+        //intent.putExtra("JOB", (java.io.Serializable) job);
+        //startActivity(intent);
+    }
+
 
     //go to the profile screen
     public void displayProfile(View view) {
