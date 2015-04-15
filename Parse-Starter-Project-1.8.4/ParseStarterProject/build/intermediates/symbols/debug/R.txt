@@ -21,6 +21,7 @@ int drawable ic_launcher 0x7f020000
 int drawable layout_bg 0x7f020001
 int id Request 0x7f09000a
 int id Title 0x7f090001
+<<<<<<< HEAD
 int id action_settings 0x7f090029
 int id bNyVare 0x7f090017
 int id cart 0x7f090018
@@ -61,6 +62,42 @@ int id textView6 0x7f090026
 int id usernameSignIn 0x7f09001c
 int id usernameText 0x7f090021
 int id usernameTextView 0x7f090012
+=======
+int id action_settings 0x7f090023
+int id bNyVare 0x7f090011
+int id cart 0x7f090012
+int id dashboard 0x7f090013
+int id description 0x7f090002
+int id description_text 0x7f090003
+int id emailText 0x7f09001f
+int id emailTextView 0x7f09000d
+int id end_date 0x7f090006
+int id end_date_text 0x7f090007
+int id header 0x7f090010
+int id listView 0x7f090014
+int id listview 0x7f090000
+int id logOutButton 0x7f09000f
+int id passwordSignIn 0x7f090018
+int id passwordText 0x7f09001d
+int id payment 0x7f090008
+int id payment_text 0x7f090009
+int id phoneNumberTextView 0x7f09000e
+int id phoneText 0x7f090021
+int id signinButton 0x7f090019
+int id signupButton 0x7f09001a
+int id signupButton2 0x7f090022
+int id start_date 0x7f090004
+int id start_date_text 0x7f090005
+int id textView1 0x7f09000b
+int id textView2 0x7f090015
+int id textView3 0x7f090017
+int id textView4 0x7f09001c
+int id textView5 0x7f09001e
+int id textView6 0x7f090020
+int id usernameSignIn 0x7f090016
+int id usernameText 0x7f09001b
+int id usernameTextView 0x7f09000c
+>>>>>>> origin/master
 int layout activity_cart 0x7f030000
 int layout activity_job_details 0x7f030001
 int layout activity_sign_in 0x7f030002

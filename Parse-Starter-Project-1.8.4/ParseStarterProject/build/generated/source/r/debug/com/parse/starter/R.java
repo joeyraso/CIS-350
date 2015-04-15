@@ -156,6 +156,7 @@ containing a value of this type.
     public static final class id {
         public static final int Request=0x7f09000a;
         public static final int Title=0x7f090001;
+<<<<<<< HEAD
         public static final int action_settings=0x7f090029;
         public static final int bNyVare=0x7f090017;
         public static final int cart=0x7f090018;
@@ -196,6 +197,42 @@ containing a value of this type.
         public static final int usernameSignIn=0x7f09001c;
         public static final int usernameText=0x7f090021;
         public static final int usernameTextView=0x7f090012;
+=======
+        public static final int action_settings=0x7f090023;
+        public static final int bNyVare=0x7f090011;
+        public static final int cart=0x7f090012;
+        public static final int dashboard=0x7f090013;
+        public static final int description=0x7f090002;
+        public static final int description_text=0x7f090003;
+        public static final int emailText=0x7f09001f;
+        public static final int emailTextView=0x7f09000d;
+        public static final int end_date=0x7f090006;
+        public static final int end_date_text=0x7f090007;
+        public static final int header=0x7f090010;
+        public static final int listView=0x7f090014;
+        public static final int listview=0x7f090000;
+        public static final int logOutButton=0x7f09000f;
+        public static final int passwordSignIn=0x7f090018;
+        public static final int passwordText=0x7f09001d;
+        public static final int payment=0x7f090008;
+        public static final int payment_text=0x7f090009;
+        public static final int phoneNumberTextView=0x7f09000e;
+        public static final int phoneText=0x7f090021;
+        public static final int signinButton=0x7f090019;
+        public static final int signupButton=0x7f09001a;
+        public static final int signupButton2=0x7f090022;
+        public static final int start_date=0x7f090004;
+        public static final int start_date_text=0x7f090005;
+        public static final int textView1=0x7f09000b;
+        public static final int textView2=0x7f090015;
+        public static final int textView3=0x7f090017;
+        public static final int textView4=0x7f09001c;
+        public static final int textView5=0x7f09001e;
+        public static final int textView6=0x7f090020;
+        public static final int usernameSignIn=0x7f090016;
+        public static final int usernameText=0x7f09001b;
+        public static final int usernameTextView=0x7f09000c;
+>>>>>>> origin/master
     }
     public static final class layout {
         public static final int activity_cart=0x7f030000;
