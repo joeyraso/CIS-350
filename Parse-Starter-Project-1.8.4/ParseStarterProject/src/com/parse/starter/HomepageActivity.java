@@ -51,14 +51,11 @@ public class HomepageActivity extends Activity {
         query.findInBackground(new FindCallback<Job>() {
             @Override
             public void done(List objects, ParseException e) {
-                Log.v("homepage", objects.size()+"");
                 for (int i = 0; i < objects.size(); i++) {
                     ParseObject o = (ParseObject)objects.get(i);
                     String name = o.getString("jobName");
                     String descr = o.getString("jobDescription");
 
-                    Log.v("Homepage", name);
-                    Log.v("Homepage", descr);
                     jobNames.add(name);
                     jobDescriptions.add(descr);
                 }
