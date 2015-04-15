@@ -183,6 +183,10 @@ containing a value of this type.
         public static final int textView4=0x7f090006;
         public static final int textView5=0x7f090008;
         public static final int textView6=0x7f090003;
+<<<<<<< Updated upstream
+=======
+        public static final int tvLOL=0x7f09000f;
+>>>>>>> Stashed changes
         public static final int usernameSignIn=0x7f090015;
         public static final int usernameText=0x7f09001a;
         public static final int usernameTextView=0x7f09000b;
