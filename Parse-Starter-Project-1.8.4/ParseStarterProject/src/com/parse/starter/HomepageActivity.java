@@ -8,8 +8,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+<<<<<<< HEAD
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+=======
+import android.widget.AdapterView;
+import android.widget.ListView;
+>>>>>>> origin/master
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,6 +27,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+import android.widget.TextView;
+import android.widget.Toast;
+import android.view.ViewGroup;
+import android.app.SearchManager;
+import android.content.Context;
+import android.widget.SearchView;
+>>>>>>> origin/master
 
 public class HomepageActivity extends Activity {
     ArrayAdapter<String> listAdapter;
@@ -34,7 +48,7 @@ public class HomepageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sample_homepage_view);
+        setContentView(R.layout.activity_homepage);
 
         //Set up listview
         final ArrayList<String> jobNames = new ArrayList<String>();
@@ -59,7 +73,7 @@ public class HomepageActivity extends Activity {
                     jobNames.add(name);
                     jobDescriptions.add(descr);
                 }
-                //listAdapter.notifyDataSetChanged();
+                listAdapter.notifyDataSetChanged();
             }
         });
 
@@ -109,10 +123,21 @@ public class HomepageActivity extends Activity {
     }
 
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_homepage, menu);
+
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSubmitButtonEnabled(true);
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+
         return true;
     }
 

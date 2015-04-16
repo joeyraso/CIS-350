@@ -35,7 +35,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="jobPrompt">Please Enter Job Information</string>
     <string name="title_activity_job_creation">jobCreationActivity</string>
+<<<<<<< HEAD
     <string name="title_activity_job_details">JobDetailsActivity</string>
     <string name="title_activity_my_posted_jobs">MyPostedJobsActivity</string>
+=======
+    <string name="title_activity_job_details">Job Details</string>
+    <string name="title_activity_search_results">SearchResultsActivity</string>
+>>>>>>> origin/master
 
 </resources>

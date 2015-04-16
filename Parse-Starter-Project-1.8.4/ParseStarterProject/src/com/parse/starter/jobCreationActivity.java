@@ -9,11 +9,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
+=======
+>>>>>>> origin/master
 public class jobCreationActivity extends Activity {
 
     EditText jobNameTextObject;
@@ -25,7 +28,7 @@ public class jobCreationActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.job_creation_view);
+        setContentView(R.layout.activity_job_creation);
 
         jobNameTextObject = (EditText) findViewById(R.id.creationName);
         jobDescriptionTextObject = (EditText) findViewById(R.id.creationDescription);

@@ -46,7 +46,14 @@
         </activity>
         <activity
             android:name=".HomepageActivity"
+<<<<<<< HEAD
             android:label="" >
+=======
+            android:label="@string/title_activity_homepage" >
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".SearchResultsActivity" />
+
+>>>>>>> origin/master
         </activity>
         <activity
             android:name=".SignUpActivity"
@@ -73,8 +80,19 @@
             android:label="@string/title_activity_job_details" >
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".MyPostedJobsActivity"
             android:label="@string/title_activity_my_posted_jobs" >
+=======
+            android:name=".SearchResultsActivity"
+            android:label="@string/title_activity_search_results" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+
+>>>>>>> origin/master
         </activity>
     </application>
 </manifest>
