@@ -25,7 +25,7 @@ public class SignUpActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.sign_up_view);
 
         //read in the username, password, email, and phone from layout
         usernameTextObject = (EditText) findViewById(R.id.usernameText);

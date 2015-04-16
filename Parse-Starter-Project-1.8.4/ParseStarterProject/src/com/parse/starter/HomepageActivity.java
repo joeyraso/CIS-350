@@ -2,28 +2,41 @@ package com.parse.starter;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.app.ListActivity;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SearchView;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import android.view.View;
+import android.widget.TextView;
+import android.content.Context;
+import android.widget.Toast;
+import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.TwoLineListItem;
+import android.view.LayoutInflater;
+import org.apache.http.message.BasicNameValuePair;
+import android.view.Display;
+import android.graphics.Point;
+import android.widget.Button;
+import android.widget.RadioGroup.LayoutParams;
+
 
 public class HomepageActivity extends Activity {
     ArrayAdapter<String> listAdapter;
@@ -36,12 +49,15 @@ public class HomepageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
+        setContentView(R.layout.sample_homepage_view);
 
         //Set up listview
         final ArrayList<String> jobNames = new ArrayList<String>();
         final ArrayList<String> jobDescriptions = new ArrayList<String>();
         final List<String> jobInfo = new LinkedList<String>();
+
+
+
 
         //Query Parse
         ParseQuery<Job> query = new ParseQuery("Job");
@@ -61,7 +77,7 @@ public class HomepageActivity extends Activity {
                     jobNames.add(name);
                     jobDescriptions.add(descr);
                 }
-                listAdapter.notifyDataSetChanged();
+                //listAdapter.notifyDataSetChanged();
             }
         });
 
@@ -111,21 +127,10 @@ public class HomepageActivity extends Activity {
     }
 
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_homepage, menu);
-
-        // Associate searchable configuration with the SearchView
-        SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSubmitButtonEnabled(true);
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
-
         return true;
     }
 
@@ -168,12 +173,6 @@ public class HomepageActivity extends Activity {
     // go to the job creation screen
     public void addJob(View view) {
         Intent intent = new Intent(this, jobCreationActivity.class);
-        startActivity(intent);
-    }
-
-    // go to MyPostedJobs screen
-    public void displayMyPostedJobs(View view) {
-        Intent intent = new Intent(this, MyPostedJobsActivity.class);
         startActivity(intent);
     }
 
