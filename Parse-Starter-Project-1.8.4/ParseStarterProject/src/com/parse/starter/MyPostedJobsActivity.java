@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MyPostedJobsActivity extends Activity {
@@ -22,8 +23,14 @@ public class MyPostedJobsActivity extends Activity {
         final ArrayList<String> jobNames = new ArrayList<String>();
         final ArrayList<String> jobDescriptions = new ArrayList<>();
 
-        for (Object o : ParseUser.getCurrentUser().getList("myPostedJobs")) {
-            Toast.makeText(MyPostedJobsActivity.this, "IN LIST: " + o.toString(), Toast.LENGTH_SHORT).show();
+
+        List<String> myPostedJobs = ParseUser.getCurrentUser().getList("myPostedJobs");
+
+        if (myPostedJobs != null) {
+
+            for (Object o : myPostedJobs) {
+                Toast.makeText(MyPostedJobsActivity.this, "IN LIST: " + o.toString(), Toast.LENGTH_SHORT).show();
+            }
         }
 
         //List of IDS for all the jobs
