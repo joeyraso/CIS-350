@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,7 +23,7 @@ public class SignInActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_in_view);
+        setContentView(R.layout.activity_sign_in);
 
         usernameTextObject = (EditText) findViewById(R.id.usernameSignIn);
         passwordTextObject = (EditText) findViewById(R.id.passwordSignIn);

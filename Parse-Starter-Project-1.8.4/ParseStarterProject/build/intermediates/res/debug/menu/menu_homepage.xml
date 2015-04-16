@@ -5,5 +5,6 @@
         android:icon="@android:drawable/ic_menu_search"
         android:showAsAction="collapseActionView|ifRoom"
         android:actionViewClass="android.widget.SearchView" />
+
 </menu>
 <!-- From: file:/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/menu/menu_homepage.xml -->
