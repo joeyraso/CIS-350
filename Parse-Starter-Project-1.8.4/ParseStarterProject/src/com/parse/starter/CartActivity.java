@@ -48,12 +48,17 @@ public class CartActivity extends Activity {
             ParseQuery<Job> query = new ParseQuery("Job");
             query.getInBackground(jobId, new GetCallback<Job>() {
                 @Override
-                public void done(Job o, ParseException e) {
+                public void done(final Job o, ParseException e) {
                     jobObjects.add(o);
+                    final String name = o.getJobName();
 
-                    String name = o.getJobName();
-                    jobNames.add(name);
-                    jobDescriptions.add(o.getString("jobDescription"));
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            jobNames.add(name);
+                            jobDescriptions.add(o.getString("jobDescription"));
+                            cartListAdapter.notifyDataSetChanged();
+                        }
+                    });
                 }
             });
 
@@ -92,7 +97,6 @@ public class CartActivity extends Activity {
                 openJob(position);
             }
         });
-        cartListAdapter.notifyDataSetChanged();
 
     }
 

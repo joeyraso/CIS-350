@@ -42,13 +42,23 @@ public class MyPostedJobsActivity extends Activity {
             ParseQuery<Job> query = new ParseQuery("Job");
             query.getInBackground(jobId, new GetCallback<Job>() {
                 @Override
-                public void done(Job o, ParseException e) {
-                    String name = o.getJobName();
-                    jobNames.add(name);
-                    jobDescriptions.add(o.getString("jobDescription"));
+                public void done(final Job o, ParseException e) {
+                    final String name = o.getJobName();
+
+                    //Thread used to ensure list appears properly each time it is loaded
+                    //Also adds each item to list
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            jobNames.add(name);
+                            jobDescriptions.add(o.getString("jobDescription"));
+                            postedlistAdapter.notifyDataSetChanged();
+                        }
+                    });
+
                 }
             });
         }
+
         postedlistAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_2,
@@ -73,7 +83,6 @@ public class MyPostedJobsActivity extends Activity {
                 return view;
             }
         };
-        postedlistAdapter.notifyDataSetChanged();
 
         postedJobsListview.setAdapter(postedlistAdapter);
         postedJobsListview.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -81,7 +90,7 @@ public class MyPostedJobsActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                openJob(position);
+                showDoerList(position);
             }
         });
 
@@ -102,8 +111,8 @@ public class MyPostedJobsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    //go to the JobDetailsActivity
-    public void openJob(int position) {
+    //clicking a job in my jobs shows the list of people who requested your job
+    public void showDoerList(int position) {
         String id = myPostedJobs.get(position);
         Intent intent = new Intent(this, JobRequestorsActivity.class);
         intent.putExtra("jobID", id);

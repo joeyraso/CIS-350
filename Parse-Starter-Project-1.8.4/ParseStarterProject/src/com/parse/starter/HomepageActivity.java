@@ -50,17 +50,24 @@ public class HomepageActivity extends Activity {
                     Job o = (Job)objects.get(i);
                     jobObjects.add(o);
                     shownObjects.add(o);
-                    String name = o.getString("jobName");
-                    String descr = o.getString("jobDescription");
+                    final String name = o.getString("jobName");
+                    final String descr = o.getString("jobDescription");
 
                     String[] temp = new String[2];
                     temp[0] = name;
                     temp[1] = descr;
-                    jobNames.add(name);
-                    jobDescriptions.add(descr);
+
+                    //Thread used to ensure list appears properly each time it is loaded
+                    //Also adds each item to list
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            jobNames.add(name);
+                            jobDescriptions.add(descr);
+                            homeListAdapter.notifyDataSetChanged();
+                        }
+                    });
+                    ;
                 }
-                //ensures the most updated list is displayed
-                homeListAdapter.notifyDataSetChanged();
             }
         });
 
@@ -132,8 +139,6 @@ public class HomepageActivity extends Activity {
         String id = jobObjects.get(position).getObjectId();
         Intent intent = new Intent(this, JobDetailsActivity.class);
         intent.putExtra("jobID", id);
-        //Intent intent = new Intent(this, JobRequestorsActivity.class);
-        //intent.putExtra("jobID", id);
         startActivity(intent);
     }
 
