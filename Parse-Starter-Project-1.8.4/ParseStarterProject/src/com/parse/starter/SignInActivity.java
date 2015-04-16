@@ -69,11 +69,11 @@ public class SignInActivity extends Activity {
         //all fields must be filled in for the login to work
         StringBuilder signinErrors = new StringBuilder("");
         boolean fieldError = false;
-        if (username.length() == 0 ) {
+        if (username.length() == 0) {
             signinErrors.append("Username was not entered. ");
             fieldError = true;
         }
-        if (password.length() == 0 ) {
+        if (password.length() == 0) {
             signinErrors.append("Password was not entered. ");
             fieldError = true;
         }

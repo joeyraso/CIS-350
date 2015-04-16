@@ -8,6 +8,7 @@ package com.parse.starter;
 
 import android.location.Location;
 import android.location.LocationListener;
+
 import com.parse.ParseObject;
 import com.parse.ParseClassName;
 import com.parse.ParseUser;
@@ -44,7 +45,9 @@ public class Job extends ParseObject {
         put("jobName", name);
     }
 
-    public void setJobDescription(String description) { put("jobDescription", description);}
+    public void setJobDescription(String description) {
+        put("jobDescription", description);
+    }
 
     public void setStartDate(String start) {
         put("startDate", start);
@@ -54,11 +57,17 @@ public class Job extends ParseObject {
         put("endDate", end);
     }
 
-    public void setJobPoster() {put("jobPoster", ParseUser.getCurrentUser().getObjectId());}
+    public void setJobPoster() {
+        put("jobPoster", ParseUser.getCurrentUser().getObjectId());
+    }
 
-    public void setJobStatus(String status) {put("jobStatus", status);}
+    public void setJobStatus(String status) {
+        put("jobStatus", status);
+    }
 
-    public void setJobDoer(String userID) {put("jobDoer", userID);}
+    public void setJobDoer(String userID) {
+        put("jobDoer", userID);
+    }
 
 
     //Getters
@@ -78,10 +87,16 @@ public class Job extends ParseObject {
         return getString("endDate");
     }
 
-    public List<String> getJobRequestors() {return getList("jobRequestors");}
+    public List<String> getJobRequestors() {
+        return getList("jobRequestors");
+    }
 
-    public String getJobDoer() { return getString("jobDoer");}
+    public String getJobDoer() {
+        return getString("jobDoer");
+    }
 
-    public String getJobPoster() {return getString("jobPoster");}
+    public String getJobPoster() {
+        return getString("jobPoster");
+    }
 
 }

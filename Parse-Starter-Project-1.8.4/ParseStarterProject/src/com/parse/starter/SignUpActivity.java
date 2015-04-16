@@ -51,19 +51,19 @@ public class SignUpActivity extends Activity {
         //all fields must be filled in for the sign up to work
         StringBuilder signupErrors = new StringBuilder("");
         boolean fieldError = false;
-        if (username.length() < 4 ) {
+        if (username.length() < 4) {
             signupErrors.append("Username must be 4 characters. ");
             fieldError = true;
         }
-        if (password.length() < 4 ) {
+        if (password.length() < 4) {
             signupErrors.append("Password must be 4 characters. ");
             fieldError = true;
         }
-        if (email.length() == 0 ) {
+        if (email.length() == 0) {
             signupErrors.append("You must enter an email address. ");
             fieldError = true;
         }
-        if (phone.length() == 0 ) {
+        if (phone.length() == 0) {
             signupErrors.append("You must enter a phone number. ");
             fieldError = true;
         }
@@ -71,7 +71,7 @@ public class SignUpActivity extends Activity {
         //displays the fieldErrors using Toast (taught in HW2)
         if (fieldError) {
             Toast.makeText(SignUpActivity.this, signupErrors.toString(),
-                           Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_SHORT).show();
             //We must breakout of the signUpUser() method if errors exist
             return;
         }

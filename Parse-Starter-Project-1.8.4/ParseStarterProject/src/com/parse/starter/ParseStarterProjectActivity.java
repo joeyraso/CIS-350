@@ -8,13 +8,15 @@ import com.parse.ParseAnalytics;
 import com.parse.ParseObject;
 
 public class ParseStarterProjectActivity extends Activity {
-	/** Called when the activity is first created. */
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+    /**
+     * Called when the activity is first created.
+     */
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
 
 
-		ParseAnalytics.trackAppOpenedInBackground(getIntent());
+        ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
@@ -22,7 +24,7 @@ public class ParseStarterProjectActivity extends Activity {
 
         Intent intent = new Intent(this, SignInActivity.class);
         startActivity(intent);
-	}
+    }
 
 
 }

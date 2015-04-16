@@ -20,6 +20,7 @@ import java.util.List;
 public class JobDetailsActivity extends Activity {
     Job job;
     String jobId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

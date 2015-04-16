@@ -68,19 +68,19 @@ public class jobCreationActivity extends Activity {
         //all fields must be filled in for the sign up to work
         StringBuilder signupErrors = new StringBuilder("");
         boolean fieldError = false;
-        if (jobName.length() == 0 ) {
+        if (jobName.length() == 0) {
             signupErrors.append("Username must be 4 characters. ");
             fieldError = true;
         }
-        if (jobDescription.length() == 0 ) {
+        if (jobDescription.length() == 0) {
             signupErrors.append("Password must be 4 characters. ");
             fieldError = true;
         }
-        if (startDate.length() == 0 ) {
+        if (startDate.length() == 0) {
             signupErrors.append("You must enter an email address. ");
             fieldError = true;
         }
-        if (endDate.length() == 0 ) {
+        if (endDate.length() == 0) {
             signupErrors.append("You must enter a phone number. ");
             fieldError = true;
         }
@@ -107,7 +107,6 @@ public class jobCreationActivity extends Activity {
         });
 
 
-
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
     }
@@ -127,7 +126,6 @@ public class jobCreationActivity extends Activity {
 
         return;
     }
-
 
 
 }

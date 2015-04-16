@@ -21,6 +21,7 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
 import android.app.SearchManager;
 import android.content.Context;
 import android.widget.SearchView;
@@ -49,7 +50,7 @@ public class HomepageActivity extends Activity {
             @Override
             public void done(List objects, ParseException e) {
                 for (int i = 0; i < objects.size(); i++) {
-                    Job o = (Job)objects.get(i);
+                    Job o = (Job) objects.get(i);
                     jobObjects.add(o);
                     shownObjects.add(o);
                     final String name = o.getString("jobName");
@@ -77,37 +78,35 @@ public class HomepageActivity extends Activity {
 
 
         homeListAdapter = new ArrayAdapter<String>(
-            this,
-            android.R.layout.simple_list_item_2,
-            android.R.id.text1,
-            jobNames) {
+                this,
+                android.R.layout.simple_list_item_2,
+                android.R.id.text1,
+                jobNames) {
 
-                @Override
-                public View getView(int position, View convertView, ViewGroup parent) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
 
-                    // Must always return just a View.
-                    View view = super.getView(position, convertView, parent);
+                // Must always return just a View.
+                View view = super.getView(position, convertView, parent);
 
-                    // If you look at the android.R.layout.simple_list_item_2 source, you'll see
-                    // it's a TwoLineListItem with 2 TextViews - text1 and text2.
-                    //TwoLineListItem listItem = (TwoLineListItem) view;
-                    TextView text1 = (TextView) view.findViewById(android.R.id.text1);
-                    TextView text2 = (TextView) view.findViewById(android.R.id.text2);
-                    text1.setText(jobNames.get(position));
-                    text1.setTextSize(25);
-                    text2.setText(jobDescriptions.get(position));
-                    text2.setPadding(50,0,0,0);
-                    return view;
-                }
-            };
+                // If you look at the android.R.layout.simple_list_item_2 source, you'll see
+                // it's a TwoLineListItem with 2 TextViews - text1 and text2.
+                //TwoLineListItem listItem = (TwoLineListItem) view;
+                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+                text1.setText(jobNames.get(position));
+                text1.setTextSize(25);
+                text2.setText(jobDescriptions.get(position));
+                text2.setPadding(50, 0, 0, 0);
+                return view;
+            }
+        };
 
-            jobsListView.setAdapter(homeListAdapter);
-            jobsListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-            {
-                @Override
-                public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
-                {
-                    openJob(position);
+        jobsListView.setAdapter(homeListAdapter);
+        jobsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+                openJob(position);
             }
         });
     }

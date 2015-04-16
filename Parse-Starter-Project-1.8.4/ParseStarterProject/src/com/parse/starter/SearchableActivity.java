@@ -13,6 +13,7 @@ import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,7 +76,7 @@ public class SearchableActivity extends Activity {
                 @Override
                 public void done(List objects, ParseException e) {
                     for (int i = 0; i < objects.size(); i++) {
-                        Job o = (Job)objects.get(i);
+                        Job o = (Job) objects.get(i);
                         jobObjects.add(o);
                         final String name = o.getString("jobName");
                         final String descr = o.getString("jobDescription");
@@ -121,7 +122,7 @@ public class SearchableActivity extends Activity {
                     text1.setText(jobNames.get(position));
                     text1.setTextSize(25);
                     text2.setText(jobDescriptions.get(position));
-                    text2.setPadding(50,0,0,0);
+                    text2.setPadding(50, 0, 0, 0);
                     return view;
                 }
             };

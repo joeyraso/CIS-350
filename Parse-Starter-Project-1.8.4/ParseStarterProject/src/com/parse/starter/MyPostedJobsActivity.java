@@ -84,17 +84,15 @@ public class MyPostedJobsActivity extends Activity {
                 text1.setText(jobNames.get(position));
                 text1.setTextSize(25);
                 text2.setText(jobDescriptions.get(position));
-                text2.setPadding(50,0,0,0);
+                text2.setPadding(50, 0, 0, 0);
                 return view;
             }
         };
 
         postedJobsListview.setAdapter(postedlistAdapter);
-        postedJobsListview.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        postedJobsListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
-            {
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 showDoerList(position);
             }
         });
@@ -121,7 +119,6 @@ public class MyPostedJobsActivity extends Activity {
         String id = jobObjects.get(position).getObjectId();
         Intent intent = new Intent(this, JobRequestorsActivity.class);
         intent.putExtra("jobID", id);
-        Log.v("DEBUG", "ID: " + id);
         startActivity(intent);
     }
 

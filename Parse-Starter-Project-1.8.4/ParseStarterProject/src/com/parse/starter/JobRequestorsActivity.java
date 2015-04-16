@@ -55,7 +55,6 @@ public class JobRequestorsActivity extends Activity {
         // get the list of requestors
         final ArrayList<String> userNames = new ArrayList<String>();
         if (requestorIds != null) {
-             Log.v("DEBUG", "GETS HERE");
             for (String requestor : requestorIds) {
                 //Query Parse for the user that requested the job, so we can display their name
                 ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
@@ -63,7 +62,6 @@ public class JobRequestorsActivity extends Activity {
                     @Override
                     public void done(ParseUser o, ParseException e) {
                         final String username = o.getUsername();
-                        //   Toast.makeText(JobRequestorsActivity.this, username, Toast.LENGTH_SHORT).show();
 
                         //Thread used to ensure list appears properly each time it is loaded
                         //Also adds each item to list

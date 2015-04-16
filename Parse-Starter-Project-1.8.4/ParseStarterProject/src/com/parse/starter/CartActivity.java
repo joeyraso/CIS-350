@@ -83,17 +83,15 @@ public class CartActivity extends Activity {
                 text1.setText(jobNames.get(position));
                 text1.setTextSize(25);
                 text2.setText(jobDescriptions.get(position));
-                text2.setPadding(50,0,0,0);
+                text2.setPadding(50, 0, 0, 0);
                 return view;
             }
         };
 
         cartListview.setAdapter(cartListAdapter);
-        cartListview.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        cartListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
-            {
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 openJob(position);
             }
         });
