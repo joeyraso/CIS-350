@@ -22,7 +22,6 @@
     <string name="endDate">End Date:</string>
     <string name="search_title">Search</string>
 
-
     <color name="white">#FFFFFF</color>
 
     <string name="title_activity_sign_in">SignInActivity</string>
@@ -37,5 +36,9 @@
     <string name="jobPrompt">Please Enter Job Information</string>
     <string name="title_activity_job_creation">jobCreationActivity</string>
     <string name="title_activity_job_details">JobDetailsActivity</string>
+    <string name="job_poster_notification_title_template">Job poster: %1$s</string>
+    <string name="job_poster_notification_placeholder_text_template">You said %1$s and lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non enim magna. Morbi dictum, velit vel semper venenatis, magna odio volutpat velit, at ullamcorper nulla lacus sed turpis. Pellentesque vitae metus elit, nec tincidunt tellus. Integer sed nisl sem, ullamcorper ornare lacus. Duis ac mauris sed massa congue volutpat. Donec sed erat sit amet turpis viverra rhoncus sit amet nec magna. Donec lacinia ligula at libero volutpat volutpat nec nec tortor.</string>
+    <string name="action_share">Share</string>
+    <string name="action_reply">Reply</string>
 
 </resources>
