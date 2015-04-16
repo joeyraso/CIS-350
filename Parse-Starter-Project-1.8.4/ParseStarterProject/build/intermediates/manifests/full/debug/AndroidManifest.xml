@@ -76,6 +76,10 @@
             android:name="com.parse.starter.MyPostedJobsActivity"
             android:label="@string/title_activity_my_posted_jobs" >
         </activity>
+        <activity
+            android:name="com.parse.starter.JobRequestorsActivity"
+            android:label="@string/title_activity_job_requestors" >
+        </activity>
     </application>
 
 </manifest>

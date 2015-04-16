@@ -3,49 +3,54 @@ package com.parse.starter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.ParseUser;
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
-public class MyPostedJobsActivity extends Activity {
-    List<String> myPostedJobs;
+public class JobRequestorsActivity extends Activity {
+    Job job;
+    String jobId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
+        setContentView(R.layout.activity_job_details);
 
-        final ListView listview = (ListView) findViewById(R.id.postedJobsList);
-        final ArrayList<String> jobNames = new ArrayList<String>();
-        final ArrayList<String> jobDescriptions = new ArrayList<String>();
+        Intent intent = getIntent();
+        jobId = intent.getStringExtra("jobID");
 
+        //Query Parse
+        ParseQuery<Job> query = new ParseQuery("Job");
+        query.getInBackground(jobId, new GetCallback<Job>() {
+            @Override
+            public void done(Job o, ParseException e) {
+                job = o;
+            }
+        });
 
-        myPostedJobs = ParseUser.getCurrentUser().getList("myPostedJobs");
+        // get the list of requestors
+        List<String> requestorIds = job.getList("jobRequestors");
 
-        if (myPostedJobs != null) {
+        final ListView listview = (ListView) findViewById(R.id.requestorsList);
 
-            for (Object o : myPostedJobs) {
-                Toast.makeText(MyPostedJobsActivity.this, "IN LIST: " + o.toString(), Toast.LENGTH_SHORT).show();
+        if (requestorIds != null) {
+
+            for (Object o : requestorIds) {
+                Toast.makeText(JobRequestorsActivity.this, "IN LIST: " + o.toString(), Toast.LENGTH_SHORT).show();
             }
         }
 
         //List of IDS for all the jobs
-       /* List <String> myPostedJobs = ParseUser.getCurrentUser().getList("myPostedJobs");*/
+       /* List <String> myPostedJobs = ParseUser.getCurrentUser().getList("myPostedJobs");
 
         if (myPostedJobs != null) {
-
-            /*for (String jobId : myPostedJobs) {
+            for (String jobId : myPostedJobs) {
                 //Query Parse
                 ParseQuery<Job> query = new ParseQuery("Job");
                 query.getInBackground(jobId, new GetCallback<Job>() {
@@ -59,7 +64,7 @@ public class MyPostedJobsActivity extends Activity {
                         jobDescriptions.add(o.getString("jobDescription"));
                     }
                 });
-            }*/
+            }
         }
 
         ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
@@ -93,33 +98,16 @@ public class MyPostedJobsActivity extends Activity {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 //openJob(position);
             }
-        });
+        });*/
 
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.search) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     //go to the JobDetailsActivity
-    public void openJob(int position) {
+   /* public void openJob(int position) {
         String id = myPostedJobs.get(position);
-        Intent intent = new Intent(this, JobRequestorsActivity.class);
+        Intent intent = new Intent(this, JobDetailsActivity.class);
         intent.putExtra("jobID", id);
         startActivity(intent);
-    }
-
-    // n
+    }*/
 }
 

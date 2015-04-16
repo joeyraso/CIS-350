@@ -139,6 +139,8 @@ public class HomepageActivity extends Activity {
         String id = jobObjects.get(position).getObjectId();
         Intent intent = new Intent(this, JobDetailsActivity.class);
         intent.putExtra("jobID", id);
+        //Intent intent = new Intent(this, JobRequestorsActivity.class);
+        //intent.putExtra("jobID", id);
         startActivity(intent);
     }
 

@@ -5,21 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
-import android.util.Log;
-
-
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.GetCallback;
-import com.parse.ParseUser;
-
 import android.widget.TextView;
+
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,4 +104,5 @@ public class JobDetailsActivity extends Activity {
         job.saveInBackground();
         return;
     }
+
 }

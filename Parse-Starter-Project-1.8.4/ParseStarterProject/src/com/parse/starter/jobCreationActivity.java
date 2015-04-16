@@ -95,9 +95,9 @@ public class jobCreationActivity extends Activity {
         newJob.saveInBackground();
 
         // send the new job's job Id to addJobToMyPostedJobs
-        String jobId = newJob.getObjectId();
+        String jobId = jobName;
 
-        addJobToMyPostedJobs(jobId);
+        addJobToMyPostedJobs(jobName);
 
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
