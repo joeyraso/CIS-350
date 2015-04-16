@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcome"
+        style="@style/LogInFont"
+        android:textSize="26sp"/>
+
+    <!--USERNAME-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="50dp"
+        android:text="@string/username"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        style="@style/LogInFont"/>
+
+    <EditText
+        android:id="@+id/usernameSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="47dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="joeyraso"
+        style="@style/LogInFont"/>
+
+    <!--PASSWORD-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="50dp"
+        android:text="@string/password"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        style="@style/LogInFont"/>
+
+    <EditText
+        android:id="@+id/passwordSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/textView3"
+        android:text="hello"
+        android:layout_marginTop="47dp"
+        style="@style/LogInFont"/>
+
+
+    <Button
+        android:id="@+id/signinButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:onClick="validateLogIn"
+        android:text="Sign In"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/signinButton"
+        android:layout_alignLeft="@+id/signinButton"
+        android:layout_alignStart="@+id/signinButton"
+        android:onClick="goToSignUp"
+        />
+
+</RelativeLayout>
+
+<!-- From: file:/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/activity_sign_in.xml -->
