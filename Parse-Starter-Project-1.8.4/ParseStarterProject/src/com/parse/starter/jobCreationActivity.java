@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,13 +93,20 @@ public class jobCreationActivity extends Activity {
             return;
         }
 
-        Job newJob = new Job(jobName, jobDescription, startDate, endDate);
-        newJob.saveInBackground();
+        final Job newJob = new Job(jobName, jobDescription, startDate, endDate);
+        newJob.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    //if e is null, no errors, so retrieve jobID program
+                    // send the new job's job Id to addJobToMyPostedJobs
+                    String jobId = newJob.getObjectId();
+                    addJobToMyPostedJobs(jobId);
+                }
+            }
+        });
 
-        // send the new job's job Id to addJobToMyPostedJobs
-        String jobId = jobName;
 
-        addJobToMyPostedJobs(jobName);
 
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);

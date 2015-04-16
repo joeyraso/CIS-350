@@ -70,6 +70,12 @@ public class ProfileActivity extends Activity {
         phone.append(ParseUser.getCurrentUser().get("phone").toString());
     }
 
+    //button logic to go to the homepage screen
+    public void displayHomepage(View view) {
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
+    }
+
     public static void logoutUser() {
         //Parse method to log out by removing CurrentUser
         ParseUser.logOut();

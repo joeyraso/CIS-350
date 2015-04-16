@@ -163,7 +163,18 @@
                     android:onClick="requestJob"
                     />
 
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+    <Button
+        android:id="@+id/buttonDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Dashboard"
+        android:onClick="displayHomepage"/>
 </RelativeLayout>

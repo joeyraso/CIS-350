@@ -11,7 +11,8 @@
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="Dashboard"/>
+        android:text="Profile"
+        android:onClick="displayProfile"/>
     <Button
         android:id="@+id/buttonCart"
         android:layout_width="wrap_content"
@@ -52,4 +53,4 @@
     </ListView>
 
 </RelativeLayout>
-<!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->
+<!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->

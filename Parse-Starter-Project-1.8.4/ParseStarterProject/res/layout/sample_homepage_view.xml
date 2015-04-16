@@ -11,7 +11,8 @@
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="Dashboard"/>
+        android:text="Profile"
+        android:onClick="displayProfile"/>
     <Button
         android:id="@+id/buttonCart"
         android:layout_width="wrap_content"
