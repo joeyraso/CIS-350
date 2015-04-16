@@ -22,7 +22,6 @@
     <string name="endDate">End Date:</string>
     <string name="search_title">Search</string>
 
-
     <color name="white">#FFFFFF</color>
 
     <string name="title_activity_sign_in">SignInActivity</string>
@@ -37,5 +36,6 @@
     <string name="jobPrompt">Please Enter Job Information</string>
     <string name="title_activity_job_creation">jobCreationActivity</string>
     <string name="title_activity_job_details">JobDetailsActivity</string>
+    <string name="title_activity_my_posted_jobs">MyPostedJobsActivity</string>
 
 </resources>

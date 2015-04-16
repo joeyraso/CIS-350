@@ -11,29 +11,40 @@
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="Dashboard" />
+        android:text="Dashboard"/>
     <Button
         android:id="@+id/buttonCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/buttonDashboard"
         android:gravity="center"
-        android:text="Cart" />
+        android:text="Cart"
+        android:onClick="displayCart"/>
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonMyPostedJobs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/buttonCart"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-
-        android:text="Button" />
+        android:text="My Jobs"
+        android:onClick="displayMyPostedJobs"/>
+    <Button
+        android:id="@+id/buttonAddJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/buttonMyPostedJobs"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="New Job"
+        android:onClick="addJob"/>
 
     <ListView
         android:id="@+id/list"
-        android:layout_above="@+id/button3"
+        android:layout_above="@+id/buttonDashboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
@@ -41,4 +52,4 @@
     </ListView>
 
 </RelativeLayout>
-<!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/Final%20Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->
+<!-- From: file:/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->
