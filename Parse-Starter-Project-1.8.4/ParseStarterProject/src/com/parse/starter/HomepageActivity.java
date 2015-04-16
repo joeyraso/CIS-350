@@ -2,21 +2,19 @@ package com.parse.starter;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-<<<<<<< HEAD
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-=======
-import android.widget.AdapterView;
-import android.widget.ListView;
->>>>>>> origin/master
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.parse.FindCallback;
@@ -26,16 +24,6 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-<<<<<<< HEAD
-=======
-import android.widget.TextView;
-import android.widget.Toast;
-import android.view.ViewGroup;
-import android.app.SearchManager;
-import android.content.Context;
-import android.widget.SearchView;
->>>>>>> origin/master
 
 public class HomepageActivity extends Activity {
     ArrayAdapter<String> listAdapter;

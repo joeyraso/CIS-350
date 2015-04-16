@@ -8,15 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
-<<<<<<< HEAD
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
-=======
->>>>>>> origin/master
 public class jobCreationActivity extends Activity {
 
     EditText jobNameTextObject;
