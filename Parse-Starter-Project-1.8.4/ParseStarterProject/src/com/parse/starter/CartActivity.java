@@ -8,15 +8,19 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,95 +33,53 @@ public class CartActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        final ListView listview = (ListView) findViewById(R.id.listview);
+        final ListView listview = (ListView) findViewById(R.id.list);
+        final ArrayList<String> jobNames = new ArrayList<String>();
+        final ArrayList<String> jobDescriptions = new ArrayList<>();
 
-
-        final ArrayList<String> list = new ArrayList<String>();
-        //Querey Parse
-        ParseQuery<Job> query = new ParseQuery("Job");
-        query.findInBackground(new FindCallback<Job>() {
-            @Override
-            public void done(List objects, ParseException e) {
-                for (int i = 0; i < objects.size(); i++) {
-                    ParseObject o = (ParseObject)objects.get(i);
-                    String name = o.getString("jobName");
-
-                    list.add(name);
+        //List of IDS for all the jobs
+        List<String> myRequestedJobs = ParseUser.getCurrentUser().getList("myRequestedJobs");
+        for (String jobId : myRequestedJobs) {
+            //Query Parse
+            ParseQuery<Job> query = new ParseQuery("Job");
+            query.getInBackground(jobId, new GetCallback<Job>() {
+                @Override
+                public void done(Job o, ParseException e) {
+                    String name = o.getJobName();
+                    jobNames.add(name);
+                    Toast.makeText(CartActivity.this, "THERE IS A JOB:." + name,
+                            Toast.LENGTH_SHORT).show();
+                    jobDescriptions.add(o.getString("jobDescription"));
                 }
-            }
-        });
+            });
+        }
 
-
-
-        final StableArrayAdapter adapter = new StableArrayAdapter(this,
-                android.R.layout.simple_list_item_1, list);
-        listview.setAdapter(adapter);
-
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_2,
+                android.R.id.text1,
+                jobNames) {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
-                                    int position, long id) {
-                final String item = (String) parent.getItemAtPosition(position);
+            public View getView(int position, View convertView, ViewGroup parent) {
 
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                        view.getContext());
+                // Must always return just a View.
+                View view = super.getView(position, convertView, parent);
 
-                // set title
-                alertDialogBuilder.setTitle("Checkout Job");
-
-                // set dialog message
-                alertDialogBuilder
-                        .setMessage("Do you want to request this job?")
-                        .setCancelable(false)
-                        .setPositiveButton("No",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
-                                // if this button is clicked, just close
-                                // the dialog box and do nothing
-                                dialog.cancel();
-                            }
-                        })
-                        .setNegativeButton("Yes",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
-
-                            }
-                        });
-
-                // create alert dialog
-                AlertDialog alertDialog = alertDialogBuilder.create();
-
-                // show it
-                alertDialog.show();
-
+                // If you look at the android.R.layout.simple_list_item_2 source, you'll see
+                // it's a TwoLineListItem with 2 TextViews - text1 and text2.
+                //TwoLineListItem listItem = (TwoLineListItem) view;
+                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+                text1.setText(jobNames.get(position));
+                text1.setTextSize(25);
+                text2.setText(jobDescriptions.get(position));
+                text2.setPadding(50,0,0,0);
+                return view;
             }
+        };
 
-        });
-
-        listview.setBackgroundColor(Color.rgb(30, 137, 255));
-    }
-
-    private class StableArrayAdapter extends ArrayAdapter<String> {
-
-        HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
-
-        public StableArrayAdapter(Context context, int textViewResourceId,
-                                  List<String> objects) {
-            super(context, textViewResourceId, objects);
-            for (int i = 0; i < objects.size(); ++i) {
-                mIdMap.put(objects.get(i), i);
-            }
-        }
-
-        @Override
-        public long getItemId(int position) {
-            String item = getItem(position);
-            return mIdMap.get(item);
-        }
-
-        @Override
-        public boolean hasStableIds() {
-            return true;
-        }
+        listview.setAdapter(listAdapter);
 
     }
 

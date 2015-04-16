@@ -154,6 +154,7 @@ containing a value of this type.
         public static final int layout_bg=0x7f020001;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int Request=0x7f0a0015;
         public static final int Title=0x7f0a0005;
         public static final int action_settings=0x7f0a0029;
@@ -197,6 +198,50 @@ containing a value of this type.
         public static final int usernameSignIn=0x7f0a001c;
         public static final int usernameText=0x7f0a0021;
         public static final int usernameTextView=0x7f0a0017;
+=======
+        public static final int Request=0x7f09000a;
+        public static final int Title=0x7f09000b;
+        public static final int action_settings=0x7f090028;
+        public static final int button3=0x7f090019;
+        public static final int buttonCart=0x7f090018;
+        public static final int buttonDashboard=0x7f090017;
+        public static final int createJob=0x7f090011;
+        public static final int creationDescription=0x7f09000d;
+        public static final int creationEndDate=0x7f09000f;
+        public static final int creationName=0x7f09000c;
+        public static final int creationPayment=0x7f090010;
+        public static final int creationStartDate=0x7f09000e;
+        public static final int description=0x7f090002;
+        public static final int detailsDescription=0x7f090003;
+        public static final int detailsEndDate=0x7f090007;
+        public static final int detailsName=0x7f090001;
+        public static final int detailsPayment=0x7f090009;
+        public static final int detailsStartDate=0x7f090005;
+        public static final int emailText=0x7f090024;
+        public static final int emailTextView=0x7f090014;
+        public static final int end_date=0x7f090006;
+        public static final int list=0x7f090000;
+        public static final int logOutButton=0x7f090016;
+        public static final int passwordSignIn=0x7f09001d;
+        public static final int passwordText=0x7f090022;
+        public static final int payment=0x7f090008;
+        public static final int phoneNumberTextView=0x7f090015;
+        public static final int phoneText=0x7f090026;
+        public static final int search=0x7f090029;
+        public static final int signinButton=0x7f09001e;
+        public static final int signupButton=0x7f09001f;
+        public static final int signupButton2=0x7f090027;
+        public static final int start_date=0x7f090004;
+        public static final int textView1=0x7f090012;
+        public static final int textView2=0x7f09001a;
+        public static final int textView3=0x7f09001c;
+        public static final int textView4=0x7f090021;
+        public static final int textView5=0x7f090023;
+        public static final int textView6=0x7f090025;
+        public static final int usernameSignIn=0x7f09001b;
+        public static final int usernameText=0x7f090020;
+        public static final int usernameTextView=0x7f090013;
+>>>>>>> origin/master
     }
     public static final class layout {
         public static final int activity_cart=0x7f030000;

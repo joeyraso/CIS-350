@@ -107,7 +107,6 @@ public class HomepageActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                Toast.makeText(HomepageActivity.this, "You chose" + position, Toast.LENGTH_SHORT).show();
                 openJob(position);
             }
         });

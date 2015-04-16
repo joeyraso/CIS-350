@@ -6,35 +6,42 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.util.Log;
 
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.GetCallback;
+import com.parse.ParseUser;
+
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class JobDetailsActivity extends Activity {
     Job job;
+    String jobId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_details);
 
         Intent intent = getIntent();
-        String jobId = intent.getStringExtra("jobID");
+        jobId = intent.getStringExtra("jobID");
 
         //Query Parse
         ParseQuery<Job> query = new ParseQuery("Job");
         query.getInBackground(jobId, new GetCallback<Job>() {
             @Override
             public void done(Job o, ParseException e) {
+                job = o;
                 TextView jobNameTextObject = (TextView) findViewById(R.id.detailsName);
                 TextView jobDescriptionTextObject = (TextView) findViewById(R.id.detailsDescription);
                 TextView startDateTextObject = (TextView) findViewById(R.id.detailsStartDate);
@@ -70,5 +77,39 @@ public class JobDetailsActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void requestJob(View view) {
+        //Update both the User and the Jobs
+        addJobToMyRequested(); //current user gets this job added to requests
+        addUserToJobRequestors();//add current user to jobs list of requestors
+
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
+    }
+
+    private void addJobToMyRequested() {
+        //Updates myRequestedJobs list in the User
+        List<String> myRequestedJobs = ParseUser.getCurrentUser().getList("myRequestedJobs");
+        if (myRequestedJobs == null) {
+            ParseUser.getCurrentUser().put("myRequestedJobs", new ArrayList<String>());
+            myRequestedJobs = ParseUser.getCurrentUser().getList("myRequestedJobs");
+        }
+
+        myRequestedJobs.add(jobId);
+        ParseUser.getCurrentUser().saveInBackground();
+        return;
+    }
+
+    private void addUserToJobRequestors() {
+        //Updates jobRequestors list in the Job
+        List<String> currRequestors = job.getList("jobRequestors");
+        if (currRequestors == null) {
+            job.put("jobRequestors", new ArrayList<String>());
+            currRequestors = job.getList("jobRequestors");
+        }
+        currRequestors.add(ParseUser.getCurrentUser().getObjectId());
+        job.saveInBackground();
+        return;
     }
 }
