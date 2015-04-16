@@ -1,8 +1,6 @@
 -- Merging decision tree log ---
 manifest
 ADDED from AndroidManifest.xml:2:1
-	xmlns:android
-		ADDED from AndroidManifest.xml:2:11
 	package
 		ADDED from AndroidManifest.xml:3:5
 	android:versionName
@@ -11,6 +9,8 @@ ADDED from AndroidManifest.xml:2:1
 		ADDED from AndroidManifest.xml:4:5
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
 uses-sdk
 ADDED from AndroidManifest.xml:7:5
 MERGED from com.android.support:support-v4:21.0.3:15:5
@@ -59,16 +59,16 @@ MERGED from com.android.support:support-v4:21.0.3:16:5
 		ADDED from AndroidManifest.xml:23:9
 meta-data#com.parse.APPLICATION_ID
 ADDED from AndroidManifest.xml:27:9
-	android:name
-		ADDED from AndroidManifest.xml:28:13
 	android:value
 		ADDED from AndroidManifest.xml:29:13
+	android:name
+		ADDED from AndroidManifest.xml:28:13
 meta-data#com.parse.CLIENT_KEY
 ADDED from AndroidManifest.xml:30:9
-	android:name
-		ADDED from AndroidManifest.xml:31:13
 	android:value
 		ADDED from AndroidManifest.xml:32:13
+	android:name
+		ADDED from AndroidManifest.xml:31:13
 activity#com.parse.starter.ParseStarterProjectActivity
 ADDED from AndroidManifest.xml:34:9
 	android:label
@@ -133,3 +133,9 @@ ADDED from AndroidManifest.xml:71:9
 		ADDED from AndroidManifest.xml:73:13
 	android:name
 		ADDED from AndroidManifest.xml:72:13
+activity#com.parse.starter.MyPostedJobsActivity
+ADDED from AndroidManifest.xml:75:9
+	android:label
+		ADDED from AndroidManifest.xml:77:13
+	android:name
+		ADDED from AndroidManifest.xml:76:13

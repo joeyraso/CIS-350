@@ -1,6 +1,5 @@
 package com.parse.starter;
 
-import com.parse.ParseObject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +9,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class jobCreationActivity extends Activity {
 
@@ -93,7 +94,40 @@ public class jobCreationActivity extends Activity {
         Job newJob = new Job(jobName, jobDescription, startDate, endDate);
         newJob.saveInBackground();
 
+
+        // adds to MyPostedJobs list
+        String newJobId = newJob.getObjectId();
+
+
+        /*ParseQuery<Job> query = new ParseQuery("Job");
+        query.getInBackground(newJob.getObjectId(), new GetCallback<Job>() {
+            @Override
+            public void done(Job o, ParseException e) {
+                 jobId = o.getObjectId();
+            }
+        });*/
+
+
+
+        addJobToMyPostedJobs(newJobId);
+
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
     }
+
+
+    // add the job to the user's list of myPostedJobs
+    public void addJobToMyPostedJobs(String newJobId) {
+        //Updates myPostedJobs list in the User
+        List<String> myPostedJobs = ParseUser.getCurrentUser().getList("myPostedJobs");
+        if (myPostedJobs == null) {
+            ParseUser.getCurrentUser().put("myPostedJobs", new ArrayList<String>());
+            myPostedJobs = ParseUser.getCurrentUser().getList("myPostedJobs");
+        }
+
+        myPostedJobs.add(newJobId);
+        ParseUser.getCurrentUser().saveInBackground();
+        return;
+    }
+
 }

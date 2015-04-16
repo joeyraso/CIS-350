@@ -16,20 +16,31 @@
         android:id="@+id/buttonCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/buttonDashboard"
         android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="Cart"
+        android:onClick="displayCart"/>
+    <Button
+        android:id="@+id/buttonMyPostedJobs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/buttonCart"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="Cart" />
+        android:text="My Jobs"
+        android:onClick="displayMyPostedJobs"/>
+
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/buttonMyPostedJobs"
         android:gravity="center"
-
-        android:text="Button" />
+        android:text="Add Job"
+        android:onClick="addJob"/>
 
     <ListView
         android:id="@+id/list"

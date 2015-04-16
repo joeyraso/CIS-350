@@ -46,7 +46,7 @@
         </activity>
         <activity
             android:name=".HomepageActivity"
-            android:label="">
+            android:label="" >
         </activity>
         <activity
             android:name=".SignUpActivity"
@@ -72,6 +72,9 @@
             android:name=".JobDetailsActivity"
             android:label="@string/title_activity_job_details" >
         </activity>
+        <activity
+            android:name=".MyPostedJobsActivity"
+            android:label="@string/title_activity_my_posted_jobs" >
+        </activity>
     </application>
-
 </manifest>
