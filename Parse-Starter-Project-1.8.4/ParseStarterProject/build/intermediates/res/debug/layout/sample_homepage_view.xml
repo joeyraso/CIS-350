@@ -44,7 +44,7 @@
         android:onClick="addJob"/>
 
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/homeList"
         android:layout_above="@+id/buttonDashboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

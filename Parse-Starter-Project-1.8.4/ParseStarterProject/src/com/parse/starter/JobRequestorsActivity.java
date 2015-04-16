@@ -20,7 +20,7 @@ public class JobRequestorsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_job_details);
+        setContentView(R.layout.activity_job_requestors_list);
 
         Intent intent = getIntent();
         jobId = intent.getStringExtra("jobID");
@@ -36,11 +36,9 @@ public class JobRequestorsActivity extends Activity {
 
         // get the list of requestors
         List<String> requestorIds = job.getList("jobRequestors");
-
         final ListView listview = (ListView) findViewById(R.id.requestorsList);
 
         if (requestorIds != null) {
-
             for (Object o : requestorIds) {
                 Toast.makeText(JobRequestorsActivity.this, "IN LIST: " + o.toString(), Toast.LENGTH_SHORT).show();
             }

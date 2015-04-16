@@ -24,7 +24,7 @@ import java.util.List;
 
 
 public class HomepageActivity extends Activity {
-    ArrayAdapter<String> listAdapter;
+    ArrayAdapter<String> homeListAdapter;
     ArrayList<Job> jobObjects = new ArrayList<>();
     ArrayList<Job> shownObjects = new ArrayList<>();
 
@@ -32,7 +32,6 @@ public class HomepageActivity extends Activity {
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample_homepage_view);
 
@@ -40,8 +39,6 @@ public class HomepageActivity extends Activity {
         final ArrayList<String> jobNames = new ArrayList<String>();
         final ArrayList<String> jobDescriptions = new ArrayList<String>();
         final List<String> jobInfo = new LinkedList<String>();
-
-
 
 
         //Query Parse
@@ -62,17 +59,16 @@ public class HomepageActivity extends Activity {
                     jobNames.add(name);
                     jobDescriptions.add(descr);
                 }
-                //listAdapter.notifyDataSetChanged();
+                //ensures the most updated list is displayed
+                homeListAdapter.notifyDataSetChanged();
             }
         });
 
-        ListView jobsListView = (ListView) findViewById(R.id.list);
-//        listAdapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_list_item_1, jobNames);
-//        jobsListView.setAdapter(listAdapter);
+
+        ListView jobsListView = (ListView) findViewById(R.id.homeList);
 
 
-    listAdapter = new ArrayAdapter<String>(
+        homeListAdapter = new ArrayAdapter<String>(
             this,
             android.R.layout.simple_list_item_2,
             android.R.id.text1,
@@ -97,7 +93,7 @@ public class HomepageActivity extends Activity {
         }
     };
 
-        jobsListView.setAdapter(listAdapter);
+        jobsListView.setAdapter(homeListAdapter);
         jobsListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
@@ -106,9 +102,6 @@ public class HomepageActivity extends Activity {
                 openJob(position);
             }
         });
-
-
-
     }
 
 

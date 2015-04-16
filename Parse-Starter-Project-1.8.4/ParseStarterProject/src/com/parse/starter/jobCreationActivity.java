@@ -122,8 +122,9 @@ public class jobCreationActivity extends Activity {
         }
 
         myPostedJobs.add(jobId);
-        ParseUser.getCurrentUser().saveInBackground();
         ParseUser.getCurrentUser().put("myPostedJobs", myPostedJobs);
+        ParseUser.getCurrentUser().saveInBackground();
+
         return;
     }
 

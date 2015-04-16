@@ -28,13 +28,16 @@ import java.util.HashMap;
 import java.util.List;
 
 public class CartActivity extends Activity {
+    //Used for clicking of jobs and displaying their info
+    ArrayList<Job> jobObjects = new ArrayList<>();
+    ArrayAdapter<String> cartListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        final ListView listview = (ListView) findViewById(R.id.list);
+        final ListView cartListview = (ListView) findViewById(R.id.list);
         final ArrayList<String> jobNames = new ArrayList<String>();
         final ArrayList<String> jobDescriptions = new ArrayList<>();
 
@@ -46,16 +49,16 @@ public class CartActivity extends Activity {
             query.getInBackground(jobId, new GetCallback<Job>() {
                 @Override
                 public void done(Job o, ParseException e) {
+                    jobObjects.add(o);
+
                     String name = o.getJobName();
                     jobNames.add(name);
-                    Toast.makeText(CartActivity.this, "THERE IS A JOB:." + name,
-                            Toast.LENGTH_SHORT).show();
                     jobDescriptions.add(o.getString("jobDescription"));
                 }
             });
-        }
 
-        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
+        }
+        cartListAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_2,
                 android.R.id.text1,
@@ -80,13 +83,30 @@ public class CartActivity extends Activity {
             }
         };
 
-        listview.setAdapter(listAdapter);
+        cartListview.setAdapter(cartListAdapter);
+        cartListview.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+            {
+                openJob(position);
+            }
+        });
+        cartListAdapter.notifyDataSetChanged();
 
     }
 
     //button logic to go to the homepage screen
     public void displayHomepage(View view) {
         Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
+    }
+
+    //go to the JobDetailsActivity
+    public void openJob(int position) {
+        String id = jobObjects.get(position).getObjectId();
+        Intent intent = new Intent(this, JobDetailsActivity.class);
+        intent.putExtra("jobID", id);
         startActivity(intent);
     }
 
