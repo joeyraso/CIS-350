@@ -24,6 +24,8 @@ import java.util.List;
 public class MyPostedJobsActivity extends Activity {
     List<String> myPostedJobs;
     ArrayAdapter<String> postedlistAdapter;
+    ArrayList<Job> jobObjects = new ArrayList<>();
+    ArrayList<Job> shownObjects = new ArrayList<>();
 
 
     @Override
@@ -31,7 +33,6 @@ public class MyPostedJobsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_posted_jobs);
 
-        final ListView postedJobsListview = (ListView) findViewById(R.id.postedJobsList);
         final ArrayList<String> jobNames = new ArrayList<String>();
         final ArrayList<String> jobDescriptions = new ArrayList<>();
 
@@ -44,6 +45,8 @@ public class MyPostedJobsActivity extends Activity {
                 @Override
                 public void done(final Job o, ParseException e) {
                     final String name = o.getJobName();
+                    jobObjects.add(o);
+                    shownObjects.add(o);
 
                     //Thread used to ensure list appears properly each time it is loaded
                     //Also adds each item to list
@@ -58,6 +61,8 @@ public class MyPostedJobsActivity extends Activity {
                 }
             });
         }
+
+        ListView postedJobsListview = (ListView) findViewById(R.id.postedJobsList);
 
         postedlistAdapter = new ArrayAdapter<String>(
                 this,
@@ -113,7 +118,7 @@ public class MyPostedJobsActivity extends Activity {
 
     //clicking a job in my jobs shows the list of people who requested your job
     public void showDoerList(int position) {
-        String id = myPostedJobs.get(position);
+        String id = jobObjects.get(position).getObjectId();
         Intent intent = new Intent(this, JobRequestorsActivity.class);
         intent.putExtra("jobID", id);
         startActivity(intent);

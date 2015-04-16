@@ -3,6 +3,7 @@ package com.parse.starter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -24,6 +25,7 @@ public class JobRequestorsActivity extends Activity {
     Job job;
     String jobId;
     ArrayAdapter<String> requestorlistAdapter;
+    List<String> requestorIds;
 
 
     @Override
@@ -40,25 +42,35 @@ public class JobRequestorsActivity extends Activity {
             @Override
             public void done(Job o, ParseException e) {
                 job = o;
+                requestorIds = job.getJobRequestors();
             }
         });
 
         // get the list of requestors
-        List<String> requestorIds = job.getList("jobRequestors");
-        final ListView requestorListview = (ListView) findViewById(R.id.requestorsList);
         final ArrayList<String> userNames = new ArrayList<String>();
         if (requestorIds != null) {
             for (String requestor : requestorIds) {
-                //Query Parse for user
-                ParseQuery<ParseUser> userQuery = new ParseQuery("User");
-                query.getInBackground(requestor, new GetCallback<Job>() {
+                //Query Parse for the user that requested the job, so we can display their name
+                ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+                userQuery.getInBackground(requestor, new GetCallback<ParseUser>() {
                     @Override
-                    public void done(Job o, ParseException e) {
-                        String name = o.getJobName();
-                        userNames.add("username");
+                    public void done(ParseUser o, ParseException e) {
+                        final String username = o.getUsername();
+                     //   Toast.makeText(JobRequestorsActivity.this, username, Toast.LENGTH_SHORT).show();
+
+                        //Thread used to ensure list appears properly each time it is loaded
+                        //Also adds each item to list
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                userNames.add(username);
+                                requestorlistAdapter.notifyDataSetChanged();
+                            }
+                        });
                     }
                 });
             }
+
+            final ListView requestorListview = (ListView) findViewById(R.id.requestorsList);
 
             requestorlistAdapter = new ArrayAdapter<String>(
                     this,
@@ -79,12 +91,11 @@ public class JobRequestorsActivity extends Activity {
                     TextView text2 = (TextView) view.findViewById(android.R.id.text2);
                     text1.setText(userNames.get(position));
                     text1.setTextSize(25);
-                    text2.setText("");
-                    text2.setPadding(50,0,0,0);
+                    text2.setText("contact");
+                    text2.setPadding(50, 0, 0, 0);
                     return view;
                 }
             };
-            requestorlistAdapter.notifyDataSetChanged();
 
             requestorListview.setAdapter(requestorlistAdapter);
             requestorListview.setOnItemClickListener(new AdapterView.OnItemClickListener()
