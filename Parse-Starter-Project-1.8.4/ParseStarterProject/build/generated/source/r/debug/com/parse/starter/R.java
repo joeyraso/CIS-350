@@ -150,12 +150,8 @@ containing a value of this type.
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int example_picture=0x7f020000;
-        public static final int ic_action_stat_reply=0x7f020001;
-        public static final int ic_action_stat_share=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int layout_bg=0x7f020004;
-        public static final int notification_job_poster=0x7f020005;
+        public static final int ic_launcher=0x7f020000;
+        public static final int layout_bg=0x7f020001;
     }
     public static final class id {
         public static final int Request=0x7f09000a;
@@ -222,42 +218,38 @@ containing a value of this type.
         public static final int menu_sign_in=0x7f080005;
     }
     public static final class string {
-        public static final int action_reply=0x7f060000;
-        public static final int action_settings=0x7f060001;
-        public static final int action_share=0x7f060002;
-        public static final int addTab=0x7f060003;
-        public static final int app_name=0x7f060004;
-        public static final int cartTab=0x7f060005;
-        public static final int dashboardTab=0x7f060006;
-        public static final int email=0x7f060007;
-        public static final int endDate=0x7f060008;
-        public static final int hello=0x7f060009;
-        public static final int hello_blank_fragment=0x7f06000a;
-        public static final int hello_world=0x7f06000b;
-        public static final int jobDescription=0x7f06000c;
-        public static final int jobName=0x7f06000d;
-        public static final int jobPrompt=0x7f06000e;
-        public static final int job_poster_notification_placeholder_text_template=0x7f06000f;
-        public static final int job_poster_notification_title_template=0x7f060010;
-        public static final int newJobsAroundYou=0x7f060011;
-        public static final int parse_app_id=0x7f060012;
-        public static final int parse_client_key=0x7f060013;
-        public static final int password=0x7f060014;
-        public static final int phone=0x7f060015;
-        public static final int search_title=0x7f060016;
-        public static final int settingsTab=0x7f060017;
-        public static final int sign_up=0x7f060018;
-        public static final int startDate=0x7f060019;
-        public static final int title_activity_cart=0x7f06001a;
-        public static final int title_activity_current_user=0x7f06001b;
-        public static final int title_activity_homepage=0x7f06001c;
-        public static final int title_activity_job_creation=0x7f06001d;
-        public static final int title_activity_job_details=0x7f06001e;
-        public static final int title_activity_profile=0x7f06001f;
-        public static final int title_activity_sign_in=0x7f060020;
-        public static final int title_activity_sign_up=0x7f060021;
-        public static final int username=0x7f060022;
-        public static final int welcome=0x7f060023;
+        public static final int action_settings=0x7f060000;
+        public static final int addTab=0x7f060001;
+        public static final int app_name=0x7f060002;
+        public static final int cartTab=0x7f060003;
+        public static final int dashboardTab=0x7f060004;
+        public static final int email=0x7f060005;
+        public static final int endDate=0x7f060006;
+        public static final int hello=0x7f060007;
+        public static final int hello_blank_fragment=0x7f060008;
+        public static final int hello_world=0x7f060009;
+        public static final int jobDescription=0x7f06000a;
+        public static final int jobName=0x7f06000b;
+        public static final int jobPrompt=0x7f06000c;
+        public static final int newJobsAroundYou=0x7f06000d;
+        public static final int parse_app_id=0x7f06000e;
+        public static final int parse_client_key=0x7f06000f;
+        public static final int password=0x7f060010;
+        public static final int phone=0x7f060011;
+        public static final int search_title=0x7f060012;
+        public static final int settingsTab=0x7f060013;
+        public static final int sign_up=0x7f060014;
+        public static final int startDate=0x7f060015;
+        public static final int title_activity_cart=0x7f060016;
+        public static final int title_activity_current_user=0x7f060017;
+        public static final int title_activity_homepage=0x7f060018;
+        public static final int title_activity_job_creation=0x7f060019;
+        public static final int title_activity_job_details=0x7f06001a;
+        public static final int title_activity_profile=0x7f06001b;
+        public static final int title_activity_sign_in=0x7f06001c;
+        public static final int title_activity_sign_up=0x7f06001d;
+        public static final int username=0x7f06001e;
+        public static final int welcome=0x7f06001f;
     }
     public static final class style {
         public static final int LogInFont=0x7f070000;

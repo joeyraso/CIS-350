@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-<<<<<<< Updated upstream
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
@@ -14,14 +13,9 @@ import android.util.Log;
 
 
 import com.parse.FindCallback;
-=======
-import android.widget.TextView;
-
-import com.parse.GetCallback;
->>>>>>> Stashed changes
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
-<<<<<<< Updated upstream
 import com.parse.GetCallback;
 import com.parse.ParseUser;
 
@@ -29,8 +23,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-=======
->>>>>>> Stashed changes
 
 
 public class JobDetailsActivity extends Activity {
@@ -87,7 +79,6 @@ public class JobDetailsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-<<<<<<< Updated upstream
     public void requestJob(View view) {
         //Update both the User and the Jobs
         addJobToMyRequested(); //current user gets this job added to requests
@@ -121,8 +112,4 @@ public class JobDetailsActivity extends Activity {
         job.saveInBackground();
         return;
     }
-=======
-
-
->>>>>>> Stashed changes
 }

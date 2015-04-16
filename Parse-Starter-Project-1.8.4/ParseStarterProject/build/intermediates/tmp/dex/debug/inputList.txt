@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 /Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/Final Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/classes/debug
 /Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/Final Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-28d7f07a3af1d8eb36c7b7a6f9f723ca0ab6f0c0.jar
 /Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/Final Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-203135653493071b7e9474d5d1df7d1f4b14013b.jar
@@ -6,12 +5,3 @@
 /Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/Final Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-73c3f12f8b6d4a57f6f72c4f33748cc5b68ce5f7.jar
 /Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/Final Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-c9675dcafbecfdb6eb5d31c197342b74187fbdc9.jar
 /Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/Final Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/classes-50e03d086f3c6545e896cca11ec20c9a17962515.jar
-=======
-/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/classes/debug
-/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-e1777da8b2c6b5b6dde025771506ad9dccd8f286.jar
-/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-c1a27db8856eb25316cf82da2e18222eb1e03381.jar
-/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-669cc773a59d87b4cc121f76ec6668cca605fdc8.jar
-/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-d3f4762d5db8179a29d694818c0492e91e7215d4.jar
-/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-7d59d588fd440d8858c2c96a91e4a399231b36db.jar
-/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/classes-31ad07a96d27bd37f85394ebc28e012a3d2fe986.jar
->>>>>>> Stashed changes

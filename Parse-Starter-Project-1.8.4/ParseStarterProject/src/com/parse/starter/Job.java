@@ -6,9 +6,6 @@ package com.parse.starter;
  * Created by joeyraso on 4/2/15.
  */
 
-import com.parse.ParseObject;
-
-<<<<<<< Updated upstream
 import android.location.Location;
 import android.location.LocationListener;
 import com.parse.ParseObject;
@@ -19,23 +16,12 @@ import java.util.List;
 
 @ParseClassName("Job")
 public class Job extends ParseObject {
-=======
-import com.parse.ParseClassName;
-import com.parse.ParseObject;
-
-
-@ParseClassName("Job")
-public class Job extends ParseObject{
-
-
->>>>>>> Stashed changes
 
     public Job(String name, String description, String start, String end) {
         setJobName(name);
         setJobDescription(description);
         setStartDate(start);
         setEndDate(end);
-<<<<<<< Updated upstream
         setJobPoster();
         setJobStatus("available");  //default
 
@@ -47,9 +33,6 @@ public class Job extends ParseObject{
 //                put("jobLocation", point);
 //            }
 //        }
-=======
-
->>>>>>> Stashed changes
     }
 
     public Job() {
@@ -95,14 +78,10 @@ public class Job extends ParseObject{
         return getString("endDate");
     }
 
-<<<<<<< Updated upstream
     public List<String> getJobRequestors() {return getList("jobRequestors");}
 
     public String getJobDoer() { return getString("jobDoer");}
 
     public String getJobPoster() {return getString("jobPoster");}
 
-=======
-    public String getStatus() { return getString("status"); }
->>>>>>> Stashed changes
 }
