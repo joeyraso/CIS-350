@@ -101,6 +101,8 @@ public class JobDetailsActivity extends Activity {
             currRequestors = job.getList("jobRequestors");
         }
         currRequestors.add(ParseUser.getCurrentUser().getObjectId());
+        job.put("jobRequestors", currRequestors);
+        //Log.v("DEBUG", "ADDED!");
         job.saveInBackground();
         return;
     }

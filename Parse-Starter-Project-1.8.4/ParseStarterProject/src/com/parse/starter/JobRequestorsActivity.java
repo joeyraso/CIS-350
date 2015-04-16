@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -35,20 +34,28 @@ public class JobRequestorsActivity extends Activity {
 
         Intent intent = getIntent();
         jobId = intent.getStringExtra("jobID");
+        Log.v("DEBUG", "JOBID: " + jobId);
 
         //Query Parse
         ParseQuery<Job> query = new ParseQuery("Job");
         query.getInBackground(jobId, new GetCallback<Job>() {
             @Override
             public void done(Job o, ParseException e) {
-                job = o;
-                requestorIds = job.getJobRequestors();
+                if (o == null) {
+                    Log.v("DEBUG", "NULL");
+                } else {
+                    Log.v("DEBUG", "Job is NOT null");
+                    job = o;
+                    requestorIds = job.getList("jobRequestors");
+                }
             }
         });
+
 
         // get the list of requestors
         final ArrayList<String> userNames = new ArrayList<String>();
         if (requestorIds != null) {
+             Log.v("DEBUG", "GETS HERE");
             for (String requestor : requestorIds) {
                 //Query Parse for the user that requested the job, so we can display their name
                 ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
@@ -56,7 +63,7 @@ public class JobRequestorsActivity extends Activity {
                     @Override
                     public void done(ParseUser o, ParseException e) {
                         final String username = o.getUsername();
-                     //   Toast.makeText(JobRequestorsActivity.this, username, Toast.LENGTH_SHORT).show();
+                        //   Toast.makeText(JobRequestorsActivity.this, username, Toast.LENGTH_SHORT).show();
 
                         //Thread used to ensure list appears properly each time it is loaded
                         //Also adds each item to list
@@ -98,18 +105,15 @@ public class JobRequestorsActivity extends Activity {
             };
 
             requestorListview.setAdapter(requestorlistAdapter);
-            requestorListview.setOnItemClickListener(new AdapterView.OnItemClickListener()
-            {
+            requestorListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
-                {
+                public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                     //Unimplemented: Upon click, approve user
                 }
             });
 
         }
-
-        }
+    }
 
     //button logic to go to the homepage screen
     public void displayHomepage(View view) {
