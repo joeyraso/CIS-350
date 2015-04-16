@@ -21,7 +21,9 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
+import android.app.SearchManager;
+import android.content.Context;
+import android.widget.SearchView;
 
 public class HomepageActivity extends Activity {
     ArrayAdapter<String> homeListAdapter;
@@ -66,7 +68,6 @@ public class HomepageActivity extends Activity {
                             homeListAdapter.notifyDataSetChanged();
                         }
                     });
-                    ;
                 }
             }
         });
@@ -81,41 +82,51 @@ public class HomepageActivity extends Activity {
             android.R.id.text1,
             jobNames) {
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+                @Override
+                public View getView(int position, View convertView, ViewGroup parent) {
 
-            // Must always return just a View.
-            View view = super.getView(position, convertView, parent);
+                    // Must always return just a View.
+                    View view = super.getView(position, convertView, parent);
 
-            // If you look at the android.R.layout.simple_list_item_2 source, you'll see
-            // it's a TwoLineListItem with 2 TextViews - text1 and text2.
-            //TwoLineListItem listItem = (TwoLineListItem) view;
-            TextView text1 = (TextView) view.findViewById(android.R.id.text1);
-            TextView text2 = (TextView) view.findViewById(android.R.id.text2);
-            text1.setText(jobNames.get(position));
-            text1.setTextSize(25);
-            text2.setText(jobDescriptions.get(position));
-            text2.setPadding(50,0,0,0);
-            return view;
-        }
-    };
+                    // If you look at the android.R.layout.simple_list_item_2 source, you'll see
+                    // it's a TwoLineListItem with 2 TextViews - text1 and text2.
+                    //TwoLineListItem listItem = (TwoLineListItem) view;
+                    TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                    TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+                    text1.setText(jobNames.get(position));
+                    text1.setTextSize(25);
+                    text2.setText(jobDescriptions.get(position));
+                    text2.setPadding(50,0,0,0);
+                    return view;
+                }
+            };
 
-        jobsListView.setAdapter(homeListAdapter);
-        jobsListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+            jobsListView.setAdapter(homeListAdapter);
+            jobsListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
             {
-                openJob(position);
+                @Override
+                public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+                {
+                    openJob(position);
             }
         });
     }
 
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_homepage, menu);
+
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+
         return true;
     }
 

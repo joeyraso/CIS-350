@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp">
+    </ListView>
+
+</RelativeLayout>
+<!-- From: file:/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/activity_searchable.xml -->

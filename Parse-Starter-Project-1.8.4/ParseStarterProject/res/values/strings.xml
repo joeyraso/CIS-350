@@ -38,5 +38,6 @@
     <string name="title_activity_job_details">JobDetailsActivity</string>
     <string name="title_activity_my_posted_jobs">MyPostedJobsActivity</string>
     <string name="title_activity_job_requestors">JobRequestorsActivity</string>
+    <string name="title_activity_searchable">SearchableActivity</string>
 
 </resources>
