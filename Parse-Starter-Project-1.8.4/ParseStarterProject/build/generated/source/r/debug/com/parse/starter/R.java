@@ -156,17 +156,17 @@ containing a value of this type.
     }
     public static final class id {
         public static final int Request=0x7f0a000b;
-        public static final int Title=0x7f0a000e;
+        public static final int Title=0x7f0a0013;
         public static final int action_settings=0x7f0a002b;
         public static final int buttonAddJob=0x7f0a001b;
         public static final int buttonCart=0x7f0a0019;
         public static final int buttonDashboard=0x7f0a0000;
         public static final int buttonMyPostedJobs=0x7f0a001a;
-        public static final int createJob=0x7f0a0013;
-        public static final int creationDescription=0x7f0a0010;
-        public static final int creationEndDate=0x7f0a0012;
-        public static final int creationName=0x7f0a000f;
-        public static final int creationStartDate=0x7f0a0011;
+        public static final int createJob=0x7f0a0018;
+        public static final int creationDescription=0x7f0a0015;
+        public static final int creationEndDate=0x7f0a0017;
+        public static final int creationName=0x7f0a0014;
+        public static final int creationStartDate=0x7f0a0016;
         public static final int description=0x7f0a0003;
         public static final int detailsDescription=0x7f0a0004;
         public static final int detailsEndDate=0x7f0a0008;
@@ -174,15 +174,15 @@ containing a value of this type.
         public static final int detailsPayment=0x7f0a000a;
         public static final int detailsStartDate=0x7f0a0006;
         public static final int emailText=0x7f0a0027;
-        public static final int emailTextView=0x7f0a0016;
+        public static final int emailTextView=0x7f0a0010;
         public static final int end_date=0x7f0a0007;
         public static final int homeList=0x7f0a001c;
         public static final int list=0x7f0a0001;
-        public static final int logOutButton=0x7f0a0018;
+        public static final int logOutButton=0x7f0a0012;
         public static final int passwordSignIn=0x7f0a0020;
         public static final int passwordText=0x7f0a0025;
         public static final int payment=0x7f0a0009;
-        public static final int phoneNumberTextView=0x7f0a0017;
+        public static final int phoneNumberTextView=0x7f0a0011;
         public static final int phoneText=0x7f0a0029;
         public static final int postedJobsList=0x7f0a000d;
         public static final int requestorsList=0x7f0a000c;
@@ -191,7 +191,7 @@ containing a value of this type.
         public static final int signupButton=0x7f0a0022;
         public static final int signupButton2=0x7f0a002a;
         public static final int start_date=0x7f0a0005;
-        public static final int textView1=0x7f0a0014;
+        public static final int textView1=0x7f0a000e;
         public static final int textView2=0x7f0a001d;
         public static final int textView3=0x7f0a001f;
         public static final int textView4=0x7f0a0024;
@@ -199,7 +199,7 @@ containing a value of this type.
         public static final int textView6=0x7f0a0028;
         public static final int usernameSignIn=0x7f0a001e;
         public static final int usernameText=0x7f0a0023;
-        public static final int usernameTextView=0x7f0a0015;
+        public static final int usernameTextView=0x7f0a000f;
     }
     public static final class layout {
         public static final int activity_cart=0x7f030000;
@@ -208,13 +208,14 @@ containing a value of this type.
         public static final int activity_my_posted_jobs=0x7f030003;
         public static final int activity_searchable=0x7f030004;
         public static final int activity_sign_in=0x7f030005;
-        public static final int job_creation_view=0x7f030006;
-        public static final int main=0x7f030007;
-        public static final int profile_tab_view=0x7f030008;
-        public static final int sample_cart_tab_view=0x7f030009;
-        public static final int sample_homepage_view=0x7f03000a;
-        public static final int sign_in_view=0x7f03000b;
-        public static final int sign_up_view=0x7f03000c;
+        public static final int activity_view_requestor=0x7f030006;
+        public static final int job_creation_view=0x7f030007;
+        public static final int main=0x7f030008;
+        public static final int profile_tab_view=0x7f030009;
+        public static final int sample_cart_tab_view=0x7f03000a;
+        public static final int sample_homepage_view=0x7f03000b;
+        public static final int sign_in_view=0x7f03000c;
+        public static final int sign_up_view=0x7f03000d;
     }
     public static final class menu {
         public static final int menu_cart=0x7f090000;
@@ -226,6 +227,7 @@ containing a value of this type.
         public static final int menu_profile=0x7f090006;
         public static final int menu_searchable=0x7f090007;
         public static final int menu_sign_in=0x7f090008;
+        public static final int menu_view_requestor=0x7f090009;
     }
     public static final class string {
         public static final int action_settings=0x7f070000;
@@ -261,8 +263,9 @@ containing a value of this type.
         public static final int title_activity_searchable=0x7f07001e;
         public static final int title_activity_sign_in=0x7f07001f;
         public static final int title_activity_sign_up=0x7f070020;
-        public static final int username=0x7f070021;
-        public static final int welcome=0x7f070022;
+        public static final int title_activity_view_requestor=0x7f070021;
+        public static final int username=0x7f070022;
+        public static final int welcome=0x7f070023;
     }
     public static final class style {
         public static final int LogInFont=0x7f080000;

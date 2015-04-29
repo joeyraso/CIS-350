@@ -16,7 +16,7 @@ import com.parse.SaveCallback;
 import java.util.ArrayList;
 import java.util.List;
 
-public class jobCreationActivity extends Activity {
+public class JobCreationActivity extends Activity {
 
     EditText jobNameTextObject;
     EditText jobDescriptionTextObject;

@@ -167,7 +167,7 @@ public class HomepageActivity extends Activity {
 
     // go to the job creation screen
     public void addJob(View view) {
-        Intent intent = new Intent(this, jobCreationActivity.class);
+        Intent intent = new Intent(this, JobCreationActivity.class);
         startActivity(intent);
     }
 

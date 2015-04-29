@@ -11,8 +11,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -23,8 +25,9 @@ import java.util.List;
 public class JobRequestorsActivity extends Activity {
     Job job;
     String jobId;
+    String jobName = "before";
     ArrayAdapter<String> requestorlistAdapter;
-    List<String> requestorIds;
+    List<String> requestorIds = new ArrayList<String>();
 
 
     @Override
@@ -37,24 +40,37 @@ public class JobRequestorsActivity extends Activity {
         Log.v("DEBUG", "JOBID: " + jobId);
 
         //Query Parse
-        ParseQuery<Job> query = new ParseQuery("Job");
-        query.getInBackground(jobId, new GetCallback<Job>() {
-            @Override
-            public void done(Job o, ParseException e) {
-                if (o == null) {
-                    Log.v("DEBUG", "NULL");
-                } else {
-                    Log.v("DEBUG", "Job is NOT null");
-                    job = o;
-                    requestorIds = job.getList("jobRequestors");
-                }
-            }
-        });
+//        ParseQuery<Job> query = new ParseQuery("Job");
+//        query.getInBackground(jobId, new GetCallback<Job>() {
+//            @Override
+//            public void done(Job o, ParseException e) {
+//                if (o == null) {
+//                    Log.v("DEBUG", "NULL");
+//                } else {
+//                    Log.v("DEBUG", "Job is NOT null");
+//                    Log.v("DEBUG: job name", o.getString("jobName"));
+//                    job = o;
+//                    jobName = job.getString("jobName");
+//                    requestorIds = job.getList("jobRequestors");
+//                }
+//                Log.v("DEBUG:", "if-else complete.");
+//            }
+//        });
 
+        loadJobRequestors();
+    }
+
+    public void loadJobRequestors() {
+
+       //SAMPLE DATA ADDED: REQUESTORS
+       requestorIds.add("GvRY94rGfE"); //ankita
+       requestorIds.add("c3Cc3547mD"); //joey
 
         // get the list of requestors
         final ArrayList<String> userNames = new ArrayList<String>();
+
         if (requestorIds != null) {
+            Log.v("DEBUG:", "our list is non null.");
             for (String requestor : requestorIds) {
                 //Query Parse for the user that requested the job, so we can display their name
                 ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
@@ -107,10 +123,18 @@ public class JobRequestorsActivity extends Activity {
                 @Override
                 public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                     //Unimplemented: Upon click, approve user
+                    goToRequestorsProfile(position);
                 }
             });
 
         }
+    }
+
+    private void goToRequestorsProfile(int position) {
+        Intent intent = new Intent(this, ViewRequestorActivity.class);
+        intent.putExtra("userID", requestorIds.get(position));
+        intent.putExtra("jobID", jobId);
+        startActivity(intent);
     }
 
     //button logic to go to the homepage screen
