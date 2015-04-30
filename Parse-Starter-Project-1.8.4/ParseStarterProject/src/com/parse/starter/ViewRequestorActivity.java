@@ -3,8 +3,10 @@ package com.parse.starter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.parse.GetCallback;
@@ -18,6 +20,7 @@ public class ViewRequestorActivity extends Activity {
     String userId;
     String jobId;
     boolean isJobDoer = false;
+    Job job;
 
 
     @Override
@@ -27,32 +30,29 @@ public class ViewRequestorActivity extends Activity {
         Intent intent = getIntent();
         userId = intent.getStringExtra("userID");
         jobId = intent.getStringExtra("jobID");
+
+        ParseQuery<Job> query = new ParseQuery("Job");
+        try {
+            job = (Job) query.get(jobId);
+
+            if (userId.equals(job.get("jobDoer"))) {
+                Log.v("Debug:", "I am the job doer");
+                isJobDoer = true;
+            }
+
+        } catch (ParseException e) {
+            Log.v("Parse Exception:", "While trying to get job");
+        }
+
+
+
         displayUserInfoParse();
 
         //displayUserDetails();
     }
 
-    public void getJobInfoParse() {
-        //Query Parse
-        ParseQuery<Job> query = new ParseQuery("Job");
-        query.getInBackground(jobId, new GetCallback<Job>() {
-            @Override
-            public void done(Job o, ParseException e) {
-                TextView jobNameTextObject = (TextView) findViewById(R.id.detailsName);
-                TextView jobDescriptionTextObject = (TextView) findViewById(R.id.detailsDescription);
-                TextView startDateTextObject = (TextView) findViewById(R.id.detailsStartDate);
-                TextView endDateTextObject = (TextView) findViewById(R.id.detailsEndDate);
-
-                jobNameTextObject.setText(o.getJobName());
-                jobDescriptionTextObject.setText(o.getJobDescription());
-                startDateTextObject.setText(o.getStartDate());
-                endDateTextObject.setText(o.getEndDate());
-            }
-        });
-
-    }
-
     public void displayUserInfoParse() {
+        Log.v("Debug:", "calls display");
         //Query Parse for the user that requested the job, so we can display their name
         ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
         userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
@@ -63,13 +63,17 @@ public class ViewRequestorActivity extends Activity {
                 TextView username = (TextView) findViewById(R.id.usernameTextView);
                 username.append(userName);
 
-                String userEmail = "Viewable upon acceptance.";
-                String userPhone = "Viewable upon acceptance.";
+                String userEmail;
+                String userPhone;
                if(isJobDoer) {
+                   Log.v("Debug", "Yes I am the jobdoer");
                    userEmail = o.getString("email");
                    userPhone = o.getString("phone");
+                } else {
+                   userEmail = "Viewable upon acceptance.";
+                   userPhone = "Viewable upon acceptance.";
+               }
 
-                }
                 TextView email = (TextView) findViewById(R.id.emailTextView);
                 email.append(userEmail);
 
@@ -80,8 +84,15 @@ public class ViewRequestorActivity extends Activity {
         });
     }
 
-    private void selectAsJobDoer() {
+    public void selectAsJobDoer(View view) {
+        Log.v("Debug:", "calls this method");
+        job.put("jobDoer", userId);
+        job.saveInBackground();
         isJobDoer = true;
+        if (userId.equals(job.get("jobDoer"))) {
+            Log.v("Debug:", "Great, new jobdoer has been assigned");
+        }
+
     }
 
 
@@ -105,6 +116,12 @@ public class ViewRequestorActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //button logic to go to the homepage screen
+    public void displayHomepage(View view) {
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
     }
 
 }

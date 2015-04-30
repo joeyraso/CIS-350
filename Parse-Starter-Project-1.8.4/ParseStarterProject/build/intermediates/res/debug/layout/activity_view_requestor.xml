@@ -58,10 +58,11 @@
         android:id="@+id/logOutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log Out"
+        android:text="Select to Complete Job"
         android:textColor="#FFFFFF"
         android:layout_marginTop="47dp"
         android:layout_centerHorizontal="true"
+        android:onClick="selectAsJobDoer"
         android:layout_below="@+id/phoneNumberTextView"
         />
 
