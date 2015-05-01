@@ -7,6 +7,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -42,6 +43,10 @@ public class NotificationsPageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications_page);
 
+        updateNotificationsList();
+    }
+
+    private void updateNotificationsList() {
         //query to find notifications
         ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
         userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
@@ -66,8 +71,9 @@ public class NotificationsPageActivity extends Activity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 TextView textView = (TextView) view.findViewById(android.R.id.text1);
+                textView.setTextColor(Color.parseColor("#89cede"));
                 textView.setText(notifications.get(position));
-                textView.setTextSize(25);
+                textView.setTextSize(20);
 
                 return view;
             }
@@ -128,6 +134,9 @@ public class NotificationsPageActivity extends Activity {
                 o.saveInBackground();
             }
         });
+
+        //now we want to refresh our page
+        updateNotificationsList();
     }
 
 

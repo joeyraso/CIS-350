@@ -11,9 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.GetCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +26,13 @@ import java.util.List;
 public class JobDetailsActivity extends Activity {
     Job job;
     String jobId;
+    String jobName;
+    String doer;
+    String doerUsername;
+    String posterID;
+    boolean isJobDoer = false;
 
+    String userId = ParseUser.getCurrentUser().getObjectId();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +40,7 @@ public class JobDetailsActivity extends Activity {
 
         Intent intent = getIntent();
         jobId = intent.getStringExtra("jobID");
+        Log.v("DEBUG:", "commencing.");
 
         //Query Parse
         ParseQuery<Job> query = new ParseQuery("Job");
@@ -48,6 +59,30 @@ public class JobDetailsActivity extends Activity {
                 endDateTextObject.setText(o.getEndDate());
             }
         });
+
+        ParseQuery<Job> query2 = new ParseQuery("Job");
+        try {
+            job = (Job) query2.get(jobId);
+            doer = job.getString("jobDoer");
+            posterID = job.getString("jobPoster");
+            jobName = job.getString("jobName");
+            if (userId.equals(doer)) {
+                isJobDoer = true;
+
+            }
+        } catch (ParseException e) {
+            Log.v("Parse Exception:", "While trying to get job");
+        }
+
+
+        TextView buttonTitle = (TextView) findViewById(R.id.Request);
+        if (isJobDoer) {
+            //This job belongs to them.
+            buttonTitle.setText("Completed");
+            isJobDoer();
+        } else {
+            buttonTitle.setText("Request Job");
+        }
 
     }
 
@@ -74,14 +109,90 @@ public class JobDetailsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void requestJob(View view) {
+    public void updateJob(View view) {
+        if (isJobDoer) {
+            jobCompleted();
+        } else {
+            jobRequesting();
+        }
+    }
+
+    private void jobCompleted() {
+        //Query Parse
+        ParseQuery<Job> query = new ParseQuery("Job");
+        query.getInBackground(jobId, new GetCallback<Job>() {
+            @Override
+            public void done(Job o, ParseException e) {
+                o.put("jobStatus", "completed");
+                o.saveInBackground();
+            }
+        });
+
+        //Find the job doer.
+        ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+        userQuery.getInBackground(doer, new GetCallback<ParseUser>() {
+            @Override
+            public void done(ParseUser o, ParseException e) {
+                String email = o.getString("email");
+                TextView emailText = (TextView) findViewById(R.id.contactInfo);
+                emailText.setText(email);
+
+                String phone = o.getString("phone");
+                TextView phoneText = (TextView) findViewById(R.id.userPhoneNumber);
+                phoneText.setText(phone);
+
+            }
+        });
+
+        String message = doerUsername + " has completed task: " + jobName;
+
+        NotificationsManager.notifyUser(posterID, message);
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
+    }
+
+    private void isJobDoer() {
+        //Find the job in question
+        ParseQuery<Job> query = new ParseQuery("Job");
+        query.getInBackground(jobId, new GetCallback<Job>() {
+            @Override
+            public void done(Job o, ParseException e) {
+                String posterID = o.getJobPoster();
+                ParseGeoPoint location = new ParseGeoPoint(30, 30); //dummy value
+                TextView locationText = (TextView) findViewById(R.id.userLocation);
+                locationText.setText(location.toString());
+
+                //Find the job poster.
+                ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+                userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
+                    @Override
+                    public void done(ParseUser o, ParseException e) {
+                        String email = o.getString("email");
+                        TextView emailText = (TextView) findViewById(R.id.contactInfo);
+                        emailText.setText(email);
+
+                        String phone = o.getString("phone");
+                        TextView phoneText = (TextView) findViewById(R.id.userPhoneNumber);
+                        phoneText.setText(phone);
+
+                        doerUsername = o.getString("username");
+                    }
+                });
+
+            }
+        });
+
+    }
+
+    private void jobRequesting() {
+        //Allow the user to request this job
         //Update both the User and the Jobs
         addJobToMyRequested(); //current user gets this job added to requests
         addUserToJobRequestors();//add current user to jobs list of requestors
-
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
+
 
     private void addJobToMyRequested() {
         //Updates myRequestedJobs list in the User
@@ -131,4 +242,11 @@ public class JobDetailsActivity extends Activity {
         startActivity(intent);
     }
 
+
+    public void payJobDoer() {
+        /*
+        Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");
+        startActivityForResult(venmoIntent, REQUEST_CODE_VENMO_APP_SWITCH);
+        */
+    }
 }

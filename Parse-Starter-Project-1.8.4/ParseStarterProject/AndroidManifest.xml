@@ -90,6 +90,10 @@
             android:label="@string/title_activity_sign_in" >
         </activity>
         <activity
+            android:name=".VenmoWebViewActivity"
+            android:label="" >
+        </activity>
+        <activity
             android:name=".HomepageActivity"
             android:label="" >
             <meta-data

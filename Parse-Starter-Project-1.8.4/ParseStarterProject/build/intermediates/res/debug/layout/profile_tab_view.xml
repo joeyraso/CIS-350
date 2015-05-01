@@ -7,7 +7,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    style="@style/LogInFont">
 
     <TextView
         android:id="@+id/title"
@@ -79,4 +80,4 @@
 </RelativeLayout>
 
 
-<!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/profile_tab_view.xml -->
+<!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/profile_tab_view.xml -->

@@ -22,6 +22,7 @@ public class JobCreationActivity extends Activity {
     EditText jobDescriptionTextObject;
     EditText startDateTextObject;
     EditText endDateTextObject;
+    EditText jobLocationTextObject;
 
 
     @Override
@@ -125,6 +126,11 @@ public class JobCreationActivity extends Activity {
         ParseUser.getCurrentUser().saveInBackground();
 
         return;
+    }
+
+    private void getLocation() {
+
+
     }
 
 

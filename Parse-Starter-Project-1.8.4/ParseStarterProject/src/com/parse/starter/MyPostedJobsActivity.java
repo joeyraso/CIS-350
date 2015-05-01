@@ -2,6 +2,7 @@ package com.parse.starter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -44,6 +45,7 @@ public class MyPostedJobsActivity extends Activity {
             query.getInBackground(jobId, new GetCallback<Job>() {
                 @Override
                 public void done(final Job o, ParseException e) {
+                    if (o == null) return;
                     final String name = o.getJobName();
                     jobObjects.add(o);
                     shownObjects.add(o);
@@ -81,6 +83,10 @@ public class MyPostedJobsActivity extends Activity {
                 //TwoLineListItem listItem = (TwoLineListItem) view;
                 TextView text1 = (TextView) view.findViewById(android.R.id.text1);
                 TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                text2.setTextColor(Color.parseColor("#dc4e00"));
+                text1.setTextColor(Color.parseColor("#89cede"));
+
                 text1.setText(jobNames.get(position));
                 text1.setTextSize(25);
                 text2.setText(jobDescriptions.get(position));
@@ -122,9 +128,27 @@ public class MyPostedJobsActivity extends Activity {
         startActivity(intent);
     }
 
-    //button logic to go to the homepage screen
-    public void displayHomepage(View view) {
-        Intent intent = new Intent(this, HomepageActivity.class);
+    //go to the profile screen
+    public void displayProfile(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    //go to the cart screen
+    public void displayCart(View view) {
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
+    }
+
+    // go to the job creation screen
+    public void viewNotifications(View view) {
+        Intent intent = new Intent(this, NotificationsPageActivity.class);
+        startActivity(intent);
+    }
+
+    // go to the MyPostedJobs screen
+    public void displayMyPostedJobs(View view) {
+        Intent intent = new Intent(this, MyPostedJobsActivity.class);
         startActivity(intent);
     }
 }
