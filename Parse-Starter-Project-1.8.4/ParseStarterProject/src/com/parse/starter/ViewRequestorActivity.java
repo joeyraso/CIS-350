@@ -31,6 +31,10 @@ public class ViewRequestorActivity extends Activity {
     String jobStatus;
     Job job;
 
+    String userPhone;
+
+    int REQUEST_CODE_VENMO_APP_SWITCH = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +94,6 @@ public class ViewRequestorActivity extends Activity {
                 jobTitle.setText(jobName);
 
                 String userEmail;
-                String userPhone;
                if (isJobDoer) {
                    userEmail = o.getString("email");
                    userPhone = o.getString("phone");
@@ -151,10 +154,10 @@ public class ViewRequestorActivity extends Activity {
         });
         builder.show();
 
-        /*
-        Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");
+
+        Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", userPhone, "0", jobName, "pay");
         startActivityForResult(venmoIntent, REQUEST_CODE_VENMO_APP_SWITCH);
-        */
+
     }
 
 
