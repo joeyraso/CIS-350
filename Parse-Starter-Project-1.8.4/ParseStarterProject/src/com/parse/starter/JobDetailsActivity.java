@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.GetCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -22,7 +23,9 @@ import java.util.List;
 public class JobDetailsActivity extends Activity {
     Job job;
     String jobId;
+    boolean isJobDoer = false;
 
+    String userId = ParseUser.getCurrentUser().getObjectId();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +49,19 @@ public class JobDetailsActivity extends Activity {
                 jobDescriptionTextObject.setText(o.getJobDescription());
                 startDateTextObject.setText(o.getStartDate());
                 endDateTextObject.setText(o.getEndDate());
+                if (job.getString("jobDoer").equals(userId)) {
+                    isJobDoer = true;
+                }
             }
         });
+
+        TextView buttonTitle = (TextView) findViewById(R.id.Request);
+        if (isJobDoer) {
+            //This job belongs to them.
+            buttonTitle.setText("Completed.");
+        } else {
+            buttonTitle.setText("Request Job");
+        }
 
     }
 
@@ -74,14 +88,28 @@ public class JobDetailsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void requestJob(View view) {
+    public void updateJob(View view) {
+        if (isJobDoer) {
+            isJobDoer();
+        } else {
+            jobRequesting();
+
+        }
+    }
+
+    private void isJobDoer() {
+
+    }
+
+    private void jobRequesting() {
+        //Allow the user to request this job
         //Update both the User and the Jobs
         addJobToMyRequested(); //current user gets this job added to requests
         addUserToJobRequestors();//add current user to jobs list of requestors
-
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
+
 
     private void addJobToMyRequested() {
         //Updates myRequestedJobs list in the User
