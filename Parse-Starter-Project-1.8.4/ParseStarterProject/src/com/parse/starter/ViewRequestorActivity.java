@@ -14,12 +14,16 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ViewRequestorActivity extends Activity {
 
     String userId;
     String jobId;
     boolean isJobDoer = false;
+    boolean isComplete = false;
     Job job;
 
 
@@ -36,19 +40,27 @@ public class ViewRequestorActivity extends Activity {
             job = (Job) query.get(jobId);
 
             if (userId.equals(job.get("jobDoer"))) {
-                Log.v("Debug:", "I am the job doer");
                 isJobDoer = true;
+            }
+
+            String status = job.getString("jobStatus");
+            if (status.equals("completed")) {
+                isComplete = true;
             }
 
         } catch (ParseException e) {
             Log.v("Parse Exception:", "While trying to get job");
         }
 
+        if (isComplete){
+            //Make a checkmark show up as well?
+            TextView payNow = (TextView) findViewById(R.id.logOutButton);
+            payNow.setText("Pay Now");
+        }
+
 
 
         displayUserInfoParse();
-
-        //displayUserDetails();
     }
 
     public void displayUserInfoParse() {
@@ -65,8 +77,7 @@ public class ViewRequestorActivity extends Activity {
 
                 String userEmail;
                 String userPhone;
-               if(isJobDoer) {
-                   Log.v("Debug", "Yes I am the jobdoer");
+               if (isJobDoer) {
                    userEmail = o.getString("email");
                    userPhone = o.getString("phone");
                 } else {
@@ -84,7 +95,24 @@ public class ViewRequestorActivity extends Activity {
         });
     }
 
-    public void selectAsJobDoer(View view) {
+    public void moveForward() {
+        if (isComplete) {
+            payJobDoer();
+        } else {
+            selectAsJobDoer();
+        }
+
+    }
+
+    public void payJobDoer() {
+        /*
+        Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");
+        startActivityForResult(venmoIntent, REQUEST_CODE_VENMO_APP_SWITCH);
+        */
+    }
+
+
+    public void selectAsJobDoer() {
         //update the Job object
         job.put("jobDoer", userId);
         job.put("jobStatus", "inProgress");
@@ -94,8 +122,20 @@ public class ViewRequestorActivity extends Activity {
         String jobName = job.getString("jobName");
         String notification = "You have been selected to complete " + jobName;
         NotificationsManager.notifyUser(userId, notification);
+        removeOtherRequesters();
     }
 
+    private void removeOtherRequesters() {
+        ParseQuery<Job> query = new ParseQuery("Job");
+        try {
+            job = (Job) query.get(jobId);
+            List<String> jobRequestor = new ArrayList<String>();
+            jobRequestor.add(userId);
+            job.put("jobRequestors", jobRequestor);
+        } catch (ParseException e) {
+            Log.v("Parse Exception:", "While trying to get job");
+        }
+    }
 
 
     @Override

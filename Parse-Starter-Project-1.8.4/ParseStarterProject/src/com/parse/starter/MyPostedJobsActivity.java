@@ -44,6 +44,7 @@ public class MyPostedJobsActivity extends Activity {
             query.getInBackground(jobId, new GetCallback<Job>() {
                 @Override
                 public void done(final Job o, ParseException e) {
+                    if (o == null) return;
                     final String name = o.getJobName();
                     jobObjects.add(o);
                     shownObjects.add(o);

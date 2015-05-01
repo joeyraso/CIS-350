@@ -46,11 +46,15 @@ public class HomepageActivity extends Activity {
 
         //Query Parse
         ParseQuery<Job> query =  ParseQuery.getQuery("Job");
-
         query.findInBackground(new FindCallback<Job>() {
             @Override
             public void done(List<Job> objects, ParseException e) {
                 for (Job o : objects) {
+                    String status = o.getString("jobStatus");
+                    if ((status.equals("inProgress")) || (status.equals("completed"))) {
+                            //We don't want to show this to anyone
+                            continue;
+                    }
                     jobObjects.add(o);
                     shownObjects.add(o);
                     final String name = o.getString("jobName");

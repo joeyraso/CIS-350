@@ -26,6 +26,10 @@ import java.util.List;
 public class JobDetailsActivity extends Activity {
     Job job;
     String jobId;
+    String jobName;
+    String doer;
+    String doerUsername;
+    String posterID;
     boolean isJobDoer = false;
 
     String userId = ParseUser.getCurrentUser().getObjectId();
@@ -59,9 +63,12 @@ public class JobDetailsActivity extends Activity {
         ParseQuery<Job> query2 = new ParseQuery("Job");
         try {
             job = (Job) query2.get(jobId);
-            String doer = job.getString("jobDoer");
+            doer = job.getString("jobDoer");
+            posterID = job.getString("jobPoster");
+            jobName = job.getString("jobName");
             if (userId.equals(doer)) {
                 isJobDoer = true;
+
             }
         } catch (ParseException e) {
             Log.v("Parse Exception:", "While trying to get job");
@@ -70,11 +77,10 @@ public class JobDetailsActivity extends Activity {
 
         TextView buttonTitle = (TextView) findViewById(R.id.Request);
         if (isJobDoer) {
-            Log.v("DEBUG:", "isJobDoer in onComplete");
             //This job belongs to them.
-            buttonTitle.setText("Completed.");
+            buttonTitle.setText("Completed");
+            isJobDoer();
         } else {
-            Log.v("DEBUG:", "is not job doer in onComplete");
             buttonTitle.setText("Request Job");
         }
 
@@ -105,10 +111,44 @@ public class JobDetailsActivity extends Activity {
 
     public void updateJob(View view) {
         if (isJobDoer) {
-            isJobDoer();
+            jobCompleted();
         } else {
             jobRequesting();
         }
+    }
+
+    private void jobCompleted() {
+        //Query Parse
+        ParseQuery<Job> query = new ParseQuery("Job");
+        query.getInBackground(jobId, new GetCallback<Job>() {
+            @Override
+            public void done(Job o, ParseException e) {
+                o.put("jobStatus", "completed");
+                o.saveInBackground();
+            }
+        });
+
+        //Find the job doer.
+        ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+        userQuery.getInBackground(doer, new GetCallback<ParseUser>() {
+            @Override
+            public void done(ParseUser o, ParseException e) {
+                String email = o.getString("email");
+                TextView emailText = (TextView) findViewById(R.id.contactInfo);
+                emailText.setText(email);
+
+                String phone = o.getString("phone");
+                TextView phoneText = (TextView) findViewById(R.id.userPhoneNumber);
+                phoneText.setText(phone);
+
+            }
+        });
+
+        String message = doerUsername + " has completed task: " + jobName;
+
+        NotificationsManager.notifyUser(posterID, message);
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
     }
 
     private void isJobDoer() {
@@ -135,6 +175,7 @@ public class JobDetailsActivity extends Activity {
                         TextView phoneText = (TextView) findViewById(R.id.userPhoneNumber);
                         phoneText.setText(phone);
 
+                        doerUsername = o.getString("username");
                     }
                 });
 
@@ -201,4 +242,11 @@ public class JobDetailsActivity extends Activity {
         startActivity(intent);
     }
 
+
+    public void payJobDoer() {
+        /*
+        Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");
+        startActivityForResult(venmoIntent, REQUEST_CODE_VENMO_APP_SWITCH);
+        */
+    }
 }
