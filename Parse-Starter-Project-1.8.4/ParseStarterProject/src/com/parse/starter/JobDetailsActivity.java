@@ -3,10 +3,12 @@ package com.parse.starter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -106,6 +108,21 @@ public class JobDetailsActivity extends Activity {
         //Log.v("DEBUG", "ADDED!");
         job.saveInBackground();
         return;
+    }
+
+    public void requestJobDetails(View view) {
+        //Appends job poster email address, so the user can ask for additional job details before
+        //requesting the job
+        ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+        userQuery.getInBackground(job.getJobPoster(), new GetCallback<ParseUser>() {
+            @Override
+            public void done(ParseUser o, ParseException e) {
+                String email = o.getEmail();
+                TextView emailField = (TextView) findViewById(R.id.contactInfo);
+                emailField.setText(email);
+            }
+        });
+
     }
 
     //button logic to go to the homepage screen

@@ -25,6 +25,7 @@ import java.util.List;
 import android.app.SearchManager;
 import android.content.Context;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 public class HomepageActivity extends Activity {
     ArrayAdapter<String> homeListAdapter;
@@ -45,12 +46,12 @@ public class HomepageActivity extends Activity {
 
 
         //Query Parse
-        ParseQuery<Job> query = new ParseQuery("Job");
+        ParseQuery<Job> query =  ParseQuery.getQuery("Job");
+
         query.findInBackground(new FindCallback<Job>() {
             @Override
-            public void done(List objects, ParseException e) {
-                for (int i = 0; i < objects.size(); i++) {
-                    Job o = (Job) objects.get(i);
+            public void done(List<Job> objects, ParseException e) {
+                for (Job o : objects) {
                     jobObjects.add(o);
                     shownObjects.add(o);
                     final String name = o.getString("jobName");
