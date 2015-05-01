@@ -1,0 +1,8 @@
+/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/classes/debug
+/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-28d7f07a3af1d8eb36c7b7a6f9f723ca0ab6f0c0.jar
+/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/json-simple-1.1.1-297ae05d35028f15c94dc6af3342cc67b1e828f0.jar
+/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-203135653493071b7e9474d5d1df7d1f4b14013b.jar
+/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-6cb293f24b490c59a78947a35b0334646e1b850d.jar
+/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-06a5701559b48ea8ee15f4f07eb4dae8098e8140.jar
+/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-287986bfe35ac22bf690c2206eb85c94cd254aae.jar
+/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/classes-05195f18b46c15a2549105a3a0cd90b90d45ff54.jar

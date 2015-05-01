@@ -95,13 +95,12 @@ public class ViewRequestorActivity extends Activity {
         });
     }
 
-    public void moveForward() {
+    public void moveForward(View view) {
         if (isComplete) {
             payJobDoer();
         } else {
             selectAsJobDoer();
         }
-
     }
 
     public void payJobDoer() {
