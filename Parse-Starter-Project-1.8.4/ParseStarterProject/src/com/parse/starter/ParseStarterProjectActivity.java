@@ -11,27 +11,15 @@ import com.parse.starter.VenmoLibrary.VenmoResponse;
 
 
 public class ParseStarterProjectActivity extends Activity {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
+
     final int REQUEST_CODE_VENMO_APP_SWITCH = 1;
-	/** Called when the activity is first created. */
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-=======
->>>>>>> Stashed changes
+
     /**
      * Called when the activity is first created.
      */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
-
 
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
@@ -40,20 +28,13 @@ public class ParseStarterProjectActivity extends Activity {
         testObject.saveInBackground();
         /*
         Intent intent = new Intent(this, SignInActivity.class);
-        startActivity(intent);
-<<<<<<< Updated upstream
-    }
-=======
-<<<<<<< HEAD
-        */
+        startActivity(intent);*/
+
 
         Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");
         startActivityForResult(venmoIntent, REQUEST_CODE_VENMO_APP_SWITCH);
 	}
-=======
-    }
->>>>>>> origin/master
->>>>>>> Stashed changes
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
