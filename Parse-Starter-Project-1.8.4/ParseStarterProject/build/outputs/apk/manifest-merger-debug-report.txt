@@ -1,6 +1,8 @@
 -- Merging decision tree log ---
 manifest
 ADDED from AndroidManifest.xml:2:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
 	package
 		ADDED from AndroidManifest.xml:3:5
 	android:versionName
@@ -9,8 +11,6 @@ ADDED from AndroidManifest.xml:2:1
 		ADDED from AndroidManifest.xml:4:5
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
-	xmlns:android
-		ADDED from AndroidManifest.xml:2:11
 uses-sdk
 ADDED from AndroidManifest.xml:7:5
 MERGED from com.android.support:support-v4:21.0.3:15:5
@@ -147,16 +147,16 @@ MERGED from com.android.support:support-v4:21.0.3:16:5
 		ADDED from AndroidManifest.xml:68:9
 meta-data#com.parse.APPLICATION_ID
 ADDED from AndroidManifest.xml:72:9
-	android:value
-		ADDED from AndroidManifest.xml:74:13
 	android:name
 		ADDED from AndroidManifest.xml:73:13
+	android:value
+		ADDED from AndroidManifest.xml:74:13
 meta-data#com.parse.CLIENT_KEY
 ADDED from AndroidManifest.xml:75:9
-	android:value
-		ADDED from AndroidManifest.xml:77:13
 	android:name
 		ADDED from AndroidManifest.xml:76:13
+	android:value
+		ADDED from AndroidManifest.xml:77:13
 activity#com.parse.starter.ParseStarterProjectActivity
 ADDED from AndroidManifest.xml:79:9
 	android:label
@@ -187,10 +187,10 @@ ADDED from AndroidManifest.xml:92:9
 		ADDED from AndroidManifest.xml:93:13
 meta-data#android.app.default_searchable
 ADDED from AndroidManifest.xml:95:13
-	android:value
-		ADDED from AndroidManifest.xml:97:17
 	android:name
 		ADDED from AndroidManifest.xml:96:17
+	android:value
+		ADDED from AndroidManifest.xml:97:17
 activity#com.parse.starter.SignUpActivity
 ADDED from AndroidManifest.xml:99:9
 	android:label

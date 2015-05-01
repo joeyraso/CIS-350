@@ -144,8 +144,8 @@ public class NotificationsPageActivity extends Activity {
     }
 
     // go to the job creation screen
-    public void addJob(View view) {
-        Intent intent = new Intent(this, JobCreationActivity.class);
+    public void viewNotifications(View view) {
+        Intent intent = new Intent(this, NotificationsPageActivity.class);
         startActivity(intent);
     }
 
