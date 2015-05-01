@@ -12,8 +12,8 @@
     <ImageView
         android:id="@+id/logo"
         android:src="@drawable/jobboard_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
     />
@@ -86,17 +86,6 @@
         android:text="Sign In"
         android:textColor="#FFFFFF"/>
 
-   <!-- <Button
-        android:id="@+id/signupButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textColor="#FFFFFF"
-        android:layout_below="@+id/signinButton"
-        android:layout_alignLeft="@+id/signinButton"
-        android:layout_alignStart="@+id/signinButton"
-        android:onClick="goToSignUp"
-        /> -->
     <TextView
         android:id="@+id/signupButton"
         android:layout_width="wrap_content"

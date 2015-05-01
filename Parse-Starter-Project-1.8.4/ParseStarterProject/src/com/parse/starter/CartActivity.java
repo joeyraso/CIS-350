@@ -89,12 +89,6 @@ public class CartActivity extends Activity {
 
     }
 
-    //button logic to go to the homepage screen
-    public void displayHomepage(View view) {
-        Intent intent = new Intent(this, HomepageActivity.class);
-        startActivity(intent);
-    }
-
     //go to the JobDetailsActivity
     public void openJob(int position) {
         String id = jobObjects.get(position).getObjectId();
@@ -102,5 +96,30 @@ public class CartActivity extends Activity {
         intent.putExtra("jobID", id);
         startActivity(intent);
     }
+
+    //go to the profile screen
+    public void displayProfile(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    //go to the cart screen
+    public void displayCart(View view) {
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
+    }
+
+    // go to the job creation screen
+    public void viewNotifications(View view) {
+        Intent intent = new Intent(this, NotificationsPageActivity.class);
+        startActivity(intent);
+    }
+
+    // go to the MyPostedJobs screen
+    public void displayMyPostedJobs(View view) {
+        Intent intent = new Intent(this, MyPostedJobsActivity.class);
+        startActivity(intent);
+    }
+
 
 }
