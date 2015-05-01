@@ -49,7 +49,10 @@
         android:onClick="viewNotifications"
         android:background="@drawable/notifications_icon"/>
     </LinearLayout>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
     <ListView
         android:id="@+id/homeList"

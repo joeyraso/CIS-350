@@ -4,10 +4,6 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.google.android.gms.location.sample.basiclocationsample" >
-
-        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-sdk
         android:minSdkVersion="9"
         android:targetSdkVersion="21" />
@@ -79,8 +75,6 @@
         <meta-data
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/parse_client_key" />
-
-        
 
         <activity
             android:name=".ParseStarterProjectActivity"
