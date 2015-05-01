@@ -32,7 +32,7 @@
     <string name="phone">Phone Number:</string>
     <string name="search_title">Search</string>
     <string name="settingsTab">Settings</string>
-    <string name="sign_up">Please sign up below:</string>
+    <string name="sign_up"><u>Sign Up for Job Board</u></string>
     <string name="startDate">Start Date:</string>
     <string name="title_activity_cart">CartActivity</string>
     <string name="title_activity_current_user">CurrentUserActivity</string>

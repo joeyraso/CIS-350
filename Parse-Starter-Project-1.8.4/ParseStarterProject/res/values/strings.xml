@@ -15,7 +15,7 @@
     <string name="addTab">add</string>
     <string name="jobName">Job Name:</string>
     <string name="jobDescription">Description:</string>
-    <string name="sign_up">Please sign up below:</string>
+    <string name="sign_up"><u>Sign Up for Job Board</u></string>
     <string name="email">Email:</string>
     <string name="phone">Phone Number:</string>
     <string name="startDate">Start Date:</string>

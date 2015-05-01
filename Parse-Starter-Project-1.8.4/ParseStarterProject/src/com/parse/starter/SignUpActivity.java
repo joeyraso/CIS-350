@@ -28,10 +28,10 @@ public class SignUpActivity extends Activity {
         setContentView(R.layout.sign_up_view);
 
         //read in the username, password, email, and phone from layout
-        usernameTextObject = (EditText) findViewById(R.id.usernameText);
-        passwordTextObject = (EditText) findViewById(R.id.passwordText);
-        emailTextObject = (EditText) findViewById(R.id.emailText);
-        phoneTextObject = (EditText) findViewById(R.id.phoneText);
+        usernameTextObject = (EditText) findViewById(R.id.username_edit);
+        passwordTextObject = (EditText) findViewById(R.id.password_edit);
+        emailTextObject = (EditText) findViewById(R.id.email_edit);
+        phoneTextObject = (EditText) findViewById(R.id.phone_edit);
 
         //Calls the signup method once the user presses the "Sign Up" button
         Button signUpButton = (Button) findViewById(R.id.signupButton2);
