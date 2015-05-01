@@ -150,10 +150,14 @@ containing a value of this type.
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int jobboard_icon=0x7f020001;
-        public static final int layout_bg=0x7f020002;
-        public static final int notification_icon=0x7f020003;
+        public static final int cart_icon=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int jobboard_icon=0x7f020002;
+        public static final int layout_bg=0x7f020003;
+        public static final int myjobs_icon=0x7f020004;
+        public static final int notification_icon=0x7f020005;
+        public static final int notifications_icon=0x7f020006;
+        public static final int profile_icon=0x7f020007;
     }
     public static final class id {
 <<<<<<< HEAD
@@ -211,11 +215,12 @@ containing a value of this type.
 =======
         public static final int Request=0x7f0a000b;
         public static final int Title=0x7f0a0017;
-        public static final int action_settings=0x7f0a002d;
+        public static final int action_settings=0x7f0a002e;
         public static final int buttonAddJob=0x7f0a0010;
         public static final int buttonCart=0x7f0a000e;
         public static final int buttonDashboard=0x7f0a0000;
         public static final int buttonMyPostedJobs=0x7f0a000f;
+        public static final int button_container=0x7f0a001d;
         public static final int createJob=0x7f0a001c;
         public static final int creationDescription=0x7f0a0019;
         public static final int creationEndDate=0x7f0a001b;
@@ -227,36 +232,40 @@ containing a value of this type.
         public static final int detailsName=0x7f0a0002;
         public static final int detailsPayment=0x7f0a000a;
         public static final int detailsStartDate=0x7f0a0006;
-        public static final int email=0x7f0a0028;
+        public static final int email=0x7f0a0029;
         public static final int emailTextView=0x7f0a0014;
-        public static final int email_edit=0x7f0a0029;
+        public static final int email_edit=0x7f0a002a;
         public static final int end_date=0x7f0a0007;
-        public static final int homeList=0x7f0a001d;
+        public static final int homeList=0x7f0a001e;
         public static final int list=0x7f0a0001;
         public static final int logOutButton=0x7f0a0016;
-        public static final int logo=0x7f0a001e;
+        public static final int logo=0x7f0a001f;
         public static final int notificationsList=0x7f0a0011;
-        public static final int password=0x7f0a0026;
-        public static final int passwordSignIn=0x7f0a0022;
-        public static final int password_edit=0x7f0a0027;
+        public static final int password=0x7f0a0027;
+        public static final int passwordSignIn=0x7f0a0023;
+        public static final int password_edit=0x7f0a0028;
         public static final int payment=0x7f0a0009;
         public static final int phoneNumberTextView=0x7f0a0015;
-        public static final int phone_edit=0x7f0a002b;
-        public static final int phone_number=0x7f0a002a;
+        public static final int phone_edit=0x7f0a002c;
+        public static final int phone_number=0x7f0a002b;
         public static final int postedJobsList=0x7f0a000d;
         public static final int requestorsList=0x7f0a000c;
-        public static final int search=0x7f0a002e;
-        public static final int signinButton=0x7f0a0023;
-        public static final int signupButton=0x7f0a0024;
-        public static final int signupButton2=0x7f0a002c;
+        public static final int search=0x7f0a002f;
+        public static final int signinButton=0x7f0a0024;
+        public static final int signupButton=0x7f0a0025;
+        public static final int signupButton2=0x7f0a002d;
         public static final int start_date=0x7f0a0005;
-        public static final int textView3=0x7f0a0021;
+        public static final int textView3=0x7f0a0022;
         public static final int title=0x7f0a0012;
-        public static final int username=0x7f0a001f;
-        public static final int usernameSignIn=0x7f0a0020;
+        public static final int username=0x7f0a0020;
+        public static final int usernameSignIn=0x7f0a0021;
         public static final int usernameTextView=0x7f0a0013;
+<<<<<<< Updated upstream
         public static final int username_edit=0x7f0a0025;
 >>>>>>> origin/master
+=======
+        public static final int username_edit=0x7f0a0026;
+>>>>>>> Stashed changes
     }
     public static final class layout {
         public static final int activity_cart=0x7f030000;

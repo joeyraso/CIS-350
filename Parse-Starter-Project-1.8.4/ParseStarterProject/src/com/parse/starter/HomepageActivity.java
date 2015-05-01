@@ -2,7 +2,10 @@ package com.parse.starter;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.parse.FindCallback;
@@ -21,11 +25,6 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import android.app.SearchManager;
-import android.content.Context;
-import android.widget.SearchView;
-import android.widget.Toast;
 
 public class HomepageActivity extends Activity {
     ArrayAdapter<String> homeListAdapter;
@@ -95,6 +94,10 @@ public class HomepageActivity extends Activity {
                 //TwoLineListItem listItem = (TwoLineListItem) view;
                 TextView text1 = (TextView) view.findViewById(android.R.id.text1);
                 TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                text2.setTextColor(Color.parseColor("#dc4e00"));
+                text1.setTextColor(Color.parseColor("#89cede"));
+
                 text1.setText(jobNames.get(position));
                 text1.setTextSize(25);
                 text2.setText(jobDescriptions.get(position));
