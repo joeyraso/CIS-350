@@ -26,13 +26,14 @@ public class ParseStarterProjectActivity extends Activity {
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
         testObject.saveInBackground();
-        /*
+
         Intent intent = new Intent(this, SignInActivity.class);
-        startActivity(intent);*/
+        startActivity(intent);
 
-
+        /*
         Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");
         startActivityForResult(venmoIntent, REQUEST_CODE_VENMO_APP_SWITCH);
+        */
 	}
 
 

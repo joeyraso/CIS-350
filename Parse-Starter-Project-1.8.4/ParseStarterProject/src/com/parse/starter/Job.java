@@ -17,6 +17,7 @@ import com.parse.ParseUser;
 
 import java.util.List;
 
+@ParseClassName("Job")
 public class Job extends ParseObject {
 
     public Job(String name, String description, String start, String end) {
