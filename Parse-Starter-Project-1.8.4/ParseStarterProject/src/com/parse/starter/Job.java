@@ -6,11 +6,15 @@ package com.parse.starter;
  * Created by joeyraso on 4/2/15.
  */
 
+<<<<<<< HEAD
+=======
 import android.location.Location;
 import android.location.LocationListener;
 
 import com.parse.ParseObject;
+>>>>>>> origin/master
 import com.parse.ParseClassName;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import java.util.List;

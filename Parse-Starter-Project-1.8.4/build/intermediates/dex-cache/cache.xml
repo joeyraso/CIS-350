@@ -3,7 +3,23 @@
 
     <item
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         jar="/Users/mjrudin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+=======
+<<<<<<< HEAD
+        jar="/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/json-simple-1.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
+        <dex dex="/Users/joeyraso/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/json-simple-1.1.1-bb9239e0d64fc9d661184567672c5715c8e61519.jar" />
+    </item>
+    <item
+        jar="/Users/joeyraso/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+=======
+<<<<<<< Updated upstream
+        jar="/Users/mjrudin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+>>>>>>> origin/master
+>>>>>>> Stashed changes
         jumboMode="false"
         revision="21.1.2"
         sha1="129874135e6081269ace2312092031558865de12">
@@ -29,6 +45,7 @@
         revision="21.1.2"
         sha1="1d00b92e605b3d970994449b93d8ff135f96bb41">
         <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-74513f9415850e2e21ac3b896ef4e4a9d2f9cdbc.jar" />
+<<<<<<< Updated upstream
     </item>
     <item
         jar="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/Parse-1.8.4.jar"
@@ -38,6 +55,17 @@
         <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-034c3c5ae0ee16923556ab0b8819aec75cb4c921.jar" />
     </item>
     <item
+=======
+    </item>
+    <item
+        jar="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/Parse-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0fcb6bbc9cf6d2643a90c812539aa82ed16ea315">
+        <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-034c3c5ae0ee16923556ab0b8819aec75cb4c921.jar" />
+    </item>
+    <item
+>>>>>>> Stashed changes
         jar="/Users/mjrudin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -63,6 +91,7 @@
         revision="21.1.2"
         sha1="1d00b92e605b3d970994449b93d8ff135f96bb41">
         <dex dex="/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-669cc773a59d87b4cc121f76ec6668cca605fdc8.jar" />
+<<<<<<< Updated upstream
     </item>
     <item
         jar="/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
@@ -72,6 +101,17 @@
         <dex dex="/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-d3f4762d5db8179a29d694818c0492e91e7215d4.jar" />
     </item>
     <item
+=======
+    </item>
+    <item
+        jar="/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/ankitachadha/Desktop/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-d3f4762d5db8179a29d694818c0492e91e7215d4.jar" />
+    </item>
+    <item
+>>>>>>> Stashed changes
         jar="/Users/ankitachadha/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
         jumboMode="false"
         revision="21.1.2"
