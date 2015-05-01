@@ -22,8 +22,10 @@ public class ViewRequestorActivity extends Activity {
 
     String userId;
     String jobId;
+    String jobName;
     boolean isJobDoer = false;
     boolean isComplete = false;
+    String jobStatus;
     Job job;
 
 
@@ -34,18 +36,29 @@ public class ViewRequestorActivity extends Activity {
         Intent intent = getIntent();
         userId = intent.getStringExtra("userID");
         jobId = intent.getStringExtra("jobID");
+        displayUserInfoParse();
+    }
 
+    public void displayUserInfoParse() {
+
+        //Query the job
         ParseQuery<Job> query = new ParseQuery("Job");
         try {
             job = (Job) query.get(jobId);
+            jobName = job.getString("jobName");
 
             if (userId.equals(job.get("jobDoer"))) {
                 isJobDoer = true;
             }
 
-            String status = job.getString("jobStatus");
-            if (status.equals("completed")) {
+            jobStatus = job.getString("jobStatus");
+            if (jobStatus.equals("completed")) {
                 isComplete = true;
+            }
+
+            if (jobStatus.equals("inProgress")) {
+                TextView buttonID = (TextView) findViewById(R.id.moveForwardButton);
+                buttonID.setText("JOB IN PROGRESS");
             }
 
         } catch (ParseException e) {
@@ -53,18 +66,13 @@ public class ViewRequestorActivity extends Activity {
         }
 
         if (isComplete){
-            //Make a checkmark show up as well?
-            TextView payNow = (TextView) findViewById(R.id.logOutButton);
+            //Make a check mark show up as well
+            TextView payNow = (TextView) findViewById(R.id.moveForwardButton);
             payNow.setText("Pay Now");
         }
 
 
 
-        displayUserInfoParse();
-    }
-
-    public void displayUserInfoParse() {
-        Log.v("Debug:", "calls display");
         //Query Parse for the user that requested the job, so we can display their name
         ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
         userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
@@ -72,8 +80,11 @@ public class ViewRequestorActivity extends Activity {
             public void done(ParseUser o, ParseException e) {
                 /*final String userNameParse = o.getUsername();*/
                 String userName = o.getUsername();
-                TextView username = (TextView) findViewById(R.id.usernameTextView);
-                username.append(userName);
+                TextView username = (TextView) findViewById(R.id.userNameDetails);
+                username.setText(userName);
+
+                TextView jobTitle = (TextView) findViewById(R.id.title);
+                jobTitle.setText(jobName);
 
                 String userEmail;
                 String userPhone;
@@ -81,15 +92,15 @@ public class ViewRequestorActivity extends Activity {
                    userEmail = o.getString("email");
                    userPhone = o.getString("phone");
                 } else {
-                   userEmail = "Viewable upon acceptance.";
-                   userPhone = "Viewable upon acceptance.";
+                   userEmail = "**********";
+                   userPhone = "**********";
                }
 
-                TextView email = (TextView) findViewById(R.id.emailTextView);
-                email.append(userEmail);
+                TextView email = (TextView) findViewById(R.id.emailDetails);
+                email.setText(userEmail);
 
-                TextView phone = (TextView) findViewById(R.id.phoneNumberTextView);
-                phone.append(userPhone);
+                TextView phone = (TextView) findViewById(R.id.phoneDetail);
+                phone.setText(userPhone);
 
             }
         });
@@ -98,12 +109,16 @@ public class ViewRequestorActivity extends Activity {
     public void moveForward(View view) {
         if (isComplete) {
             payJobDoer();
+        } else if (jobStatus.equals("inProgress")) {
+
+            return;
         } else {
             selectAsJobDoer();
         }
     }
 
     public void payJobDoer() {
+
         /*
         Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");
         startActivityForResult(venmoIntent, REQUEST_CODE_VENMO_APP_SWITCH);
@@ -118,10 +133,16 @@ public class ViewRequestorActivity extends Activity {
         job.saveInBackground();
         isJobDoer = true;
 
+        //Display the info
+        displayUserInfoParse();
+        TextView buttonText = (TextView) findViewById(R.id.moveForwardButton);
+        buttonText.setText("In Progress.");
+
         String jobName = job.getString("jobName");
         String notification = "You have been selected to complete " + jobName;
         NotificationsManager.notifyUser(userId, notification);
         removeOtherRequesters();
+
     }
 
     private void removeOtherRequesters() {

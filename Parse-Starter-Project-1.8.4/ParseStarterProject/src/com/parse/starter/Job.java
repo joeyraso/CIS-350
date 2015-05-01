@@ -7,6 +7,7 @@ package com.parse.starter;
  */
 
 
+import com.parse.ParseACL;
 import com.parse.ParseObject;
 
 import android.location.Location;
@@ -27,6 +28,11 @@ public class Job extends ParseObject {
         setEndDate(end);
         setJobPoster();
         setJobStatus("available");  //default
+
+        ParseACL acl = new ParseACL();
+        acl.setPublicReadAccess(true);
+        acl.setPublicWriteAccess(true);
+
 
 //        LocationListener locationListener = new LocationListener() {
 //            public void onLocationChanged(Location location) {

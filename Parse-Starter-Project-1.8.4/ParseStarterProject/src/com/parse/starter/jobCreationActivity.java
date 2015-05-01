@@ -108,7 +108,7 @@ public class JobCreationActivity extends Activity {
         });
 
 
-        Intent intent = new Intent(this, HomepageActivity.class);
+        Intent intent = new Intent(this, MyPostedJobsActivity.class);
         startActivity(intent);
     }
 
@@ -128,9 +128,8 @@ public class JobCreationActivity extends Activity {
         return;
     }
 
-    private void getLocation() {
-
-
+    private void getLocation(View view) {
+        return;
     }
 
 

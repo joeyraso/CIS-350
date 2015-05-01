@@ -7,7 +7,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#ffffff"
-    tools:context=".JobDetailsActivity">
+    tools:context=".JobDetailsActivity"
+    style="@style/LogInFont">
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,13 +20,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:text="Please Enter Job Details"
-                android:gravity="center"
+                android:textColor="#dc4e00"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:text="Enter Job Details:"
                 android:textSize="30dp"
                 android:paddingBottom="30dp"
                 />
@@ -45,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Name:"
                     android:layout_weight="0.75"
                     android:textSize="18dp"
@@ -72,9 +75,9 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Description:"
                     android:layout_weight="0.75"
                     android:textSize="18dp"
@@ -102,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Start Date:"
                     android:layout_weight="0.75"
                     android:textSize="18dp"
@@ -130,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="End Date:"
                     android:layout_weight="0.75"
                     android:textSize="18dp"
@@ -158,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Location:"
                     android:layout_weight="0.75"
                     android:textSize="18dp"
@@ -184,6 +187,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
+                    style="@style/buttonBackground"
                     android:id="@+id/createJob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

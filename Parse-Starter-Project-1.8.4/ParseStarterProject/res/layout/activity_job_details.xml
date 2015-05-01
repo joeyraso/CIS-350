@@ -23,10 +23,10 @@
                     android:id="@+id/detailsName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:gravity="center"
                     android:textSize="30dp"
-                    android:paddingBottom="50dp"
+                    android:paddingBottom="25dp"
                     />
             </LinearLayout>
 
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Description:"
                     android:layout_weight="0.8"
                     android:textSize="16dp"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Start Date:"
                     android:layout_weight="0.8"
                     android:textSize="16dp"
@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="End Date:"
                     android:layout_weight="0.8"
                     android:textSize="16dp"
@@ -127,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Payment:"
                     android:layout_weight="0.8"
                     android:textSize="16dp"
@@ -156,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Email:"
                     android:layout_weight="0.8"
                     android:textSize="16dp"
@@ -187,7 +187,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Phone:"
                     android:layout_weight="0.8"
                     android:textSize="16dp"
@@ -218,7 +218,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:layout_margin="4dp"
-                    android:textColor="#000000"
+                    android:textColor="#89cede"
                     android:text="Location:"
                     android:layout_weight="0.8"
                     android:textSize="16dp"
@@ -240,41 +240,53 @@
 
         </LinearLayout>
 
+    <LinearLayout
+        android:layout_below="@id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
     <Button
         android:id="@+id/Request"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
-        android:textStyle="bold"
         android:text="Request Job"
-        android:textSize="20dp"
-        android:layout_marginTop="15dp"
-        android:onClick="updateJob" />
-
-
-
-
-    <Button
-        android:id="@+id/buttonDashboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="Dashboard"
-        android:onClick="displayHomepage"/>
+        android:textSize="15dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:onClick="updateJob"
+        style="@style/buttonBackground"/>
 
     <Button
         android:id="@+id/moreInfoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
         android:text="Request Info"
-        android:onClick="requestJobDetails"/>
+        android:textSize="15dp"
+        android:onClick="requestJobDetails"
+        style="@style/buttonBackground"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/buttonDashboard"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/dashboard_icon"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="0dp"
+        android:onClick="displayHomepage"
+        android:layout_alignParentBottom="true"
+    />
+
+
+
 
 </RelativeLayout>

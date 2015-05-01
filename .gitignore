@@ -10,3 +10,17 @@
 *.bin
 
 *.bin
+
+Parse-Starter-Project-1.8.4/ParseStarterProject/build/generated/source/r/debug/com/parse/starter/R.java
+
+Parse-Starter-Project-1.8.4/ParseStarterProject/build/generated/source/r/debug/com/parse/starter/R.java
+
+Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/dex/debug/classes.dex
+
+*.dex
+
+Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/incremental/mergeResources/debug/merger.xml
+
+*.apk
+
+Parse-Starter-Project-1.8.4/ParseStarterProject/build/outputs/apk/ParseStarterProject-debug-unaligned.apk

@@ -126,5 +126,11 @@ public class CartActivity extends Activity {
         startActivity(intent);
     }
 
+    //button logic to go to the homepage screen
+    public void displayHomepage(View view) {
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
+    }
+
 
 }

@@ -24,7 +24,7 @@ public class ProfileActivity extends Activity {
         displayUserDetails();
 
         //Calls the logout method once the user presses the "Logout" button
-        Button logOutBut = (Button) findViewById(R.id.logOutButton);
+        Button logOutBut = (Button) findViewById(R.id.moveForwardButton);
         logOutBut.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 logoutUser();
@@ -96,6 +96,12 @@ public class ProfileActivity extends Activity {
     // go to the MyPostedJobs screen
     public void displayMyPostedJobs(View view) {
         Intent intent = new Intent(this, MyPostedJobsActivity.class);
+        startActivity(intent);
+    }
+
+    //button logic to go to the homepage screen
+    public void displayHomepage(View view) {
+        Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
     }
 

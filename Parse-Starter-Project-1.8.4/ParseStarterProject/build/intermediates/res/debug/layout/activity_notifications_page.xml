@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/white"
+    style="@style/LogInFont">
 
 
     <!--TABS AT BOTTOM OF PAGE -->
@@ -13,12 +14,23 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true">
 
+
+        <TextView
+            android:id="@+id/text_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:layout_marginRight="25dp"
+            style="@style/buttonContainer"
+            />
+
         <TextView
             android:id="@+id/text_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profile"
             android:layout_marginRight="25dp"
+            style="@style/buttonContainer"
             />
 
         <TextView
@@ -27,7 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/text_profile"
             android:text="Cart"
-            android:layout_marginRight="27dp"/>
+            android:layout_marginRight="18dp"
+            style="@style/buttonContainer"/>
 
         <TextView
             android:id="@+id/text_myjobs"
@@ -35,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/text_cart"
             android:text="My Jobs"
-
+            style="@style/buttonContainer"
             />
 
         <TextView
@@ -43,9 +56,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/text_myjobs"
-            android:text="Notifications"
-
-            android:layout_marginLeft = "15dp"/>
+            android:text="Alerts"
+            android:layout_marginLeft = "15dp"
+            style="@style/buttonContainer"/>
 
 
     </LinearLayout>
@@ -59,11 +72,22 @@
         android:layout_above="@id/button_names_container">
 
         <Button
+            android:id="@+id/buttonDashboard"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/dashboard_icon"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="0dp"
+            android:onClick="displayHomepage"
+            />
+
+        <Button
             android:id="@+id/buttonProfile"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/profile_icon"
             android:layout_marginRight="15dp"
+            android:layout_marginLeft="7dp"
             android:onClick="displayProfile"
             />
 
@@ -81,7 +105,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/myjobs_icon"
             android:onClick="displayMyPostedJobs"/>
         <Button
@@ -94,6 +118,7 @@
             android:onClick="viewNotifications"
             android:background="@drawable/notifications_icon"/>
     </LinearLayout>
+    <!--END TABS AT BOTTOM OF PAGE -->
 
     <ListView
         android:id="@+id/notificationsList"
@@ -105,4 +130,8 @@
     </ListView>
 
 </RelativeLayout>
+<<<<<<< HEAD
+<!-- From: file:/Users/mjrudin/Documents/Junior%20Year/CIS350/CIS-350%20App/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/activity_notifications_page.xml -->
+=======
 <!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/activity_notifications_page.xml -->
+>>>>>>> origin/master

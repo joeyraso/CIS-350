@@ -3,6 +3,7 @@ package com.parse.starter;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -118,6 +119,10 @@ public class SearchableActivity extends Activity {
                     //TwoLineListItem listItem = (TwoLineListItem) view;
                     TextView text1 = (TextView) view.findViewById(android.R.id.text1);
                     TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                    text2.setTextColor(Color.parseColor("#dc4e00"));
+                    text1.setTextColor(Color.parseColor("#89cede"));
+
                     text1.setText(jobNames.get(position));
                     text1.setTextSize(25);
                     text2.setText(jobDescriptions.get(position));

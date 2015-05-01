@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/ParseCrashReporting-1.8.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1d00b92e605b3d970994449b93d8ff135f96bb41">
-        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-6cb293f24b490c59a78947a35b0334646e1b850d.jar" />
-    </item>
-    <item
         jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/Parse-1.8.4.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -35,6 +28,13 @@
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/classes-05195f18b46c15a2549105a3a0cd90b90d45ff54.jar" />
+    </item>
+    <item
+        jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/ParseCrashReporting-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1d00b92e605b3d970994449b93d8ff135f96bb41">
+        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-6cb293f24b490c59a78947a35b0334646e1b850d.jar" />
     </item>
     <item
         jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"

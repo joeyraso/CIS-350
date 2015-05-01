@@ -1,6 +1,8 @@
 package com.parse.starter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -145,8 +147,25 @@ public class JobDetailsActivity extends Activity {
         });
 
         String message = doerUsername + " has completed task: " + jobName;
-
         NotificationsManager.notifyUser(posterID, message);
+
+        CharSequence ratings[] = new CharSequence[] {"*", "**", "***", "****", "*****"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("How would you rate this job?");
+        builder.setItems(ratings, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int rating) {
+                //user.put(rating, rating);
+                //update in background
+                if (rating == 0) {
+                    Log.v("DEBUG:", "Bad rating.");
+                }
+                return;
+            }
+        });
+        builder.show();
+
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
     }
@@ -157,11 +176,18 @@ public class JobDetailsActivity extends Activity {
         query.getInBackground(jobId, new GetCallback<Job>() {
             @Override
             public void done(Job o, ParseException e) {
-                String posterID = o.getJobPoster();
-                ParseGeoPoint location = new ParseGeoPoint(30, 30); //dummy value
-                TextView locationText = (TextView) findViewById(R.id.userLocation);
-                locationText.setText(location.toString());
 
+                //dummy value, if it was real - would still work.
+                //User permissions prohibited development
+                ParseGeoPoint location = new ParseGeoPoint(40.0, 75.2);
+                TextView locationText = (TextView) findViewById(R.id.userLocation);
+                String lat = "" + location.getLatitude();
+                lat = lat.substring(0, 4);
+                String longitude = "" + location.getLongitude();
+                longitude = longitude.substring(0, 4);
+                locationText.setText(lat + ", " + longitude);
+
+                String posterID = o.getJobPoster();
                 //Find the job poster.
                 ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
                 userQuery.getInBackground(userId, new GetCallback<ParseUser>() {

@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 
 import com.parse.FindCallback;
 import com.parse.GetCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -35,7 +37,7 @@ public class NotificationsPageActivity extends Activity {
 
     ArrayAdapter<String> notificationsListAdapter;
     String userId = ParseUser.getCurrentUser().getObjectId();
-    final ArrayList<String> notifications = new ArrayList<String>();
+    ArrayList<String> notifications = new ArrayList<String>();
 
 
     @Override
@@ -47,14 +49,17 @@ public class NotificationsPageActivity extends Activity {
     }
 
     private void updateNotificationsList() {
+        notifications = new ArrayList<String>();
         //query to find notifications
         ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
         userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
             @Override
             public void done(ParseUser o, ParseException e) {
                 List<String> currNotifications = (List<String>) o.get("notifications");
-                for (String s: currNotifications) {
-                    notifications.add(s);
+                if (currNotifications != null) {
+                    for (String s: currNotifications) {
+                        notifications.add(s);
+                    }
                 }
             }
         });
@@ -125,15 +130,15 @@ public class NotificationsPageActivity extends Activity {
     //give the user the option of deleting this job
     public void deleteJob(final int position) {
         ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
-        userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
-            @Override
-            public void done(ParseUser o, ParseException e) {
-                List<String> currNotifications = (List<String>) o.get("notifications");
-                notifications.remove(position);
-                o.put("notifications", notifications);
-                o.saveInBackground();
-            }
-        });
+        try {
+            ParseUser user = (ParseUser) userQuery.get(userId);
+            List<String> userNotifications = (List<String>) user.get("notifications");
+            userNotifications.remove(position);
+            user.put("notifications", userNotifications);
+            user.save();
+        } catch (ParseException e) {
+            Log.v("There is no user associated with the id.", "");
+        }
 
         //now we want to refresh our page
         updateNotificationsList();
@@ -164,4 +169,9 @@ public class NotificationsPageActivity extends Activity {
         startActivity(intent);
     }
 
+    //button logic to go to the homepage screen
+    public void displayHomepage(View view) {
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
+    }
 }

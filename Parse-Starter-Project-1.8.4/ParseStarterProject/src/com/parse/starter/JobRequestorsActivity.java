@@ -2,6 +2,7 @@ package com.parse.starter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -104,6 +105,9 @@ public class JobRequestorsActivity extends Activity {
                     //TwoLineListItem listItem = (TwoLineListItem) view;
                     TextView text1 = (TextView) view.findViewById(android.R.id.text1);
                     TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+                    text2.setTextColor(Color.parseColor("#dc4e00"));
+                    text1.setTextColor(Color.parseColor("#89cede"));
+
                     text1.setText(userNames.get(position));
                     text1.setTextSize(25);
                     text2.setText("contact");
@@ -128,6 +132,30 @@ public class JobRequestorsActivity extends Activity {
         Intent intent = new Intent(this, ViewRequestorActivity.class);
         intent.putExtra("userID", requestorIds.get(position));
         intent.putExtra("jobID", jobId);
+        startActivity(intent);
+    }
+
+    //go to the profile screen
+    public void displayProfile(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    //go to the cart screen
+    public void displayCart(View view) {
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
+    }
+
+    // go to the job creation screen
+    public void viewNotifications(View view) {
+        Intent intent = new Intent(this, NotificationsPageActivity.class);
+        startActivity(intent);
+    }
+
+    // go to the MyPostedJobs screen
+    public void displayMyPostedJobs(View view) {
+        Intent intent = new Intent(this, MyPostedJobsActivity.class);
         startActivity(intent);
     }
 

@@ -151,5 +151,17 @@ public class MyPostedJobsActivity extends Activity {
         Intent intent = new Intent(this, MyPostedJobsActivity.class);
         startActivity(intent);
     }
+
+    //button logic to go to the homepage screen
+    public void displayHomepage(View view) {
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
+    }
+
+    //button logic to create a new job
+    public void createJob(View view) {
+        Intent intent = new Intent(this, JobCreationActivity.class);
+        startActivity(intent);
+    }
 }
 
