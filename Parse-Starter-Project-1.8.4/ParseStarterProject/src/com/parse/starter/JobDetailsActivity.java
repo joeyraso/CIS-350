@@ -13,11 +13,8 @@ import android.widget.Toast;
 import com.parse.GetCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
-import com.parse.ParseGeoPoint;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +33,6 @@ public class JobDetailsActivity extends Activity {
 
         Intent intent = getIntent();
         jobId = intent.getStringExtra("jobID");
-        Log.v("DEBUG:", "commencing.");
 
         //Query Parse
         ParseQuery<Job> query = new ParseQuery("Job");
@@ -53,28 +49,17 @@ public class JobDetailsActivity extends Activity {
                 jobDescriptionTextObject.setText(o.getJobDescription());
                 startDateTextObject.setText(o.getStartDate());
                 endDateTextObject.setText(o.getEndDate());
+                if (job.getString("jobDoer").equals(userId)) {
+                    isJobDoer = true;
+                }
             }
         });
 
-        ParseQuery<Job> query2 = new ParseQuery("Job");
-        try {
-            job = (Job) query2.get(jobId);
-            String doer = job.getString("jobDoer");
-            if (userId.equals(doer)) {
-                isJobDoer = true;
-            }
-        } catch (ParseException e) {
-            Log.v("Parse Exception:", "While trying to get job");
-        }
-
-
         TextView buttonTitle = (TextView) findViewById(R.id.Request);
         if (isJobDoer) {
-            Log.v("DEBUG:", "isJobDoer in onComplete");
             //This job belongs to them.
             buttonTitle.setText("Completed.");
         } else {
-            Log.v("DEBUG:", "is not job doer in onComplete");
             buttonTitle.setText("Request Job");
         }
 
@@ -108,38 +93,11 @@ public class JobDetailsActivity extends Activity {
             isJobDoer();
         } else {
             jobRequesting();
+
         }
     }
 
     private void isJobDoer() {
-        //Find the job in question
-        ParseQuery<Job> query = new ParseQuery("Job");
-        query.getInBackground(jobId, new GetCallback<Job>() {
-            @Override
-            public void done(Job o, ParseException e) {
-                String posterID = o.getJobPoster();
-                ParseGeoPoint location = new ParseGeoPoint(30, 30); //dummy value
-                TextView locationText = (TextView) findViewById(R.id.userLocation);
-                locationText.setText(location.toString());
-
-                //Find the job poster.
-                ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
-                userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
-                    @Override
-                    public void done(ParseUser o, ParseException e) {
-                        String email = o.getString("email");
-                        TextView emailText = (TextView) findViewById(R.id.contactInfo);
-                        emailText.setText(email);
-
-                        String phone = o.getString("phone");
-                        TextView phoneText = (TextView) findViewById(R.id.userPhoneNumber);
-                        phoneText.setText(phone);
-
-                    }
-                });
-
-            }
-        });
 
     }
 

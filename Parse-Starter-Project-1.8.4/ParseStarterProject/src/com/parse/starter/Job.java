@@ -6,17 +6,16 @@ package com.parse.starter;
  * Created by joeyraso on 4/2/15.
  */
 
-
-import com.parse.ParseObject;
-
 import android.location.Location;
 import android.location.LocationListener;
 
+import com.parse.ParseObject;
 import com.parse.ParseClassName;
 import com.parse.ParseUser;
 
 import java.util.List;
 
+@ParseClassName("Job")
 public class Job extends ParseObject {
 
     public Job(String name, String description, String start, String end) {

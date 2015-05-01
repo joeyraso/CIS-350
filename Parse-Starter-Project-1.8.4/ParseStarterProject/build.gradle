@@ -12,7 +12,6 @@ buildscript {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: 'json-simple-1.1.1.jar')
     compile fileTree(dir: 'libs', include: 'Parse-*.jar')
     compile fileTree(dir: 'libs', include: 'ParseCrashReporting-*.jar')
     compile 'com.parse.bolts:bolts-android:1.1.4'
