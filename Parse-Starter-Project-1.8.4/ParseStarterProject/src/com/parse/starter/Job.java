@@ -8,6 +8,11 @@ package com.parse.starter;
 
 
 import com.parse.ParseObject;
+
+import android.location.Location;
+import android.location.LocationListener;
+
+import com.parse.ParseClassName;
 import com.parse.ParseUser;
 
 import java.util.List;
