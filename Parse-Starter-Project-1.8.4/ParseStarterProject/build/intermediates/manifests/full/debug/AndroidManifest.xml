@@ -90,10 +90,13 @@
             android:label="@string/title_activity_sign_in" >
         </activity>
         <activity
+<<<<<<< Updated upstream
             android:name="com.parse.starter.VenmoWebViewActivity"
             android:label="" >
         </activity>
         <activity
+=======
+>>>>>>> Stashed changes
             android:name="com.parse.starter.HomepageActivity"
             android:label="" >
             <meta-data
@@ -117,7 +120,11 @@
             android:label="@string/title_activity_cart" >
         </activity>
         <activity
+<<<<<<< Updated upstream
             android:name="com.parse.starter.jobCreationActivity"
+=======
+            android:name="com.parse.starter.JobCreationActivity"
+>>>>>>> Stashed changes
             android:label="@string/title_activity_job_creation" >
         </activity>
         <activity
@@ -143,6 +150,17 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
+<<<<<<< Updated upstream
+=======
+        <activity
+            android:name="com.parse.starter.ViewRequestorActivity"
+            android:label="@string/title_activity_view_requestor" >
+        </activity>
+        <activity
+            android:name="com.parse.starter.NotificationsPageActivity"
+            android:label="@string/title_activity_notifications_page" >
+        </activity>
+>>>>>>> Stashed changes
     </application>
 
 </manifest>
