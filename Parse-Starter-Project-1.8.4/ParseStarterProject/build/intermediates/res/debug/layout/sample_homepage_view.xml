@@ -40,8 +40,8 @@
         android:layout_toRightOf="@id/buttonMyPostedJobs"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="New Job"
-        android:onClick="addJob"/>
+        android:text="Notifications"
+        android:onClick="viewNotifications"/>
 
     <ListView
         android:id="@+id/homeList"

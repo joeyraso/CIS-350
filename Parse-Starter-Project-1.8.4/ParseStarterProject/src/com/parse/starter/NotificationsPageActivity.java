@@ -42,6 +42,10 @@ public class NotificationsPageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications_page);
 
+        updateNotificationsList();
+    }
+
+    private void updateNotificationsList() {
         //query to find notifications
         ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
         userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
@@ -67,7 +71,7 @@ public class NotificationsPageActivity extends Activity {
                 View view = super.getView(position, convertView, parent);
                 TextView textView = (TextView) view.findViewById(android.R.id.text1);
                 textView.setText(notifications.get(position));
-                textView.setTextSize(25);
+                textView.setTextSize(20);
 
                 return view;
             }
@@ -128,6 +132,9 @@ public class NotificationsPageActivity extends Activity {
                 o.saveInBackground();
             }
         });
+
+        //now we want to refresh our page
+        updateNotificationsList();
     }
 
 
