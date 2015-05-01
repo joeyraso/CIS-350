@@ -1,6 +1,8 @@
 package com.parse.starter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -118,6 +121,35 @@ public class ViewRequestorActivity extends Activity {
     }
 
     public void payJobDoer() {
+        //Before paying the completer, rate how they did
+        CharSequence ratings[] = new CharSequence[] {"*", "* *", "* * *", "* * * *", "* * * * *"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("How would you rate this job?");
+        builder.setItems(ratings, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, final int rating) {
+            //Query Parse for the user that requested the job, so we can display their name
+            ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+            userQuery.getInBackground(userId, new GetCallback<ParseUser>() {
+                @Override
+                public void done(ParseUser o, ParseException e) {
+                Double oldRating = Double.parseDouble(o.get("userRating").toString());
+
+                //update the rating to be the average of old ratings and new rating
+                oldRating = (oldRating + rating + 1.0)/2;
+                o.put("userRating", oldRating.toString());
+                o.saveInBackground();
+                }
+            });
+
+            if (rating == 0) {
+                Log.v("DEBUG:", "Bad rating.");
+            }
+            return;
+            }
+        });
+        builder.show();
 
         /*
         Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");

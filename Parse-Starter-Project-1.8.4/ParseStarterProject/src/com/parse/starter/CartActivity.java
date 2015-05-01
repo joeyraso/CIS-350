@@ -35,26 +35,29 @@ public class CartActivity extends Activity {
 
         //List of IDS for all the jobs
         List<String> myRequestedJobs = ParseUser.getCurrentUser().getList("myRequestedJobs");
-        for (String jobId : myRequestedJobs) {
-            //Query Parse
-            ParseQuery<Job> query = new ParseQuery("Job");
-            query.getInBackground(jobId, new GetCallback<Job>() {
-                @Override
-                public void done(final Job o, ParseException e) {
-                    jobObjects.add(o);
-                    final String name = o.getJobName();
+        if (myRequestedJobs != null ) {
+            for (String jobId : myRequestedJobs) {
+                //Query Parse
+                ParseQuery<Job> query = new ParseQuery("Job");
+                query.getInBackground(jobId, new GetCallback<Job>() {
+                    @Override
+                    public void done(final Job o, ParseException e) {
+                        jobObjects.add(o);
+                        final String name = o.getJobName();
 
-                    runOnUiThread(new Runnable() {
-                        public void run() {
-                            jobNames.add(name);
-                            jobDescriptions.add(o.getString("jobDescription"));
-                            cartListAdapter.notifyDataSetChanged();
-                        }
-                    });
-                }
-            });
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                jobNames.add(name);
+                                jobDescriptions.add(o.getString("jobDescription"));
+                                cartListAdapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
+                });
 
+            }
         }
+
         cartListAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_2,

@@ -39,29 +39,32 @@ public class MyPostedJobsActivity extends Activity {
 
         //List of IDS for all the jobs
         List<String> myPostedJobs = ParseUser.getCurrentUser().getList("myPostedJobs");
-        for (String jobId : myPostedJobs) {
-            //Query Parse
-            ParseQuery<Job> query = new ParseQuery("Job");
-            query.getInBackground(jobId, new GetCallback<Job>() {
-                @Override
-                public void done(final Job o, ParseException e) {
-                    if (o == null) return;
-                    final String name = o.getJobName();
-                    jobObjects.add(o);
-                    shownObjects.add(o);
+        if (myPostedJobs != null){
+            for (String jobId : myPostedJobs) {
+                //Query Parse
+                ParseQuery<Job> query = new ParseQuery("Job");
+                query.getInBackground(jobId, new GetCallback<Job>() {
+                    @Override
+                    public void done(final Job o, ParseException e) {
+                        if (o == null) return;
+                        final String name = o.getJobName();
+                        jobObjects.add(o);
+                        shownObjects.add(o);
 
-                    //Thread used to ensure list appears properly each time it is loaded
-                    //Also adds each item to list
-                    runOnUiThread(new Runnable() {
-                        public void run() {
-                            jobNames.add(name);
-                            jobDescriptions.add(o.getString("jobDescription"));
-                            postedlistAdapter.notifyDataSetChanged();
-                        }
-                    });
+                        //Thread used to ensure list appears properly each time it is loaded
+                        //Also adds each item to list
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                jobNames.add(name);
+                                jobDescriptions.add(o.getString("jobDescription"));
+                                postedlistAdapter.notifyDataSetChanged();
+                            }
+                        });
 
-                }
-            });
+                    }
+                });
+            }
+
         }
 
         ListView postedJobsListview = (ListView) findViewById(R.id.postedJobsList);

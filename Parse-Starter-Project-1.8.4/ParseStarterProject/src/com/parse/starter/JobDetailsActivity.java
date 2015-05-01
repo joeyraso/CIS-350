@@ -149,23 +149,6 @@ public class JobDetailsActivity extends Activity {
         String message = doerUsername + " has completed task: " + jobName;
         NotificationsManager.notifyUser(posterID, message);
 
-        CharSequence ratings[] = new CharSequence[] {"*", "**", "***", "****", "*****"};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("How would you rate this job?");
-        builder.setItems(ratings, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int rating) {
-                //user.put(rating, rating);
-                //update in background
-                if (rating == 0) {
-                    Log.v("DEBUG:", "Bad rating.");
-                }
-                return;
-            }
-        });
-        builder.show();
-
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
     }
@@ -268,11 +251,4 @@ public class JobDetailsActivity extends Activity {
         startActivity(intent);
     }
 
-
-    public void payJobDoer() {
-        /*
-        Intent venmoIntent = VenmoLibrary.openVenmoPayment("2590", "Job Board", "joeyraso", "0", "food", "pay");
-        startActivityForResult(venmoIntent, REQUEST_CODE_VENMO_APP_SWITCH);
-        */
-    }
 }

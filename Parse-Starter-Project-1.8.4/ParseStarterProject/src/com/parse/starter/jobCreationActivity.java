@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
@@ -95,6 +96,12 @@ public class JobCreationActivity extends Activity {
         }
 
         final Job newJob = new Job(jobName, jobDescription, startDate, endDate);
+
+        //Ensures all users can see jobs posted by other users
+        ParseACL acl = newJob.getACL();
+        acl.setPublicReadAccess(true);
+        acl.setPublicWriteAccess(true);
+
         newJob.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {

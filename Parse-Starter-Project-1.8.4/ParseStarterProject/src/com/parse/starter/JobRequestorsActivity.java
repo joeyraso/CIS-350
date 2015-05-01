@@ -62,6 +62,7 @@ public class JobRequestorsActivity extends Activity {
 
         // get the list of requestors
         final ArrayList<String> userNames = new ArrayList<String>();
+        final ArrayList<String> userRatings = new ArrayList<String>();
 
         if (requestorIds != null) {
             Log.v("DEBUG:", "our list is non null.");
@@ -73,12 +74,30 @@ public class JobRequestorsActivity extends Activity {
                     @Override
                     public void done(ParseUser o, ParseException e) {
                         final String username = o.getUsername();
+                        final String rating = o.get("userRating").toString();
 
                         //Thread used to ensure list appears properly each time it is loaded
                         //Also adds each item to list
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 userNames.add(username);
+                                //Allows rating to be shown as stars
+                                if (Double.parseDouble(rating) < 1.5) {
+                                    userRatings.add("*");
+                                }
+                                else if (Double.parseDouble(rating) < 2.5) {
+                                    userRatings.add("* *");
+                                }
+                                else if (Double.parseDouble(rating) < 3.5) {
+                                    userRatings.add("* * *");
+                                }
+                                else if (Double.parseDouble(rating) < 4.5) {
+                                    userRatings.add("* * * *");
+                                }
+                                else {
+                                    userRatings.add("* * * * *");
+                                }
+
                                 requestorlistAdapter.notifyDataSetChanged();
                             }
                         });
@@ -110,7 +129,7 @@ public class JobRequestorsActivity extends Activity {
 
                     text1.setText(userNames.get(position));
                     text1.setTextSize(25);
-                    text2.setText("contact");
+                    text2.setText("Rating: " + userRatings.get(position));
                     text2.setPadding(50, 0, 0, 0);
                     return view;
                 }

@@ -2,53 +2,53 @@
 <items version="2" >
 
     <item
-        jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/Parse-1.8.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0fcb6bbc9cf6d2643a90c812539aa82ed16ea315">
-        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-287986bfe35ac22bf690c2206eb85c94cd254aae.jar" />
-    </item>
-    <item
-        jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/json-simple-1.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
-        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/json-simple-1.1.1-297ae05d35028f15c94dc6af3342cc67b1e828f0.jar" />
-    </item>
-    <item
-        jar="/Users/Anjali/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="129874135e6081269ace2312092031558865de12">
-        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-203135653493071b7e9474d5d1df7d1f4b14013b.jar" />
-    </item>
-    <item
-        jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/classes-05195f18b46c15a2549105a3a0cd90b90d45ff54.jar" />
-    </item>
-    <item
-        jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/ParseCrashReporting-1.8.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1d00b92e605b3d970994449b93d8ff135f96bb41">
-        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-6cb293f24b490c59a78947a35b0334646e1b850d.jar" />
-    </item>
-    <item
-        jar="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-06a5701559b48ea8ee15f4f07eb4dae8098e8140.jar" />
+        <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-894ea5e553b32fc41afd5c52a6b9873f1dd932b2.jar" />
     </item>
     <item
-        jar="/Users/Anjali/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/ParseCrashReporting-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1d00b92e605b3d970994449b93d8ff135f96bb41">
+        <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.4-74513f9415850e2e21ac3b896ef4e4a9d2f9cdbc.jar" />
+    </item>
+    <item
+        jar="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/Parse-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0fcb6bbc9cf6d2643a90c812539aa82ed16ea315">
+        <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.4-034c3c5ae0ee16923556ab0b8819aec75cb4c921.jar" />
+    </item>
+    <item
+        jar="/Users/mjrudin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-49520a26db5f1cb20837d3bef205549b61d5df09.jar" />
+    </item>
+    <item
+        jar="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/classes-2337afca8e9893f02f9d5a07dff501bddf941016.jar" />
+    </item>
+    <item
+        jar="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/libs/json-simple-1.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
+        <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/json-simple-1.1.1-c79c6e203d6b6b8eeaccc6ef9a32d07668f04d2e.jar" />
+    </item>
+    <item
+        jar="/Users/mjrudin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/Anjali/Documents/UPenn/Spring 2015/CIS 350/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-28d7f07a3af1d8eb36c7b7a6f9f723ca0ab6f0c0.jar" />
+        <dex dex="/Users/mjrudin/Documents/Junior Year/CIS350/CIS-350 App/Parse-Starter-Project-1.8.4/ParseStarterProject/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-15f89642a6ccbe2cbe107a58d7ef37b8cb4e1f8c.jar" />
     </item>
 
 </items>
