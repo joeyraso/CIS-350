@@ -143,6 +143,10 @@
             android:name=".ViewRequestorActivity"
             android:label="@string/title_activity_view_requestor" >
         </activity>
+        <activity
+            android:name=".NotificationsPageActivity"
+            android:label="@string/title_activity_notifications_page" >
+        </activity>
     </application>
 
 </manifest>

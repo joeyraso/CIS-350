@@ -44,7 +44,7 @@
         android:onClick="addJob"/>
 
     <ListView
-        android:id="@+id/homeList"
+        android:id="@+id/notificationsList"
         android:layout_above="@+id/buttonDashboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,4 +53,3 @@
     </ListView>
 
 </RelativeLayout>
-<!-- From: file:/Users/Anjali/Documents/UPenn/Spring%202015/CIS%20350/Final%20Project/CIS-350/Parse-Starter-Project-1.8.4/ParseStarterProject/res/layout/sample_homepage_view.xml -->

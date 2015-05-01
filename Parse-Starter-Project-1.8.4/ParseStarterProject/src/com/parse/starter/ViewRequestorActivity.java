@@ -85,15 +85,17 @@ public class ViewRequestorActivity extends Activity {
     }
 
     public void selectAsJobDoer(View view) {
-        Log.v("Debug:", "calls this method");
+        //update the Job object
         job.put("jobDoer", userId);
+        job.put("jobStatus", "inProgress");
         job.saveInBackground();
         isJobDoer = true;
-        if (userId.equals(job.get("jobDoer"))) {
-            Log.v("Debug:", "Great, new jobdoer has been assigned");
-        }
 
+        String jobName = job.getString("jobName");
+        String notification = "You have been selected to complete " + jobName;
+        NotificationsManager.notifyUser(userId, notification);
     }
+
 
 
     @Override
